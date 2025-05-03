@@ -122,3 +122,37 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Card animations */
+@keyframes card-enter {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes card-exit-right {
+  from {
+    transform: translateX(0) rotateZ(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%) rotateZ(10deg);
+    opacity: 0;
+  }
+}
+
+@keyframes card-exit-left {
+  from {
+    transform: translateX(0) rotateZ(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%) rotateZ(-10deg);
+    opacity: 0;
+  }
+}

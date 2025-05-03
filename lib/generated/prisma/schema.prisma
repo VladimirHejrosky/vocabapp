@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Album {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  userId      String
+  words       Word[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([userId])
+}
+
+model Word {
+  id          Int      @id @default(autoincrement())
+  term        String
+  translation String
+  example     String?
+  priority    Int      @default(1)
+  userId      String
+  albumId     Int
+  album       Album    @relation(fields: [albumId], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([userId, albumId])
+  @@index([userId, priority])
+}
