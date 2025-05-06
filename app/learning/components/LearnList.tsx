@@ -88,8 +88,8 @@ const LearnList = ({words}: Props) => {
         </div>
 
         {learningTerms.map((term, index) => {
-          const firstColumn = swapColumns ? term.term : term.translation;
-          const secondColumn = swapColumns ? term.translation : term.term;
+          const firstColumn = swapColumns ? term.translation : term.term;
+          const secondColumn = swapColumns ? term.term : term.translation;
           const isCovered =
             coverTranslations && !uncoveredIndices.includes(index);
 

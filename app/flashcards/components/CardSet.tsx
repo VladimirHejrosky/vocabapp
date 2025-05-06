@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Volume2, Check, X, RotateCw, Eye, EyeOff } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { SpeakButton } from "@/app/components/SpeakButton";
 
 interface Word {
   id: number;
@@ -46,39 +47,6 @@ export default function CardSet({ initialWords }: Props) {
     setUnknownWords([]);
     setIsCompleted(false);
     setShowCard(true);
-  };
-
-  // Function to speak the current word with proper term pronunciation
-  const speakWord = () => {
-    const voices = window.speechSynthesis.getVoices();
-    voices.forEach((voice, index) => {
-      console.log(
-        `${index + 1}: ${voice.name} (${voice.lang}) - ${
-          voice.localService ? "local" : "remote"
-        }`
-      );
-    });
-    if ("speechSynthesis" in window) {
-      // Cancel any ongoing speech
-      window.speechSynthesis.cancel();
-
-      const utterance = new SpeechSynthesisUtterance(currentWord.term);
-
-      // Explicitly set to term (US)
-      utterance.lang = "en-US";
-
-      // Try to find an term voice
-      const voices = window.speechSynthesis.getVoices();
-      const termVoice = voices.find(
-        (voice) => voice.lang.includes("en-US") && voice.localService
-      );
-
-      if (termVoice) {
-        utterance.voice = termVoice;
-      }
-
-      window.speechSynthesis.speak(utterance);
-    }
   };
 
   // Handle card flip
@@ -295,17 +263,13 @@ export default function CardSet({ initialWords }: Props) {
               >
                 <h2 className="text-3xl font-bold mb-4">{currentWord.term}</h2>
                 <p className="text-muted-foreground">Otočit kliknutím</p>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="absolute top-4 right-4"
+                <div className="absolute top-4 right-4"
                   onClick={(e) => {
                     e.stopPropagation();
-                    speakWord();
                   }}
                 >
-                  <Volume2 className="h-4 w-4" />
-                </Button>
+                  <SpeakButton text={currentWord.term} lang="en-US" />
+                </div>
               </Card>
 
               {/* Back of card (translation) */}

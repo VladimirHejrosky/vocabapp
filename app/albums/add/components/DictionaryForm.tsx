@@ -41,8 +41,9 @@ export default function DictionaryForm() {
   });
 
   const handleSave = (data: FormValues) => {
+    const checkedData = data.pairs.filter(pair => pair.term && pair.translation)
     // Save to a database
-    console.log("Saving word pairs:", data.pairs);
+    console.log("Saving word pairs:", checkedData);
   };
   const handleAddPair = () => {
     append({ term: "", translation: "", example: "" });

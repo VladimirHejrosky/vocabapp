@@ -63,7 +63,7 @@ const WordList = ({ data }: Props) => {
           <Link href={`/albums/add`}>
             <Button className="flex items-center gap-2 whitespace-nowrap">
               <Plus className="h-4 w-4" />
-              Přidat
+              Přidat slova
             </Button>
           </Link>
         </div>

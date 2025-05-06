@@ -11,7 +11,7 @@ export default async function FlashcardsPage() {
   const sampleWords = await getAlbums(userId);
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4 overflow-hidden">
       <SubNav name="Kartičky" desctiprion="Album"/>
       <CardSet initialWords={sampleWords} />
     </div>
