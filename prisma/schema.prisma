@@ -12,6 +12,7 @@ model Album {
   id          Int      @id @default(autoincrement())
   name        String
   description String?
+  language    Language @default(EN)
   userId      String
   words       Word[]
   createdAt   DateTime @default(now())
@@ -34,4 +35,10 @@ model Word {
 
   @@index([userId, albumId])
   @@index([userId, priority])
+}
+
+enum Language {
+  EN
+  DE
+  ES
 }

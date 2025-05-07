@@ -5,24 +5,18 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { getAlbums } from "@/lib/db/db-actions";
+import { AlbumWithCount } from "@/lib/db/db-types";
+import { auth } from "@clerk/nextjs/server";
 import Link from "next/link";
 import AddAlbumDialog from "./components/AlbumDialog";
+import { redirect } from "next/navigation";
 
-interface Album {
-  id: number;
-  title: string;
-  description: string;
-  termCount: number;
-}
+export default async function AlbumsPage() {
+  const { userId } = await auth();
+  if (!userId) redirect("/sign-in");
 
-// get from server
-const albums: Album[] = [
-  {id: 1, title: "Album 1", description: "Description 1", termCount: 10},
-  {id: 2, title: "Album 2", description: "Description 2", termCount: 20},
-  {id: 3, title: "Album 3", description: "Description 3", termCount: 30},
-]
-
-export default function AlbumsPage() {
+  const albums: AlbumWithCount[] = await getAlbums(userId);
 
   return (
     <div className="container mx-auto px-4">
@@ -40,13 +34,16 @@ export default function AlbumsPage() {
           >
             <Card className="h-full hover:shadow-md transition-shadow relative">
               <CardHeader>
-                <CardTitle>{album.title}</CardTitle>
+                <CardTitle>{album.name}</CardTitle>
                 <CardDescription>{album.description}</CardDescription>
               </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  {album.termCount} Slovíček
-                </p>
+              <CardContent className="flex justify-between items-center">
+                <div className="text-sm text-muted-foreground">
+                  {album._count.words} Slovíček
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  {album.language}
+                </div>
               </CardContent>
             </Card>
           </Link>

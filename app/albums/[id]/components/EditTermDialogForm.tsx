@@ -23,25 +23,19 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Word } from "@/lib/generated/prisma";
 
 interface Props {
-  word: {
-    id: number;
-    term: string;
-    translation: string;
-    example?: string;
-  };
+  word: Word
 }
 
-const EditTermDialogForm = ({
-  word: { term, translation, example, id },
-}: Props) => {
+const EditTermDialogForm = ({word}: Props) => {
   const form = useForm({
     resolver: zodResolver(wordPair),
     defaultValues: {
-      term: term,
-      translation: translation,
-      example: example || "",
+      term: word.term,
+      translation: word.translation,
+      example: word.example || "",
     },
   });
   

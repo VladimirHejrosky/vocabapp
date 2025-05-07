@@ -25,6 +25,24 @@ export type Album = $Result.DefaultSelection<Prisma.$AlbumPayload>
 export type Word = $Result.DefaultSelection<Prisma.$WordPayload>
 
 /**
+ * Enums
+ */
+export namespace $Enums {
+  export const Language: {
+  EN: 'EN',
+  DE: 'DE',
+  ES: 'ES'
+};
+
+export type Language = (typeof Language)[keyof typeof Language]
+
+}
+
+export type Language = $Enums.Language
+
+export const Language: typeof $Enums.Language
+
+/**
  * ##  Prisma Client ʲˢ
  *
  * Type-safe database client for TypeScript & Node.js
@@ -1014,6 +1032,7 @@ export namespace Prisma {
     id: number | null
     name: string | null
     description: string | null
+    language: $Enums.Language | null
     userId: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -1023,6 +1042,7 @@ export namespace Prisma {
     id: number | null
     name: string | null
     description: string | null
+    language: $Enums.Language | null
     userId: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -1032,6 +1052,7 @@ export namespace Prisma {
     id: number
     name: number
     description: number
+    language: number
     userId: number
     createdAt: number
     updatedAt: number
@@ -1051,6 +1072,7 @@ export namespace Prisma {
     id?: true
     name?: true
     description?: true
+    language?: true
     userId?: true
     createdAt?: true
     updatedAt?: true
@@ -1060,6 +1082,7 @@ export namespace Prisma {
     id?: true
     name?: true
     description?: true
+    language?: true
     userId?: true
     createdAt?: true
     updatedAt?: true
@@ -1069,6 +1092,7 @@ export namespace Prisma {
     id?: true
     name?: true
     description?: true
+    language?: true
     userId?: true
     createdAt?: true
     updatedAt?: true
@@ -1165,6 +1189,7 @@ export namespace Prisma {
     id: number
     name: string
     description: string | null
+    language: $Enums.Language
     userId: string
     createdAt: Date
     updatedAt: Date
@@ -1193,6 +1218,7 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     description?: boolean
+    language?: boolean
     userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -1204,6 +1230,7 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     description?: boolean
+    language?: boolean
     userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -1213,6 +1240,7 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     description?: boolean
+    language?: boolean
     userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -1222,12 +1250,13 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     description?: boolean
+    language?: boolean
     userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type AlbumOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["album"]>
+  export type AlbumOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "language" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["album"]>
   export type AlbumInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     words?: boolean | Album$wordsArgs<ExtArgs>
     _count?: boolean | AlbumCountOutputTypeDefaultArgs<ExtArgs>
@@ -1244,6 +1273,7 @@ export namespace Prisma {
       id: number
       name: string
       description: string | null
+      language: $Enums.Language
       userId: string
       createdAt: Date
       updatedAt: Date
@@ -1674,6 +1704,7 @@ export namespace Prisma {
     readonly id: FieldRef<"Album", 'Int'>
     readonly name: FieldRef<"Album", 'String'>
     readonly description: FieldRef<"Album", 'String'>
+    readonly language: FieldRef<"Album", 'Language'>
     readonly userId: FieldRef<"Album", 'String'>
     readonly createdAt: FieldRef<"Album", 'DateTime'>
     readonly updatedAt: FieldRef<"Album", 'DateTime'>
@@ -3277,6 +3308,7 @@ export namespace Prisma {
     id: 'id',
     name: 'name',
     description: 'description',
+    language: 'language',
     userId: 'userId',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
@@ -3358,6 +3390,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Language'
+   */
+  export type EnumLanguageFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Language'>
+    
+
+
+  /**
+   * Reference to a field of type 'Language[]'
+   */
+  export type ListEnumLanguageFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Language[]'>
+    
+
+
+  /**
    * Reference to a field of type 'DateTime'
    */
   export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
@@ -3395,6 +3441,7 @@ export namespace Prisma {
     id?: IntFilter<"Album"> | number
     name?: StringFilter<"Album"> | string
     description?: StringNullableFilter<"Album"> | string | null
+    language?: EnumLanguageFilter<"Album"> | $Enums.Language
     userId?: StringFilter<"Album"> | string
     createdAt?: DateTimeFilter<"Album"> | Date | string
     updatedAt?: DateTimeFilter<"Album"> | Date | string
@@ -3405,6 +3452,7 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrderInput | SortOrder
+    language?: SortOrder
     userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -3418,6 +3466,7 @@ export namespace Prisma {
     NOT?: AlbumWhereInput | AlbumWhereInput[]
     name?: StringFilter<"Album"> | string
     description?: StringNullableFilter<"Album"> | string | null
+    language?: EnumLanguageFilter<"Album"> | $Enums.Language
     userId?: StringFilter<"Album"> | string
     createdAt?: DateTimeFilter<"Album"> | Date | string
     updatedAt?: DateTimeFilter<"Album"> | Date | string
@@ -3428,6 +3477,7 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrderInput | SortOrder
+    language?: SortOrder
     userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -3445,6 +3495,7 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Album"> | number
     name?: StringWithAggregatesFilter<"Album"> | string
     description?: StringNullableWithAggregatesFilter<"Album"> | string | null
+    language?: EnumLanguageWithAggregatesFilter<"Album"> | $Enums.Language
     userId?: StringWithAggregatesFilter<"Album"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Album"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Album"> | Date | string
@@ -3530,6 +3581,7 @@ export namespace Prisma {
   export type AlbumCreateInput = {
     name: string
     description?: string | null
+    language?: $Enums.Language
     userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -3540,6 +3592,7 @@ export namespace Prisma {
     id?: number
     name: string
     description?: string | null
+    language?: $Enums.Language
     userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -3549,6 +3602,7 @@ export namespace Prisma {
   export type AlbumUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: EnumLanguageFieldUpdateOperationsInput | $Enums.Language
     userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3559,6 +3613,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: EnumLanguageFieldUpdateOperationsInput | $Enums.Language
     userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3569,6 +3624,7 @@ export namespace Prisma {
     id?: number
     name: string
     description?: string | null
+    language?: $Enums.Language
     userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -3577,6 +3633,7 @@ export namespace Prisma {
   export type AlbumUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: EnumLanguageFieldUpdateOperationsInput | $Enums.Language
     userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3586,6 +3643,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: EnumLanguageFieldUpdateOperationsInput | $Enums.Language
     userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3712,6 +3770,13 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
+  export type EnumLanguageFilter<$PrismaModel = never> = {
+    equals?: $Enums.Language | EnumLanguageFieldRefInput<$PrismaModel>
+    in?: $Enums.Language[] | ListEnumLanguageFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Language[] | ListEnumLanguageFieldRefInput<$PrismaModel>
+    not?: NestedEnumLanguageFilter<$PrismaModel> | $Enums.Language
+  }
+
   export type DateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -3742,6 +3807,7 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
+    language?: SortOrder
     userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -3755,6 +3821,7 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
+    language?: SortOrder
     userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -3764,6 +3831,7 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
+    language?: SortOrder
     userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -3823,6 +3891,16 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type EnumLanguageWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.Language | EnumLanguageFieldRefInput<$PrismaModel>
+    in?: $Enums.Language[] | ListEnumLanguageFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Language[] | ListEnumLanguageFieldRefInput<$PrismaModel>
+    not?: NestedEnumLanguageWithAggregatesFilter<$PrismaModel> | $Enums.Language
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumLanguageFilter<$PrismaModel>
+    _max?: NestedEnumLanguageFilter<$PrismaModel>
   }
 
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -3912,6 +3990,10 @@ export namespace Prisma {
 
   export type NullableStringFieldUpdateOperationsInput = {
     set?: string | null
+  }
+
+  export type EnumLanguageFieldUpdateOperationsInput = {
+    set?: $Enums.Language
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
@@ -4007,6 +4089,13 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
+  export type NestedEnumLanguageFilter<$PrismaModel = never> = {
+    equals?: $Enums.Language | EnumLanguageFieldRefInput<$PrismaModel>
+    in?: $Enums.Language[] | ListEnumLanguageFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Language[] | ListEnumLanguageFieldRefInput<$PrismaModel>
+    not?: NestedEnumLanguageFilter<$PrismaModel> | $Enums.Language
+  }
+
   export type NestedDateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -4090,6 +4179,16 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
+  export type NestedEnumLanguageWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.Language | EnumLanguageFieldRefInput<$PrismaModel>
+    in?: $Enums.Language[] | ListEnumLanguageFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Language[] | ListEnumLanguageFieldRefInput<$PrismaModel>
+    not?: NestedEnumLanguageWithAggregatesFilter<$PrismaModel> | $Enums.Language
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumLanguageFilter<$PrismaModel>
+    _max?: NestedEnumLanguageFilter<$PrismaModel>
+  }
+
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -4169,6 +4268,7 @@ export namespace Prisma {
   export type AlbumCreateWithoutWordsInput = {
     name: string
     description?: string | null
+    language?: $Enums.Language
     userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -4178,6 +4278,7 @@ export namespace Prisma {
     id?: number
     name: string
     description?: string | null
+    language?: $Enums.Language
     userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -4202,6 +4303,7 @@ export namespace Prisma {
   export type AlbumUpdateWithoutWordsInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: EnumLanguageFieldUpdateOperationsInput | $Enums.Language
     userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -4211,6 +4313,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: EnumLanguageFieldUpdateOperationsInput | $Enums.Language
     userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string

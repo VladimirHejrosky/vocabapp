@@ -13,33 +13,50 @@ import {
 import { albumSchema } from "@/validation/form-validations";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { languages } from "@/app/components/LangSelector";
 
-const onSubmit = (data: any) => {
-  // Handle form submission
-  console.log("Form submitted:", data);
-  // Here you can add your logic to save the album data
-};
 import { DialogClose, DialogFooter } from "@/components/ui/dialog";
+import { Language } from "@/lib/generated/prisma";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { upsertAlbum } from "@/lib/db/db-actions";
+import { z } from "zod";
 
 interface Props {
-    album?: {
-      id: number
-      name: string
-      description: string}
-  }
+  album?: {
+    id?: number;
+    name: string;
+    description?: string | null;
+    language: Language;
+  };
+}
 
-const AlbumForm = ({album}: Props) => {
+const AlbumForm = ({ album }: Props) => {
   const form = useForm({
     resolver: zodResolver(albumSchema),
     defaultValues: {
+      id: album ? album.id : undefined,
       name: album ? album.name : "",
-      description: album ? album.description : "",
+      description: album ? album.description ?? "" : "",
+      language: album ? album.language : undefined,
     },
   });
+
+  const onSubmit = async (data: z.infer<typeof albumSchema>) => {
+     await upsertAlbum(data);
+  };
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        {album?.id != null && (
+          <input type="hidden" {...form.register("id")} value={album.id} />
+        )}{" "}
         <FormField
           control={form.control}
           name="name"
@@ -53,7 +70,6 @@ const AlbumForm = ({album}: Props) => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="description"
@@ -67,13 +83,37 @@ const AlbumForm = ({album}: Props) => {
             </FormItem>
           )}
         />
+        <FormField
+          control={form.control}
+          name="language"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Jazyk</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Vyber jazyk" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {languages.map((lang) => (
+                    <SelectItem key={lang.value} value={lang.value}>
+                      {lang.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <DialogFooter className="mt-8">
           <DialogClose asChild>
             <Button type="button" variant="outline">
               Zavřít
             </Button>
           </DialogClose>
-          <Button type="submit">{album ? "Uložit" : "Vytvořit"}</Button>
+          <Button disabled={form.formState.isSubmitting} type="submit">{album ? "Uložit" : "Vytvořit"}</Button>
         </DialogFooter>
       </form>
     </Form>

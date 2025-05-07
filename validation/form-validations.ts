@@ -1,4 +1,7 @@
+import { Language } from "@/lib/generated/prisma";
 import { z } from "zod";
+
+const LanguageValues = Object.values(Language) as [Language, ...Language[]];
 
 export const wordPairSchema = z
   .object({
@@ -29,6 +32,7 @@ export const wordPairSchema = z
 
   export const wordPairFormSchema = z
   .object({
+    albumId: z.number(),
     pairs: z.array(wordPairSchema).max(20, {message: "Maximální počet řádků je 20."}),
   })
   .refine(
@@ -40,9 +44,13 @@ export const wordPairSchema = z
   );
 
   export const albumSchema = z.object({
+    id: z.number().optional(),
     name: z.string().trim().min(1, { message: "Název alba je povinný" }).max(255),
     description: z.string().trim().max(255).optional(),
-  })
+    language: z.enum(LanguageValues, {
+      required_error: "Jazyk je povinný",
+      invalid_type_error: "Neplatná hodnota jazyka",
+    }),  })
 
   export const wordPair = z.object({
     term: z.string().trim().min(1, { message: "Pole je povinné" }).max(255),

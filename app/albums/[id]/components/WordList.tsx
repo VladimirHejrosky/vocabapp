@@ -20,17 +20,14 @@ import Link from "next/link";
 import { useState } from "react";
 import DeleteTermDialog from "./DeleteTermDialog";
 import EditTermDialogForm from "./EditTermDialogForm";
+import { Word } from "@/lib/generated/prisma";
 
 interface Props {
-  data: {
-    id: number;
-    translation: string;
-    term: string;
-    example: string;
-  }[];
+  data: Word[],
+  albumId: number
 }
 
-const WordList = ({ data }: Props) => {
+const WordList = ({ data, albumId }: Props) => {
   const [words, setwords] = useState(data);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -60,7 +57,7 @@ const WordList = ({ data }: Props) => {
             />
           </div>
 
-          <Link href={`/albums/add`}>
+          <Link href={`/albums/${albumId}/add`}>
             <Button className="flex items-center gap-2 whitespace-nowrap">
               <Plus className="h-4 w-4" />
               Přidat slova

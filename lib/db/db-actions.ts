@@ -1,35 +1,73 @@
 "use server";
 
 import { db } from "@/prisma/prisma";
-import { unstable_cacheTag as cacheTag } from "next/cache";
+import { unstable_cacheTag as cacheTag, revalidateTag } from "next/cache";
+import { auth } from '@clerk/nextjs/server'
+import { z } from "zod";
+import { albumSchema } from "@/validation/form-validations";
+import { redirect } from "next/navigation"
+import { AlbumWithCount, AlbumWithWords } from "./db-types";
 
-export async function getAlbums(userId: string) {
+
+// Albums
+export async function getAlbums(userId:string): Promise<AlbumWithCount[]> {
   "use cache";
-
-  if (!userId) {
-    throw new Error("User not authenticated");
-  }
-
   cacheTag(`albums-${userId}`);
-  // const albums = await db.album.findMany({
-  //   where: { userId },
-  // });
-  const albums = [
-    { id: 1, term: "book", translation: "kniha", example: "I read a new book today." },
-    { id: 2, term: "apple", translation: "jablko", example: "She ate a red apple." },
-    { id: 3, term: "house", translation: "dům", example: "Their house is near the park." },
-    { id: 4, term: "car", translation: "auto", example: "He washed his car yesterday." },
-    { id: 5, term: "music", translation: "hudba", example: "They play music at the party." },
-    { id: 6, term: "friend", translation: "přítel", example: "My friend called me this morning." },
-    { id: 7, term: "coffee", translation: "káva", example: "I need coffee every day." },
-    { id: 8, term: "city", translation: "město", example: "The city looks beautiful at night." },
-    { id: 9, term: "garden", translation: "zahrada", example: "She waters her garden daily." },
-    { id: 10, term: "movie", translation: "film", example: "We watched a movie last night." }
-  ];
+  const albums = await db.album.findMany({
+    where: { userId },
+    include: {
+      _count: {
+        select: { words: true },
+      },
+    },
+  });
 
   return albums;
 }
 
+export async function upsertAlbum(unsafeData: z.infer<typeof albumSchema>) {
+  const { userId } = await auth()
+  const { success, data } = albumSchema.safeParse(unsafeData);
+if (!success || !userId ) return { error: true}
+
+if (data.id) {
+  await db.album.update({
+    where: { id: data.id },
+    data: {
+      name: data.name,
+      description: data.description,
+      language: data.language,
+    },
+  });
+} else {
+  await db.album.create({
+    data: {
+      name: data.name,
+      description: data.description,
+      language: data.language,
+      userId,
+    },
+  });
+}
+
+revalidateTag(`albums-${userId}`)
+redirect("/albums/" + data.id);
+}
+
+export async function getAlbum(userId: string, albumId: number): Promise<AlbumWithWords | null> {
+  "use cache";
+  cacheTag(`album-${albumId}`);
+  const album = await db.album.findFirst({
+    where: { id: albumId, userId },
+    include: {
+      words: true
+      },
+  });
+  return album;
+}
+
+
+// Words
 export async function getAlbumWords(userId: string, albumId: number) {
   const words = await db.word.findMany({
     where: { userId, albumId },

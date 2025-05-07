@@ -10,12 +10,15 @@ import {
 } from "@/components/ui/dialog";
 import { Pencil, Plus } from "lucide-react";
 import AlbumForm from "./AlbumForm";
+import { Language } from "@/lib/generated/prisma";
 
 interface Props {
   album?: {
-    id: number
+    id?: number
     name: string
-    description: string}
+    description?: string | null
+    language: Language
+  }
 }
 
 const AlbumDialog = ({album}: Props) => {

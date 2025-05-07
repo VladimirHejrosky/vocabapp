@@ -1,5 +1,4 @@
 import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern";
-import { CoolMode } from "@/components/magicui/cool-mode";
 import { HyperText } from "@/components/magicui/hyper-text";
 import { SparklesText } from "@/components/magicui/sparkles-text";
 import { Button } from "@/components/ui/button";
@@ -7,8 +6,12 @@ import { cn } from "@/lib/utils";
 import { SignedIn, SignedOut, SignUpButton } from "@clerk/nextjs";
 import { BookOpen, List, MoveRight, Play } from "lucide-react";
 import Link from "next/link";
+import LangSelector from "./components/LangSelector";
+import { cookies } from 'next/headers';
+import { Language } from "@/lib/generated/prisma";
 
-export default function Home() {
+export default async function Home() {
+  const langCookie = (await cookies()).get('lang')?.value as Language | undefined;
   return (
     <div className="container mx-auto px-4 flex flex-col items-center justify-center min-h-[80vh] text-center">
       <div className="absolute inset-0 -z-10 w-full h-full overflow-hidden">
@@ -30,20 +33,6 @@ export default function Home() {
         Obohať slovní zásobu pomocí kartiček.
       </HyperText>
       <div className="flex flex-col gap-4">
-        <CoolMode
-          options={{
-            particle:
-              "https://img.icons8.com/?size=100&id=uG-gOKWvvi8T&format=png&color=000000",
-          }}
-        >
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-2xl sm:hidden self-center"
-          >
-            ❤️
-          </Button>
-        </CoolMode>
         <SignedIn>
           <Link href="/albums">
             <Button size="lg" className="flex items-center gap-2 w-full">
@@ -71,6 +60,7 @@ export default function Home() {
               Náhodný seznam
             </Button>
           </Link>
+            <LangSelector defaultLanguage={langCookie}/>
         </SignedIn>
         <SignedOut>
           <div className="flex gap-4">

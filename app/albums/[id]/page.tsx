@@ -9,87 +9,32 @@ import Link from "next/link";
 import AlbumDialog from "../components/AlbumDialog";
 import DeleteAlbumDialog from "./components/DeleteAlbumDialog";
 import WordList from "./components/WordList";
+import { auth } from "@clerk/nextjs/server";
+import { notFound, redirect } from "next/navigation";
+import { getAlbum } from "@/lib/db/db-actions";
 
-type Album = {
-  id: number;
-  name: string;
-  description: string;
-  words: { id: number; translation: string; term: string; example: string }[];
-};
+interface Props {
+  params: Promise<{ id: string }>;
+}
 
-// Get from DB
-const albumsData: Album = {
-  id: 1,
-  name: "Basic Vocabulary",
-  description: "Essential everyday words",
-  words: [
-    {
-      id: 1,
-      translation: "apple",
-      term: "jablko",
-      example: "I eat an apple every day.",
-    },
-    {
-      id: 2,
-      translation: "book",
-      term: "kniha",
-      example: "She reads a book before bed.",
-    },
-    {
-      id: 3,
-      translation: "car",
-      term: "auto",
-      example: "We drive to work by car.",
-    },
-    {
-      id: 4,
-      translation: "dog",
-      term: "pes",
-      example: "The dog barks at strangers.",
-    },
-    {
-      id: 5,
-      translation: "house",
-      term: "dům",
-      example: "They live in a big house.",
-    },
-    {
-      id: 6,
-      translation: "computer",
-      term: "počítač",
-      example: "I work on my computer.",
-    },
-    {
-      id: 7,
-      translation: "friend",
-      term: "přítel",
-      example: "He is my best friend.",
-    },
-    {
-      id: 8,
-      translation: "water",
-      term: "voda",
-      example: "Please drink more water.",
-    },
-    { id: 9, translation: "time", term: "čas", example: "What time is it?" },
-    {
-      id: 10,
-      translation: "food",
-      term: "jídlo",
-      example: "The food tastes delicious.",
-    },
-  ],
-};
+export default async function AlbumDetailPage({ params }: Props) {
+    const { id } = await params;
+    const { userId } = await auth();
+    if (!userId) redirect("/sign-in");
 
-export default function AlbumDetailPage() {
+    const album = await getAlbum(userId, Number(id));
+    if (!album) {
+        return notFound()
+    }
+
   return (
     <div className="container mx-auto px-4">
       <div className="flex justify-between items-center">
-        <SubNav name="Testovací název alba" desctiprion="Popis" />
+        <SubNav name={album.name} desctiprion={album.description || ""} />
         <div className="flex gap-2 flex-col mb-4">
-          <AlbumDialog album={albumsData} />
+          <AlbumDialog album={album} />
           <DeleteAlbumDialog
-            albumId={albumsData.id}
+            albumId={album.id}
           />
         </div>
       </div>
@@ -115,7 +60,7 @@ export default function AlbumDetailPage() {
           </div>
         </CardContent>
       </Card>
-      <WordList data={albumsData.words} />
+      <WordList data={album.words} albumId={album.id}/>
     </div>
   );
 }
