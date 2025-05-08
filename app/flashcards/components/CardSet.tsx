@@ -17,7 +17,7 @@ interface Word {
 
 interface Props {
   initialWords: Word[];
-  lang: Language
+  lang: Language | undefined
 }
 
 export default function CardSet({ initialWords, lang }: Props) {
@@ -32,7 +32,6 @@ export default function CardSet({ initialWords, lang }: Props) {
   const [animation, setAnimation] = useState<
     "entering" | "exiting-right" | "exiting-left" | null
   >(null);
-  // Add a state to track if we should show the card at all
   const [showCard, setShowCard] = useState(true);
   const [showExample, setShowExample] = useState(false);
 
@@ -40,7 +39,6 @@ export default function CardSet({ initialWords, lang }: Props) {
   const remainingWords =
     words.length - (knownWords.length + unknownWords.length);
 
-  // Reset function for starting over
   const resetLearning = () => {
     setWords(words.filter((word) => !knownWords.includes(word.id)));
     setCurrentIndex(0);
@@ -51,26 +49,19 @@ export default function CardSet({ initialWords, lang }: Props) {
     setShowCard(true);
   };
 
-  // Handle card flip
   const flipCard = () => {
     setIsFlipped(!isFlipped);
   };
 
-  // Update the markAsKnown function to use the new approach
   const markAsKnown = () => {
     setIsAnimating(true);
-    // Start exit animation immediately without flipping back
     setAnimation("exiting-right");
 
-    // Add the word to known words
     setKnownWords([...knownWords, currentWord.id]);
 
-    // Wait for animation to complete before moving to next card
     setTimeout(() => {
-      // Hide the current card completely
       setShowCard(false);
 
-      // Reset flip state while card is hidden
       setIsFlipped(false);
 
       setTimeout(() => {
@@ -79,21 +70,15 @@ export default function CardSet({ initialWords, lang }: Props) {
     }, 300);
   };
 
-  // Update the markAsUnknown function to use the new approach
   const markAsUnknown = () => {
     setIsAnimating(true);
-    // Start exit animation immediately without flipping back
     setAnimation("exiting-left");
 
-    // Add the word to unknown words
     setUnknownWords([...unknownWords, currentWord.id]);
 
-    // Wait for animation to complete before moving to next card
     setTimeout(() => {
-      // Hide the current card completely
       setShowCard(false);
 
-      // Reset flip state while card is hidden
       setIsFlipped(false);
 
       setTimeout(() => {
@@ -102,14 +87,12 @@ export default function CardSet({ initialWords, lang }: Props) {
     }, 300);
   };
 
-  // Update the moveToNextCard function to handle card visibility
   const moveToNextCard = () => {
-    setAnimation(null); // Reset animation state first
+    setAnimation(null);
 
     if (currentIndex < words.length - 1) {
       setCurrentIndex(currentIndex + 1);
 
-      // Show the card after a brief delay to ensure state is updated
       setTimeout(() => {
         setShowCard(true);
         setAnimation("entering");
@@ -121,7 +104,6 @@ export default function CardSet({ initialWords, lang }: Props) {
     }
   };
 
-  // Add useEffect to reset animation after it completes
   useEffect(() => {
     if (animation === "entering") {
       const timer = setTimeout(() => {
@@ -131,12 +113,7 @@ export default function CardSet({ initialWords, lang }: Props) {
     }
   }, [animation]);
 
-  // Modify the completion screen to include a button to show unknown words
-  // and the list of unknown words when toggled
-
-  // Replace the completion screen return statement with this updated version
   if (isCompleted) {
-    // Get the actual unknown word objects based on their IDs
     const unknownWordsList = words.filter((word) =>
       unknownWords.includes(word.id)
     );
@@ -203,7 +180,6 @@ export default function CardSet({ initialWords, lang }: Props) {
           <EyeOff className="h-4 w-4" />
         )}
       </Button>
-      {/* Progress indicator */}
       <div className="w-full max-w-md mb-6">
         <div className="flex justify-center mb-2 text-2xl font-bold">
           <span>
@@ -227,9 +203,7 @@ export default function CardSet({ initialWords, lang }: Props) {
           {words[currentIndex].example || "..."}
         </Card>
       )}
-      {/* Card */}
       <div className="w-full max-w-md h-64 mb-6 relative">
-        {/* Only render the card if showCard is true */}
         {showCard && (
           <div
             className="w-full h-full"
@@ -249,7 +223,6 @@ export default function CardSet({ initialWords, lang }: Props) {
                 : {}),
             }}
           >
-            {/* Flip container */}
             <div
               className="w-full h-full transition-all duration-500"
               style={{
@@ -258,7 +231,6 @@ export default function CardSet({ initialWords, lang }: Props) {
                 transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
               }}
             >
-              {/* Front of card (term) */}
               <Card
                 className="absolute w-full h-full cursor-pointer flex flex-col items-center justify-center p-6 backface-hidden shadow-lg border-2 hover:border-primary/20"
                 onClick={flipCard}
@@ -274,7 +246,6 @@ export default function CardSet({ initialWords, lang }: Props) {
                 </div>
               </Card>
 
-              {/* Back of card (translation) */}
               <Card
                 className="absolute w-full h-full cursor-pointer flex flex-col items-center justify-center p-6 backface-hidden shadow-lg border-2 hover:border-primary/20"
                 style={{
@@ -292,7 +263,6 @@ export default function CardSet({ initialWords, lang }: Props) {
         )}
       </div>
 
-      {/* Controls - always visible */}
       <div className="flex gap-4">
         <Button
           size="lg"

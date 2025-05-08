@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Language } from "@/lib/generated/prisma";
 import { Volume2 } from "lucide-react";
@@ -11,13 +13,15 @@ const languageMap: Record<Language, string> = {
 
 interface SpeakButtonProps {
   text: string;
-  lang?: Language; 
+  lang: Language | undefined;
 }
 
 export const SpeakButton: FC<SpeakButtonProps> = ({ text, lang }) => {
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
 
-  // Funkce pro (znovu)načtení hlasů
+  const langCode = lang ? languageMap[lang] : undefined;
+  if (!langCode) return null;
+
   const loadVoices = useCallback(() => {
     const available = window.speechSynthesis.getVoices();
     if (available.length > 0) {
@@ -28,10 +32,7 @@ export const SpeakButton: FC<SpeakButtonProps> = ({ text, lang }) => {
   useEffect(() => {
     if (!("speechSynthesis" in window)) return;
 
-    // Pokud už jsou hlasy načtené, stáhni je hned
     loadVoices();
-
-    // Jinak počkej na jejich načtení
     window.speechSynthesis.addEventListener("voiceschanged", loadVoices);
 
     return () => {
@@ -39,33 +40,30 @@ export const SpeakButton: FC<SpeakButtonProps> = ({ text, lang }) => {
     };
   }, [loadVoices]);
 
-  // Vybereme preferovaný hlas podle lang
   const selectedVoice = useMemo(() => {
     if (!voices.length) return null;
-    // nejprve pokus o přesnou shodu, pak o začátek jazyka
     return (
-      voices.find((v) => v.lang === lang && v.localService) ||
-      voices.find((v) => v.lang.startsWith(lang.split("-")[0]))
+      voices.find((v) => v.lang === langCode && v.localService) ||
+      voices.find((v) => v.lang.startsWith(langCode.split("-")[0]))
     );
-  }, [voices, lang]);
+  }, [voices, langCode]);
 
   const handleSpeak = () => {
-    if (!("speechSynthesis" in window) || !text) return;
+    if (!("speechSynthesis" in window) || !text || !selectedVoice) return;
 
     window.speechSynthesis.cancel();
 
     const utter = new SpeechSynthesisUtterance(text);
-    utter.lang = lang;
-    if (selectedVoice) {
-      utter.voice = selectedVoice;
-    }
+    utter.lang = langCode;
+    utter.voice = selectedVoice;
+
     window.speechSynthesis.speak(utter);
   };
 
+  if (!selectedVoice) return null;
+
   return (
-    <Button
-      onClick={handleSpeak}
-      variant="ghost">
+    <Button onClick={handleSpeak} variant="ghost">
       <Volume2 size={20} />
     </Button>
   );
