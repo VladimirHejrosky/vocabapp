@@ -96,9 +96,9 @@ const WordList = ({ data, albumId }: Props) => {
                 filteredwords.map((word) => (
                   <TableRow key={word.id}>
                     <TableCell className="font-medium">
-                      {word.translation}
+                      {word.term}
                     </TableCell>
-                    <TableCell>{word.term}</TableCell>
+                    <TableCell>{word.translation}</TableCell>
                     <TableCell className="hidden md:table-cell text-muted-foreground text-sm">
                       {word.example || "Žádný příklad"}
                     </TableCell>

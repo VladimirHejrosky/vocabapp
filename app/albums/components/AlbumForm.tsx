@@ -34,9 +34,10 @@ interface Props {
     description?: string | null;
     language: Language;
   };
+  onSuccess?: () => void;
 }
 
-const AlbumForm = ({ album }: Props) => {
+const AlbumForm = ({ album, onSuccess }: Props) => {
   const form = useForm({
     resolver: zodResolver(albumSchema),
     defaultValues: {
@@ -48,15 +49,13 @@ const AlbumForm = ({ album }: Props) => {
   });
 
   const onSubmit = async (data: z.infer<typeof albumSchema>) => {
-     await upsertAlbum(data);
+     await upsertAlbum(data, album?.id);
+     onSuccess?.()
   };
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-        {album?.id != null && (
-          <input type="hidden" {...form.register("id")} value={album.id} />
-        )}{" "}
         <FormField
           control={form.control}
           name="name"

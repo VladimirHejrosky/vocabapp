@@ -3,22 +3,24 @@
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Volume2, Check, X, RotateCw, Eye, EyeOff } from "lucide-react";
+import { Check, X, RotateCw, Eye, EyeOff } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { SpeakButton } from "@/app/components/SpeakButton";
+import { Language } from "@/lib/generated/prisma";
 
 interface Word {
   id: number;
   term: string;
   translation: string;
-  example: string;
+  example: string | null;
 }
 
 interface Props {
   initialWords: Word[];
+  lang: Language
 }
 
-export default function CardSet({ initialWords }: Props) {
+export default function CardSet({ initialWords, lang }: Props) {
   const router = useRouter();
   const [words, setWords] = useState<Word[]>(initialWords);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -222,7 +224,7 @@ export default function CardSet({ initialWords }: Props) {
 
       {showExample && (
         <Card className="p-2 w-full max-w-md text-center mb-4">
-          {words[currentIndex].example}
+          {words[currentIndex].example || "..."}
         </Card>
       )}
       {/* Card */}
@@ -268,7 +270,7 @@ export default function CardSet({ initialWords }: Props) {
                     e.stopPropagation();
                   }}
                 >
-                  <SpeakButton text={currentWord.term} lang="en-US" />
+                  <SpeakButton text={currentWord.term} lang={lang} />
                 </div>
               </Card>
 

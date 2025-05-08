@@ -8,29 +8,26 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { saveNewWords } from "@/lib/db/db-actions";
 import { wordPairFormSchema } from "@/validation/form-validations";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CirclePlus, Save, X } from "lucide-react";
-import { useFieldArray, useForm } from "react-hook-form";
-import DialogInput from "./DialogInput";
 import { useState } from "react";
-import { useParams } from "next/navigation";
+import { useFieldArray, useForm } from "react-hook-form";
+import { z } from "zod";
+import DialogInput from "./DialogInput";
+import { useRouter } from "next/navigation";
 
-interface WordPair {
-  term: string;
-  translation: string;
-  example?: string;
+type FormValues = z.infer<typeof wordPairFormSchema>;
+
+interface Props {
+  paramId: string;
 }
 
-interface FormValues {
-  albumId: number;
-  pairs: WordPair[];
-}
-
-export default function DictionaryForm() {
-  const params = useParams<{id:string}>()
-  const albumId = Number(params.id);
+export default function DictionaryForm({paramId}: Props) {
+  const albumId = Number(paramId);
   const [reachedMaxLength, setReachedMaxLength] = useState(false);
+  const router = useRouter()
   const form = useForm<FormValues>({
     resolver: zodResolver(wordPairFormSchema),
     defaultValues: {
@@ -45,12 +42,19 @@ export default function DictionaryForm() {
     rules: { maxLength: {value: 20, message: "Maximální počet řádků je 20."}},
   });
 
-  const handleSave = (data: FormValues) => {
+  const handleSave = async (data: FormValues) => {
     const checkedData = data.pairs.filter(pair => pair.term && pair.translation)
-    // Save to a database
-    console.log("Saving word pairs:", checkedData);
-    console.log("Album ID:", data.albumId);
+    const payload: FormValues = {
+      albumId: data.albumId,
+      pairs: checkedData,
+    };
+    const result = await saveNewWords(payload)
+
+    if (!result?.error) {
+      router.push("/albums/" + data.albumId); 
+    }
   };
+  
   const handleAddPair = () => {
     append({ term: "", translation: "", example: "" });
     if (fields.length >= 19) {
@@ -146,7 +150,7 @@ export default function DictionaryForm() {
           >
             {reachedMaxLength ? "Maximum 20 řádků" :<><CirclePlus /> Přidat řádek</>}
           </Button>
-          <Button type="submit">
+          <Button disabled={form.formState.isSubmitted} type="submit">
             <Save /> Přidat do slovníku
           </Button>
         </div>

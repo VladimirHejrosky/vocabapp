@@ -30,7 +30,7 @@ export default async function AlbumDetailPage({ params }: Props) {
   return (
     <div className="container mx-auto px-4">
       <div className="flex justify-between items-center">
-        <SubNav name={album.name} desctiprion={album.description || ""} />
+        <SubNav name={album.name} desctiprion={album.description || ""} returnPath="/albums"/>
         <div className="flex gap-2 flex-col mb-4">
           <AlbumDialog album={album} />
           <DeleteAlbumDialog
@@ -45,7 +45,7 @@ export default async function AlbumDetailPage({ params }: Props) {
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap gap-4">
-            <Link href={`/flashcards`}>
+            <Link href={`/flashcards?album=${album.id}`}>
               <Button className="flex items-center gap-2">
                 <FlipHorizontal className="h-4 w-4" />
                 Kartičky

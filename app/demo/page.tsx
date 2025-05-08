@@ -18,7 +18,7 @@ const demoWords = [
 const page = () => {
   return (
     <div className="container mx-auto px-4">
-    <SubNav name="Kartičky" desctiprion="Demo"/>
+    <SubNav name="Kartičky" desctiprion="Demo" returnPath="/"/>
     <CardSet initialWords={demoWords} />
   </div>
   )

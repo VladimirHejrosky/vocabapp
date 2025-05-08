@@ -1,10 +1,17 @@
 import { Button } from "@/components/ui/button";
+import { Language } from "@/lib/generated/prisma";
 import { Volume2 } from "lucide-react";
 import { FC, useCallback, useEffect, useMemo, useState } from "react";
 
+const languageMap: Record<Language, string> = {
+  EN: "en-US",
+  DE: "de-DE",
+  ES: "es-ES",
+};
+
 interface SpeakButtonProps {
   text: string;
-  lang: string; // např. "en-US", "cs-CZ"
+  lang?: Language; 
 }
 
 export const SpeakButton: FC<SpeakButtonProps> = ({ text, lang }) => {

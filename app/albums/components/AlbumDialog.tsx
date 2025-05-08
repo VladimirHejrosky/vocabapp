@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -21,9 +22,11 @@ interface Props {
   }
 }
 
-const AlbumDialog = ({album}: Props) => {
+const AlbumDialog = ({ album }: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <Button variant={album ? "secondary" : "default"} className="flex items-center gap-2">
           {album  ? <> <Pencil /> <span className="hidden md:block">Editovat</span></> : <> <Plus className="h-4 w-4" /><span className="hidden md:block">Nové album</span></> }
@@ -33,7 +36,7 @@ const AlbumDialog = ({album}: Props) => {
         <DialogHeader>
           <DialogTitle className="my-2">{album ? "Editovat Album" : "Vytvořit nové album"}</DialogTitle>
         </DialogHeader>
-        <AlbumForm album={album}/>
+        {isOpen && <AlbumForm album={album} onSuccess={() => setIsOpen(false)}/>}
       </DialogContent>
     </Dialog>
   );
