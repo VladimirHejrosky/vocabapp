@@ -53,6 +53,7 @@ export const wordPairSchema = z
     }),  })
 
   export const wordPair = z.object({
+    id: z.number().optional(),
     term: z.string().trim().min(1, { message: "Pole je povinné" }).max(255),
     translation: z.string().trim().min(1, { message: "Pole je povinné" }).max(255),
     example: z.string().trim().max(255).optional(),

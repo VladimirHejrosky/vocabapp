@@ -12,13 +12,21 @@ import {
   AlertDialogAction,
 } from '@/components/ui/alert-dialog';
 import { Button } from '@/components/ui/button';
+import { deleteAlbum } from '@/lib/db/db-actions';
 import { Trash2 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
-interface DeleteAlbumDialogProps {
+interface Props {
   albumId: number;
+  userId: string;
 }
 
-const DeleteAlbumDialog: React.FC<DeleteAlbumDialogProps> = ({ albumId }) => {
+const DeleteAlbumDialog = ({ albumId, userId }: Props) => {
+  const router = useRouter()
+  const handleDelete = async () => {
+    await deleteAlbum(userId, albumId)
+    router.push("/albums")
+  }
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
@@ -36,7 +44,7 @@ const DeleteAlbumDialog: React.FC<DeleteAlbumDialogProps> = ({ albumId }) => {
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Zrušit</AlertDialogCancel>
-          <AlertDialogAction>Smazat</AlertDialogAction>
+          <AlertDialogAction onClick={handleDelete}>Smazat</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

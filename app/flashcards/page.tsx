@@ -4,6 +4,7 @@ import SubNav from "../components/SubNav";
 import CardSet from "./components/CardSet";
 import { cookies } from "next/headers";
 import { Language } from "@/lib/generated/prisma";
+import NoDataWarning from "../components/NoDataWarning";
 
 const getLangCookie = async () => {
     const langCookie = (await cookies()).get('lang')?.value as Language | undefined;
@@ -27,7 +28,7 @@ export default async function FlashcardsPage({ searchParams }: Props) {
   
   
   if (!flashcardWords || flashcardWords.length === 0)
-    return <h3>Nemáš žádná slova v tomto album, nebo album neexistuje.</h3>;
+    return <NoDataWarning />;
 
   return (
     <div className="container mx-auto px-4 overflow-hidden">

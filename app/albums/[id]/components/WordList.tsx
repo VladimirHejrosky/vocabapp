@@ -23,15 +23,14 @@ import EditTermDialogForm from "./EditTermDialogForm";
 import { Word } from "@/lib/generated/prisma";
 
 interface Props {
-  data: Word[],
-  albumId: number
+  data: Word[];
+  albumId: number;
 }
 
 const WordList = ({ data, albumId }: Props) => {
-  const [words, setwords] = useState(data);
+  const words = data;
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Filter words based on search query
   const filteredwords = words.filter(
     (word) =>
       word.translation.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -95,9 +94,7 @@ const WordList = ({ data, albumId }: Props) => {
               ) : (
                 filteredwords.map((word) => (
                   <TableRow key={word.id}>
-                    <TableCell className="font-medium">
-                      {word.term}
-                    </TableCell>
+                    <TableCell className="font-medium">{word.term}</TableCell>
                     <TableCell>{word.translation}</TableCell>
                     <TableCell className="hidden md:table-cell text-muted-foreground text-sm">
                       {word.example || "Žádný příklad"}
@@ -110,8 +107,11 @@ const WordList = ({ data, albumId }: Props) => {
                           </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
-                          <EditTermDialogForm word={word} />
-                          <DeleteTermDialog wordId={word.id} />
+                          <EditTermDialogForm word={word} albumId={albumId} />
+                          <DeleteTermDialog
+                            wordId={word.id}
+                            albumId={albumId}
+                          />
                         </DropdownMenuContent>
                       </DropdownMenu>
                     </TableCell>

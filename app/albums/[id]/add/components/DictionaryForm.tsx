@@ -17,14 +17,16 @@ import { useFieldArray, useForm } from "react-hook-form";
 import { z } from "zod";
 import DialogInput from "./DialogInput";
 import { useRouter } from "next/navigation";
+import { Language } from "@/lib/generated/prisma";
 
 type FormValues = z.infer<typeof wordPairFormSchema>;
 
 interface Props {
   paramId: string;
+  albumLang: Language
 }
 
-export default function DictionaryForm({paramId}: Props) {
+export default function DictionaryForm({paramId, albumLang}: Props) {
   const albumId = Number(paramId);
   const [reachedMaxLength, setReachedMaxLength] = useState(false);
   const router = useRouter()
@@ -69,7 +71,7 @@ export default function DictionaryForm({paramId}: Props) {
         className="p-2 max-w-2xl mx-auto">
         <input type="hidden" {...form.register("albumId")} value={albumId} />
         <div className="flex w-full justify-end">
-          <DialogInput form={form} disableButton={() => setReachedMaxLength(true)} />
+          <DialogInput albumLang={albumLang} form={form} disableButton={() => setReachedMaxLength(true)} />
         </div>
         {fields.map((field, index) => (
           <div

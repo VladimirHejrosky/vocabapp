@@ -33,8 +33,7 @@ export default async function AlbumDetailPage({ params }: Props) {
         <SubNav name={album.name} desctiprion={album.description || ""} returnPath="/albums"/>
         <div className="flex gap-2 flex-col mb-4">
           <AlbumDialog album={album} />
-          <DeleteAlbumDialog
-            albumId={album.id}
+          <DeleteAlbumDialog albumId={album.id} userId={userId}
           />
         </div>
       </div>
@@ -51,7 +50,7 @@ export default async function AlbumDetailPage({ params }: Props) {
                 Kartičky
               </Button>
             </Link>
-            <Link href={`/learning`}>
+            <Link href={`/learning?album=${album.id}`}>
               <Button variant="secondary" className="flex items-center gap-2">
                 <PlayCircle className="h-4 w-4" />
                 Seznam

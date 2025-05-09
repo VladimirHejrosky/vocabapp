@@ -24,12 +24,16 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Word } from "@/lib/generated/prisma";
+import { editWord } from "@/lib/db/db-actions";
+import { useState } from "react";
 
 interface Props {
   word: Word
+  albumId: number
 }
 
-const EditTermDialogForm = ({word}: Props) => {
+const EditTermDialogForm = ({word, albumId}: Props) => {
+  const [isOpen, setIsOpen] = useState(false)
   const form = useForm({
     resolver: zodResolver(wordPair),
     defaultValues: {
@@ -39,13 +43,14 @@ const EditTermDialogForm = ({word}: Props) => {
     },
   });
   
-  const onSubmit = (data: any) => {
-    // Handle save edit logic here
-    console.log("Saving edited word:", data);
+  const onSubmit = async (formData: any) => {
+    const data = {id: word.id ,...formData}
+    await editWord( data, albumId)
+    setIsOpen(false)
   };
   
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <DropdownMenuItem
           onSelect={(e) => {
@@ -108,7 +113,7 @@ const EditTermDialogForm = ({word}: Props) => {
                   Zrušit
                 </Button>
               </DialogClose>
-              <Button type="submit">Uložit</Button>
+              <Button disabled={form.formState.isSubmitted} type="submit">Uložit</Button>
             </DialogFooter>
           </form>
         </Form>

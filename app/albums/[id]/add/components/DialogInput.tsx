@@ -15,28 +15,27 @@ import { Textarea } from "@/components/ui/textarea";
 import { z } from "zod";
 import { wordPairSchema } from "@/validation/form-validations";
 import { CheckCheck, Copy } from "lucide-react";
-
-const exampleText = `Vygeneruj JSON pole objektů se strukturou:
-{ "term": "", "translation": "", "example": "" }
-Například:
-[
-  { "term": "dog", "translation": "pes", "example": "The dog is barking." },
-  { "term": "cat", "translation": "kočka", "example": "The cat sleeps all day." }
-]
-Pokud poskytnu vlastní slovíčka, použij pouze tato slovíčka.
-Pokud neposkytnu žádná slovíčka, vygeneruj 10 náhodných dvojic (term + translation + example).
-Příklad věty vždy napiš běžnou konverzační větou v angličtině, maximálně 10 slov.
-Výsledek vrať pouze jako čisté JSON pole s možností zkopírování, bez dalšího textu.
-Slovíčka: `;
+import { Language } from "@/lib/generated/prisma";
 
 interface Props {
   form: any;
   disableButton: () => void;
+  albumLang: Language
 }
 
-export default function ImportDialog({ form, disableButton }: Props) {
+export default function ImportDialog({ form, disableButton, albumLang }: Props) {
   const [input, setInput] = useState("");
   const [copied, setCopied] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const exampleText = `Vygeneruj JSON pole objektů se strukturou:
+[{ "term": "", "translation": "", "example": "" }], kterou mohu tlačítkem zkopírovat.
+Term je slovíčko v ${albumLang} jazyce a translation je český překlad.
+Příklad věty vždy napiš běžnou konverzační větou v ${albumLang} jazyce, maximálně 10 slov.
+Pokud poskytnu vlastní slovíčka, použij pouze tato slovíčka.
+Pokud neposkytnu žádná slovíčka, vygeneruj 10 náhodných.
+Výsledek vrať pouze jako čisté JSON pole s možností zkopírování, bez dalšího textu.
+Slovíčka: `;
 
   const handleImport = () => {
     try {
@@ -62,6 +61,7 @@ export default function ImportDialog({ form, disableButton }: Props) {
       if (parsed.data.length > 19) {
         disableButton()
       }
+      setIsOpen(false)
     } catch (error) {
       alert("Neplatný formát dat");
     }
@@ -80,7 +80,7 @@ export default function ImportDialog({ form, disableButton }: Props) {
   };
 
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <Button variant="outline">JSON</Button>
       </DialogTrigger>

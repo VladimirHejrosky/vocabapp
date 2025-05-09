@@ -60,7 +60,7 @@ export const SpeakButton: FC<SpeakButtonProps> = ({ text, lang }) => {
     window.speechSynthesis.speak(utter);
   };
 
-  if (!selectedVoice) return null;
+     if (!selectedVoice) return null;
 
   return (
     <Button onClick={handleSpeak} variant="ghost">

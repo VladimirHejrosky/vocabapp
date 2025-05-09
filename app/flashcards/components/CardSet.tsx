@@ -3,12 +3,12 @@
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, X, RotateCw, Eye, EyeOff } from "lucide-react";
+import { Check, X, RotateCw, Eye, EyeOff, Home } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { SpeakButton } from "@/app/components/SpeakButton";
 import { Language } from "@/lib/generated/prisma";
 
-interface Word {
+interface FlashcardWords {
   id: number;
   term: string;
   translation: string;
@@ -16,13 +16,13 @@ interface Word {
 }
 
 interface Props {
-  initialWords: Word[];
+  initialWords: FlashcardWords[];
   lang: Language | undefined
 }
 
 export default function CardSet({ initialWords, lang }: Props) {
   const router = useRouter();
-  const [words, setWords] = useState<Word[]>(initialWords);
+  const [words, setWords] = useState<FlashcardWords[]>(initialWords);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [knownWords, setKnownWords] = useState<number[]>([]);
@@ -132,7 +132,7 @@ export default function CardSet({ initialWords, lang }: Props) {
 
         <div className="flex gap-4 mb-6">
           <Button variant="outline" onClick={() => router.push("/")}>
-            Menu
+            <Home /> Hlavní menu
           </Button>
           {unknownWords.length > 0 && (
             <Button onClick={resetLearning} className="flex items-center gap-2">
