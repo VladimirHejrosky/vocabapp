@@ -58,3 +58,11 @@ export const wordPairSchema = z
     translation: z.string().trim().min(1, { message: "Pole je povinné" }).max(255),
     example: z.string().trim().max(255).optional(),
   });
+
+export const wordsForUpdate = z.array(
+  z.object({
+    id: z.number().int().positive(),
+    priority: z.number().int().min(1).max(10),
+    know: z.boolean()
+  })
+);

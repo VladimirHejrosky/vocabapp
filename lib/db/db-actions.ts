@@ -5,13 +5,13 @@ import {
   albumSchema,
   wordPair,
   wordPairFormSchema,
+  wordsForUpdate,
 } from "@/validation/form-validations";
 import { auth } from "@clerk/nextjs/server";
 import { unstable_cacheTag as cacheTag, revalidateTag } from "next/cache";
 import { z } from "zod";
 import { cookies } from "next/headers";
 import { Language } from "../generated/prisma";
-import { redirect } from "next/navigation";
 
 // Albums
 
@@ -172,7 +172,6 @@ export async function editWord(
   const { userId } = await auth();
   const { success, data } = wordPair.safeParse(unsafeData);
   if (!success || !userId) return { error: true };
-  try {
     await db.word.update({
       where: { id: data.id, userId },
       data: {
@@ -183,9 +182,37 @@ export async function editWord(
     });
     revalidateTag(`albums-${userId}`);
     revalidateTag(`album-${albumId}`);
-  } catch (error) {
-    console.log(error);
-  }
+}
+
+export async function updateWordsPriority( unsafeData: z.infer<typeof wordsForUpdate> ){
+  const { userId } = await auth();
+  const { success, data } = wordsForUpdate.safeParse(unsafeData);
+  if (!success || !userId) return { error: true };
+
+  const filteredData = data.map(({ id, priority, know }) => {
+    if (know && priority < 10) {
+      return { id, newPriority: priority + 1 };
+    }
+    if (!know && priority > 1) {
+      return { id, newPriority: 1 };
+    }
+    return null;
+  })
+  .filter(Boolean) as { id: number; newPriority: number }[];
+
+  const updateOps = filteredData.map(word =>
+  db.word.update({
+    where: {
+      id: word.id,
+      userId
+    },
+    data: {
+      priority: word.newPriority
+    }
+  })
+);
+
+await Promise.all(updateOps);
 }
 
 // functions

@@ -7,12 +7,14 @@ import { Check, X, RotateCw, Eye, EyeOff, Home } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { SpeakButton } from "@/app/components/SpeakButton";
 import { Language } from "@/lib/generated/prisma";
+import { updateWordsPriority } from "@/lib/db/db-actions";
 
 interface FlashcardWords {
   id: number;
   term: string;
   translation: string;
   example: string | null;
+  priority: number
 }
 
 interface Props {
@@ -34,6 +36,7 @@ export default function CardSet({ initialWords, lang }: Props) {
   >(null);
   const [showCard, setShowCard] = useState(true);
   const [showExample, setShowExample] = useState(false);
+  const [fisrtTime, setFirstTime] = useState(true)
 
   const currentWord = words[currentIndex];
   const remainingWords =
@@ -101,8 +104,20 @@ export default function CardSet({ initialWords, lang }: Props) {
     } else {
       setIsCompleted(true);
       setIsAnimating(false);
+      handleUpdateData()
     }
   };
+
+  const handleUpdateData = async () => {
+    if (!fisrtTime) return
+    const dataForUpdate = words.map(word => ({
+      id: word.id,
+      priority: word.priority,
+      know: knownWords.includes(word.id)
+    }))
+    await updateWordsPriority(dataForUpdate)
+    setFirstTime(false)
+  }
 
   useEffect(() => {
     if (animation === "entering") {
