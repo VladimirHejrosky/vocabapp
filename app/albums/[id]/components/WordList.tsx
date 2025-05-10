@@ -1,11 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import {
   Table,
@@ -15,12 +10,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { MoreVertical, Plus, Search } from "lucide-react";
+import { Word } from "@/lib/generated/prisma";
+import { Plus, Search } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import DeleteTermDialog from "./DeleteTermDialog";
-import EditTermDialogForm from "./EditTermDialogForm";
-import { Word } from "@/lib/generated/prisma";
+import RowItem from "./RowItem";
 
 interface Props {
   data: Word[];
@@ -93,29 +87,7 @@ const WordList = ({ data, albumId }: Props) => {
                 </TableRow>
               ) : (
                 filteredwords.map((word) => (
-                  <TableRow key={word.id}>
-                    <TableCell className="font-medium">{word.term}</TableCell>
-                    <TableCell>{word.translation}</TableCell>
-                    <TableCell className="hidden md:table-cell text-muted-foreground text-sm">
-                      {word.example || "Žádný příklad"}
-                    </TableCell>
-                    <TableCell>
-                      <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                          <Button variant="ghost" size="icon">
-                            <MoreVertical className="h-4 w-4" />
-                          </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                          <EditTermDialogForm word={word} albumId={albumId} />
-                          <DeleteTermDialog
-                            wordId={word.id}
-                            albumId={albumId}
-                          />
-                        </DropdownMenuContent>
-                      </DropdownMenu>
-                    </TableCell>
-                  </TableRow>
+                  <RowItem key={word.id} word={word} albumId={albumId} />
                 ))
               )}
             </TableBody>

@@ -7,14 +7,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
-import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
-import { Edit } from "lucide-react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { wordPair } from "@/validation/form-validations";
 import {
   Form,
   FormControl,
@@ -23,17 +16,21 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Word } from "@/lib/generated/prisma";
+import { Input } from "@/components/ui/input";
 import { editWord } from "@/lib/db/db-actions";
-import { useState } from "react";
+import { Word } from "@/lib/generated/prisma";
+import { wordPair } from "@/validation/form-validations";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 
 interface Props {
-  word: Word
-  albumId: number
+  word: Word;
+  albumId: number;
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const EditTermDialogForm = ({word, albumId}: Props) => {
-  const [isOpen, setIsOpen] = useState(false)
+const EditTermDialogForm = ({ word, albumId, isOpen, setIsOpen }: Props) => {
   const form = useForm({
     resolver: zodResolver(wordPair),
     defaultValues: {
@@ -42,25 +39,15 @@ const EditTermDialogForm = ({word, albumId}: Props) => {
       example: word.example || "",
     },
   });
-  
+
   const onSubmit = async (formData: any) => {
-    const data = {id: word.id ,...formData}
-    await editWord( data, albumId)
-    setIsOpen(false)
+    const data = { id: word.id, ...formData };
+    await editWord(data, albumId);
+    setIsOpen(false);
   };
-  
+
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger asChild>
-        <DropdownMenuItem
-          onSelect={(e) => {
-            e.preventDefault();
-          }}
-        >
-          <Edit className="h-4 w-4 mr-2" />
-          Upravit
-        </DropdownMenuItem>
-      </DialogTrigger>
       <DialogContent aria-describedby={undefined}>
         <DialogHeader>
           <DialogTitle>Upravit</DialogTitle>
@@ -80,7 +67,7 @@ const EditTermDialogForm = ({word, albumId}: Props) => {
                 </FormItem>
               )}
             />
-             <FormField
+            <FormField
               control={form.control}
               name="translation"
               render={({ field }) => (
@@ -93,14 +80,17 @@ const EditTermDialogForm = ({word, albumId}: Props) => {
                 </FormItem>
               )}
             />
-             <FormField
+            <FormField
               control={form.control}
               name="example"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Příklad ve větě</FormLabel>
                   <FormControl>
-                    <Input placeholder="Příklad ve větě (nepovinné)" {...field} />
+                    <Input
+                      placeholder="Příklad ve větě (nepovinné)"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -113,7 +103,9 @@ const EditTermDialogForm = ({word, albumId}: Props) => {
                   Zrušit
                 </Button>
               </DialogClose>
-              <Button disabled={form.formState.isSubmitted} type="submit">Uložit</Button>
+              <Button disabled={form.formState.isSubmitted} type="submit">
+                Uložit
+              </Button>
             </DialogFooter>
           </form>
         </Form>

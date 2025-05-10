@@ -9,40 +9,24 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import { deleteWord } from "@/lib/db/db-actions";
-import { AlertDialogTrigger } from "@radix-ui/react-alert-dialog";
-import { Trash2 } from "lucide-react";
-import React, { useState } from "react";
+import React from "react";
 
 interface Props {
   wordId: number;
-  albumId: number,
+  albumId: number;
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-
-const DeleteTermDialog = ({wordId, albumId}:Props) => {
-  const [isOpen, setIsOpen] = useState(false)
+const DeleteTermDialog = ({ wordId, albumId, isOpen, setIsOpen }: Props) => {
   const handleDelete = async () => {
-    await deleteWord(wordId, albumId)
-    setIsOpen(false)
+    await deleteWord(wordId, albumId);
+    setIsOpen(false);
   };
 
-
   return (
-    
     <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
-      <AlertDialogTrigger asChild>
-        <DropdownMenuItem
-          className="text-destructive focus:text-destructive"
-          onSelect={(e) => {
-            e.preventDefault();
-          }}
-        >
-          <Trash2 className="h-4 w-4 mr-2" />
-          Smazat
-        </DropdownMenuItem>
-      </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Opravdu chceš smazat slovo?</AlertDialogTitle>
