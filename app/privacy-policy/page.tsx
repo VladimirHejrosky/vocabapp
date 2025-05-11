@@ -47,7 +47,7 @@ export default function PrivacyPolicyPage() {
           improve the user experience.
         </p>
       </section>
-      <div className="mt-8 text-center">
+      <div className="my-8 text-center">
         <Button asChild variant="outline">
           <Link href="/">
             <ArrowLeft />

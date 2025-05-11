@@ -32,7 +32,7 @@ export default function TermsOfServicePage() {
         </ul>
         <p>These terms may be updated at any time.</p>
       </section>
-      <div className="mt-8 text-center">
+      <div className="my-8 text-center">
         <Button asChild variant="outline">
           <Link href="/">
             <ArrowLeft />

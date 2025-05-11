@@ -186,7 +186,7 @@ export default function CardSet({ initialWords, lang, demo }: Props) {
     <div className="flex flex-col items-center justify-center">
       <Button
         onClick={() => setShowExample(!showExample)}
-        className="self-end mb-2"
+        className="self-end"
         variant="secondary"
       >
         Příklad{" "}
@@ -196,7 +196,7 @@ export default function CardSet({ initialWords, lang, demo }: Props) {
           <EyeOff className="h-4 w-4" />
         )}
       </Button>
-      <div className="w-full max-w-md mb-6">
+      <div className="w-full max-w-md mb-2">
         <div className="flex justify-center mb-2 text-2xl font-bold">
           <span>
             {words.length - remainingWords} / {words.length}
@@ -215,7 +215,7 @@ export default function CardSet({ initialWords, lang, demo }: Props) {
       </div>
 
       {showExample && (
-        <Card className="p-2 w-full max-w-md text-center mb-4">
+        <Card className="p-2 w-full max-w-md text-center mb-2">
           {words[currentIndex].example || "..."}
         </Card>
       )}
