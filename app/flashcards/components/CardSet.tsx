@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Check, X, RotateCw, Eye, EyeOff, Home } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { SpeakButton } from "@/app/components/SpeakButton";
-import { Language } from "@/lib/generated/prisma";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { updateWordsPriority } from "@/lib/db/db-actions";
+import { Language } from "@/lib/generated/prisma";
+import { ArrowLeft, Check, Eye, EyeOff, RotateCw, X } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 type FlashcardWords = {
   id: number;
@@ -147,8 +147,8 @@ export default function CardSet({ initialWords, lang, demo }: Props) {
         )}
 
         <div className="flex gap-4 mb-6">
-          <Button variant="outline" onClick={() => router.push("/")}>
-            <Home /> Hlavní menu
+          <Button variant="outline" onClick={() => router.back()}>
+            <ArrowLeft />Zpět
           </Button>
           {unknownWords.length > 0 && (
             <Button onClick={resetLearning} className="flex items-center gap-2">
