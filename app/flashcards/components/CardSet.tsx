@@ -9,7 +9,7 @@ import { SpeakButton } from "@/app/components/SpeakButton";
 import { Language } from "@/lib/generated/prisma";
 import { updateWordsPriority } from "@/lib/db/db-actions";
 
-interface FlashcardWords {
+type FlashcardWords = {
   id: number;
   term: string;
   translation: string;
@@ -20,9 +20,10 @@ interface FlashcardWords {
 interface Props {
   initialWords: FlashcardWords[];
   lang: Language | undefined
+  demo?: boolean
 }
 
-export default function CardSet({ initialWords, lang }: Props) {
+export default function CardSet({ initialWords, lang, demo }: Props) {
   const router = useRouter();
   const [words, setWords] = useState<FlashcardWords[]>(initialWords);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -109,7 +110,7 @@ export default function CardSet({ initialWords, lang }: Props) {
   };
 
   const handleUpdateData = async () => {
-    if (!fisrtTime) return
+    if (!fisrtTime || demo) return
     const dataForUpdate = words.map(word => ({
       id: word.id,
       priority: word.priority,

@@ -8,16 +8,14 @@ import {
   wordsForUpdate,
 } from "@/validation/form-validations";
 import { auth } from "@clerk/nextjs/server";
-import { unstable_cacheTag as cacheTag, revalidateTag } from "next/cache";
-import { z } from "zod";
 import { cookies } from "next/headers";
+import { z } from "zod";
 import { Language } from "../generated/prisma";
+import { revalidatePath } from "next/cache";
 
 // Albums
 
 export async function getAlbums(userId: string) {
-  "use cache";
-  cacheTag(`albums-${userId}`);
 
   const albums = await db.album.findMany({
     where: { userId },
@@ -49,6 +47,7 @@ export async function upsertAlbum(
         language: data.language,
       },
     });
+    revalidatePath("/albums/" + albumId)
   } else {
     await db.album.create({
       data: {
@@ -58,16 +57,11 @@ export async function upsertAlbum(
         userId,
       },
     });
+    revalidatePath("/albums")
   }
-
-  revalidateTag(`albums-${userId}`);
-  revalidateTag(`album-${albumId}`);
 }
 
 export async function getAlbum(userId: string, albumId: number) {
-  "use cache";
-  cacheTag(`album-${albumId}`);
-
   const album = await db.album.findFirst({
     where: { id: albumId, userId },
     include: {
@@ -106,8 +100,7 @@ export async function deleteAlbum(userId: string, albumId: number) {
   await db.album.delete({
     where: { id: albumId, userId },
   });
-  revalidateTag(`albums-${userId}`);
-  revalidateTag(`album-${albumId}`);
+
 }
 
 // Words
@@ -150,8 +143,6 @@ export async function saveNewWords(
       albumId,
     })),
   });
-  revalidateTag(`albums-${userId}`);
-  revalidateTag(`album-${albumId}`);
 }
 
 export async function deleteWord(wordId: number, albumId: number) {
@@ -161,8 +152,8 @@ export async function deleteWord(wordId: number, albumId: number) {
   await db.word.delete({
     where: { id: wordId, userId },
   });
-  revalidateTag(`albums-${userId}`);
-  revalidateTag(`album-${albumId}`);
+  revalidatePath("/albums/" + albumId)
+
 }
 
 export async function editWord(
@@ -180,8 +171,8 @@ export async function editWord(
         example: data.example,
       },
     });
-    revalidateTag(`albums-${userId}`);
-    revalidateTag(`album-${albumId}`);
+    revalidatePath("/albums/" + albumId)
+
 }
 
 export async function updateWordsPriority( unsafeData: z.infer<typeof wordsForUpdate> ){
