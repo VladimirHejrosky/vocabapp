@@ -4,16 +4,25 @@ import { SparklesText } from "@/components/magicui/sparkles-text";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { SignedIn, SignedOut, SignUpButton } from "@clerk/nextjs";
-import { BookOpen, List, MoveRight, Play } from "lucide-react";
+import {
+  BookOpen,
+  FileText,
+  List,
+  MoveRight,
+  Play,
+  ShieldCheck,
+} from "lucide-react";
 import Link from "next/link";
 import LangSelector from "./components/LangSelector";
-import { cookies } from 'next/headers';
+import { cookies } from "next/headers";
 import { Language } from "@/lib/generated/prisma";
 
 export default async function Home() {
-  const langCookie = (await cookies()).get('lang')?.value as Language | undefined;
+  const langCookie = (await cookies()).get("lang")?.value as
+    | Language
+    | undefined;
   return (
-    <div className="container mx-auto px-4 flex flex-col items-center justify-center min-h-[80vh] text-center">
+    <div className="relative container mx-auto px-4 flex flex-col items-center justify-center min-h-[80vh] text-center">
       <div className="absolute inset-0 -z-10 w-full h-full overflow-hidden">
         <AnimatedGridPattern
           numSquares={30}
@@ -60,7 +69,7 @@ export default async function Home() {
               Náhodný seznam
             </Button>
           </Link>
-            <LangSelector defaultLanguage={langCookie}/>
+          <LangSelector defaultLanguage={langCookie} />
         </SignedIn>
         <SignedOut>
           <div className="flex gap-4">
@@ -74,6 +83,15 @@ export default async function Home() {
             </Link>
           </div>
         </SignedOut>
+      </div>
+
+      <div className="absolute top-0 right-4 flex gap-4">
+        <Link href="/privacy-policy" title="Zásady ochrany osobních údajů">
+          <FileText className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
+        </Link>
+        <Link href="/terms-of-service" title="Podmínky služby">
+          <ShieldCheck className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
+        </Link>
       </div>
     </div>
   );
