@@ -81,7 +81,7 @@ export async function getAlbumWithWords(userId: string, albumId: number) {
       name: true,
       language: true,
       words: {
-        orderBy: { priority: "desc" },
+        orderBy: { priority: "asc" },
         take: 10,
         select: {
           id: true,
@@ -120,7 +120,7 @@ export async function getRandomWords(userId: string) {
         },
       }),
     },
-    orderBy: { priority: "desc" },
+    orderBy: { priority: "asc" },
     take: 10,
   });
   return words;
