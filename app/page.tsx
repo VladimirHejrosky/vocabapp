@@ -69,7 +69,7 @@ export default async function Home() {
               Náhodný seznam
             </Button>
           </Link>
-          <LangSelector defaultLanguage={langCookie} />
+          <LangSelector />
         </SignedIn>
         <SignedOut>
           <div className="flex gap-4">
