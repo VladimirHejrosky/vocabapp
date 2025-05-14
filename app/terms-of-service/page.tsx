@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function TermsOfServicePage() {
@@ -10,7 +11,10 @@ export default function TermsOfServicePage() {
       </h1>
 
       <section className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">🇨🇿 Česky</h2>
+        <div className="flex gap-2 items-center mb-2">
+        <Image src="/cz-flag.png" alt="CZ" width={32} height={16} />
+        <h2 className="text-xl font-semibold">Česky</h2>
+        </div>
         <p>Používáním této aplikace souhlasíte s následujícími podmínkami:</p>
         <ul className="list-disc pl-5 my-2">
           <li>
@@ -23,7 +27,10 @@ export default function TermsOfServicePage() {
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold mb-2">🇬🇧 English</h2>
+        <div className="flex gap-2 items-center mb-2">
+        <Image src="/uk-flag.png" alt="UK" width={32} height={16} />
+        <h2 className="text-xl font-semibold">English</h2>
+        </div>
         <p>By using this app, you agree to the following:</p>
         <ul className="list-disc pl-5 my-2">
           <li>This app is for learning vocabulary and is provided "as is".</li>

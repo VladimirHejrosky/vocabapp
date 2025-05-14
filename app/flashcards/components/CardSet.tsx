@@ -36,7 +36,7 @@ export default function CardSet({ initialWords, lang, demo }: Props) {
     "entering" | "exiting-right" | "exiting-left" | null
   >(null);
   const [showCard, setShowCard] = useState(true);
-  const [showExample, setShowExample] = useState(false);
+  const [showExample, setShowExample] = useState(true);
   const [fisrtTime, setFirstTime] = useState(true)
 
   const currentWord = words[currentIndex];

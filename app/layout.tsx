@@ -7,6 +7,7 @@ import "./globals.css";
 import { PWARegister } from "./components/pwa-register";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import CookieBanner from "./components/CookieBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,10 +42,11 @@ export default function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <header className="mb-20">
+            <header>
               <NavBar />
             </header>
-            <main>{children}</main>
+            <main className="py-18">{children}</main>
+            <CookieBanner />
           </ThemeProvider>
           <Analytics />
           <SpeedInsights />
