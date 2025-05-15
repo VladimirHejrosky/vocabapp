@@ -3,25 +3,26 @@
 import { SpeakButton } from "@/app/components/SpeakButton";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 import { updateWordsPriority } from "@/lib/db/db-actions";
 import { Language } from "@/lib/generated/prisma";
+import { useLocalStorageBool } from "@/lib/hooks/useLocalStorageBool";
 import { ArrowLeft, Check, Eye, EyeOff, RotateCw, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useLocalStorageBool } from "@/lib/hooks/useLocalStorageBool";
 
 type FlashcardWords = {
   id: number;
   term: string;
   translation: string;
   example: string | null;
-  priority: number
-}
+  priority: number;
+};
 
 interface Props {
   initialWords: FlashcardWords[];
-  lang: Language | undefined
-  demo?: boolean
+  lang: Language | undefined;
+  demo?: boolean;
 }
 
 export default function CardSet({ initialWords, lang, demo }: Props) {
@@ -37,13 +38,16 @@ export default function CardSet({ initialWords, lang, demo }: Props) {
     "entering" | "exiting-right" | "exiting-left" | null
   >(null);
   const [showCard, setShowCard] = useState(true);
-  const [showExample, setShowExample] = useLocalStorageBool("showExample", true
+  const [showExample, setShowExample] = useLocalStorageBool(
+    "showExample",
+    true
   );
-  const [fisrtTime, setFirstTime] = useState(true)
+  const [fisrtTime, setFirstTime] = useState(true);
 
   const currentWord = words[currentIndex];
   const remainingWords =
     words.length - (knownWords.length + unknownWords.length);
+  const progress = ((words.length - remainingWords) / words.length) * 100;
 
   const resetLearning = () => {
     setWords(words.filter((word) => !knownWords.includes(word.id)));
@@ -107,26 +111,20 @@ export default function CardSet({ initialWords, lang, demo }: Props) {
     } else {
       setIsCompleted(true);
       setIsAnimating(false);
-      handleUpdateData()
+      handleUpdateData();
     }
   };
 
-  const toggleShowExample = () => {
-    const newValue = !showExample
-    setShowExample(newValue)
-    localStorage.setItem("showExample", newValue.toString())
-  }
-
   const handleUpdateData = async () => {
-    if (!fisrtTime || demo) return
-    const dataForUpdate = words.map(word => ({
+    if (!fisrtTime || demo) return;
+    const dataForUpdate = words.map((word) => ({
       id: word.id,
       priority: word.priority,
-      know: knownWords.includes(word.id)
-    }))
-    await updateWordsPriority(dataForUpdate)
-    setFirstTime(false)
-  }
+      know: knownWords.includes(word.id),
+    }));
+    await updateWordsPriority(dataForUpdate);
+    setFirstTime(false);
+  };
 
   useEffect(() => {
     if (animation === "entering") {
@@ -156,7 +154,8 @@ export default function CardSet({ initialWords, lang, demo }: Props) {
 
         <div className="flex gap-4 mb-6">
           <Button variant="outline" onClick={() => router.back()}>
-            <ArrowLeft />Zpět
+            <ArrowLeft />
+            Zpět
           </Button>
           {unknownWords.length > 0 && (
             <Button onClick={resetLearning} className="flex items-center gap-2">
@@ -210,16 +209,7 @@ export default function CardSet({ initialWords, lang, demo }: Props) {
             {words.length - remainingWords} / {words.length}
           </span>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-2.5">
-          <div
-            className="bg-primary h-2.5 rounded-full"
-            style={{
-              width: `${
-                ((words.length - remainingWords) / words.length) * 100
-              }%`,
-            }}
-          ></div>
-        </div>
+          <Progress value={progress} className="h-2" />
       </div>
 
       {showExample && (
@@ -261,7 +251,8 @@ export default function CardSet({ initialWords, lang, demo }: Props) {
               >
                 <h2 className="text-3xl font-bold mb-4">{currentWord.term}</h2>
                 <p className="text-muted-foreground">Otočit kliknutím</p>
-                <div className="absolute top-4 right-4"
+                <div
+                  className="absolute top-4 right-4"
                   onClick={(e) => {
                     e.stopPropagation();
                   }}

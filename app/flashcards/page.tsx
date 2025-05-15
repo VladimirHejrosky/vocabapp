@@ -34,10 +34,10 @@ export default async function FlashcardsPage({ searchParams }: Props) {
     <div className="container mx-auto px-4 overflow-hidden">
       <SubNav
         name="Kartičky"
-        desctiprion={
+        description={
           (album && albumData?.name) || "Náhodná slovíčka"
         }
-        returnPath={album ? `/albums/${album}` : "/"}
+        returnPath={album ? `/albums/${album}` : "/albums"}
       />
       <CardSet initialWords={flashcardWords} lang={lang}/>
     </div>

@@ -8,7 +8,7 @@ import {
   SignInButton,
   UserButton
 } from "@clerk/nextjs";
-import { BookOpen, Home, List, Play } from "lucide-react";
+import { BookOpen, Home, NotepadText, PenTool } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ThemeToggle } from "./ThemeToggle";
@@ -30,16 +30,16 @@ export function NavBar() {
       active: pathname.includes("/albums"),
     },
     {
-      href: "/flashcards",
-      label: "Kartičky",
-      icon: Play,
-      active: pathname.includes("/flashcards"),
+      href: "/grammar",
+      label: "Gramatika",
+      icon: NotepadText,
+      active: pathname.includes("/grammar"),
     },
     {
-      href: "/learning",
-      label: "Seznam",
-      icon: List,
-      active: pathname.includes("/learning"),
+      href: "/phrases",
+      label: "Skládání vět",
+      icon: PenTool,
+      active: pathname.includes("/phrases"),
     },
   ];
 

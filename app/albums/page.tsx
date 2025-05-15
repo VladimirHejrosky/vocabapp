@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -8,9 +9,11 @@ import {
 import { getAlbums } from "@/lib/db/db-actions";
 import { AlbumWithCount } from "@/lib/db/db-types";
 import { auth } from "@clerk/nextjs/server";
+import { FlipHorizontal, PlayCircle } from "lucide-react";
 import Link from "next/link";
-import AddAlbumDialog from "./components/AlbumDialog";
 import { redirect } from "next/navigation";
+import AddAlbumDialog from "./components/AlbumDialog";
+import SubNav from "../components/SubNav";
 
 export default async function AlbumsPage() {
   const { userId } = await auth();
@@ -20,10 +23,31 @@ export default async function AlbumsPage() {
 
   return (
     <div className="container mx-auto px-4">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">Tvoje alba</h1>
+      <div className="flex justify-between items-center">
+        <SubNav name="Tvoje Alba" returnPath="/" />
         <AddAlbumDialog />
       </div>
+      <Card className="mb-4">
+        <CardHeader>
+          <CardTitle>Cvičení<span className="text-muted-foreground"> - náhodná slovíčka</span></CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex flex-wrap gap-4">
+            <Link href={`/flashcards`}>
+              <Button className="flex items-center gap-2">
+                <FlipHorizontal className="h-4 w-4" />
+                Kartičky
+              </Button>
+            </Link>
+            <Link href={`/learning`}>
+              <Button variant="secondary" className="flex items-center gap-2">
+                <PlayCircle className="h-4 w-4" />
+                Seznam
+              </Button>
+            </Link>
+          </div>
+        </CardContent>
+      </Card>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {albums.map((album) => (

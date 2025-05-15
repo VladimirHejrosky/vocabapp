@@ -1,0 +1,67 @@
+{
+  "id": "test",
+  "title": "test",
+  "description": "Test your knowledge of common English prepositions",
+  "questions": [
+    {
+      "question": "I usually go to work ___ bus.",
+      "answers": ["with", "by", "on", "in"],
+      "correctAnswer": 1,
+      "explanation": "We use 'by' to indicate the method of transportation (by bus, by train, by car)."
+    },
+    {
+      "question": "She's been living in London ___ 2018.",
+      "answers": ["for", "since", "from", "during"],
+      "correctAnswer": 1,
+      "explanation": "'Since' is used with a specific point in time when something began."
+    },
+    {
+      "question": "The book is ___ the table.",
+      "answers": ["above", "over", "on", "at"],
+      "correctAnswer": 2,
+      "explanation": "'On' is used when something is in contact with a surface."
+    },
+    {
+      "question": "I'll meet you ___ the cinema at 8 PM.",
+      "answers": ["at", "in", "on", "to"],
+      "correctAnswer": 0,
+      "explanation": "'At' is used for specific points (at the cinema, at the corner)."
+    },
+    {
+      "question": "She walked ___ the street to the shop.",
+      "answers": ["through", "across", "over", "down"],
+      "correctAnswer": 3,
+      "explanation": "'Down' indicates movement along a street from one end toward another."
+    },
+    {
+      "question": "The cat is hiding ___ the sofa.",
+      "answers": ["below", "under", "beneath", "underneath"],
+      "correctAnswer": 1,
+      "explanation": "'Under' is commonly used to indicate something is directly below something else."
+    },
+    {
+      "question": "We're flying ___ the Atlantic Ocean tomorrow.",
+      "answers": ["across", "over", "above", "through"],
+      "correctAnswer": 1,
+      "explanation": "'Over' is used when talking about movement across something by flying."
+    },
+    {
+      "question": "I'll be back ___ an hour.",
+      "answers": ["at", "on", "in", "during"],
+      "correctAnswer": 2,
+      "explanation": "'In' is used with periods of time to indicate when something will happen in the future."
+    },
+    {
+      "question": "The picture is hanging ___ the wall.",
+      "answers": ["at", "on", "in", "by"],
+      "correctAnswer": 1,
+      "explanation": "'On' is used when something is attached to a vertical surface."
+    },
+    {
+      "question": "She stood ___ the crowd to see better.",
+      "answers": ["between", "among", "through", "beside"],
+      "correctAnswer": 0,
+      "explanation": "'Between' is used when something is in the middle of two distinct things or people."
+    }
+  ]
+}

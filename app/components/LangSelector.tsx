@@ -86,7 +86,7 @@ export default function LanguageVoiceSelector() {
   };
 
   return (
-    <div className="flex gap-4 my-4 justify-center">
+    <div className="flex gap-4 justify-center">
       <Select
         value={lang}
         onValueChange={(value) => handleLangChange(value as Language)}

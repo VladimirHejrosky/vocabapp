@@ -21,7 +21,7 @@ const AddPage = async ({ params }: Props) => {
     <div className="container mx-auto px-4">
       <SubNav
         name="Přidat slovíčka"
-        desctiprion={album.name}
+        description={album.name}
         returnPath={`/albums/` + id}
       />
         <DictionaryForm albumLang={album.language} paramId={id} />
