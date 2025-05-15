@@ -8,6 +8,7 @@ import { Language } from "@/lib/generated/prisma";
 import { ArrowLeft, Check, Eye, EyeOff, RotateCw, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useLocalStorageBool } from "@/lib/hooks/useLocalStorageBool";
 
 type FlashcardWords = {
   id: number;
@@ -36,7 +37,8 @@ export default function CardSet({ initialWords, lang, demo }: Props) {
     "entering" | "exiting-right" | "exiting-left" | null
   >(null);
   const [showCard, setShowCard] = useState(true);
-  const [showExample, setShowExample] = useState(true);
+  const [showExample, setShowExample] = useLocalStorageBool("showExample", true
+  );
   const [fisrtTime, setFirstTime] = useState(true)
 
   const currentWord = words[currentIndex];
@@ -108,6 +110,12 @@ export default function CardSet({ initialWords, lang, demo }: Props) {
       handleUpdateData()
     }
   };
+
+  const toggleShowExample = () => {
+    const newValue = !showExample
+    setShowExample(newValue)
+    localStorage.setItem("showExample", newValue.toString())
+  }
 
   const handleUpdateData = async () => {
     if (!fisrtTime || demo) return

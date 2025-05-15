@@ -47,7 +47,12 @@ export default function LanguageVoiceSelector() {
       const filtered = all.filter((v) =>
         v.lang.toLowerCase().startsWith(lang.toLowerCase())
       );
-      setVoices(filtered);
+
+      const uniqueVoices = Array.from(
+        new Map(filtered.map((v) => [v.name, v])).values()
+      );
+
+      setVoices(uniqueVoices);
 
       const savedVoice = Cookies.get("voice");
       if (savedVoice && filtered.some((v) => v.name === savedVoice)) {
@@ -66,19 +71,19 @@ export default function LanguageVoiceSelector() {
     setSelectedVoice(undefined);
   };
 
-const handleVoiceChange = (voiceName: string) => {
-  setSelectedVoice(voiceName);
-  Cookies.set("voice", voiceName, { expires: 365, sameSite: "lax" });
+  const handleVoiceChange = (voiceName: string) => {
+    setSelectedVoice(voiceName);
+    Cookies.set("voice", voiceName, { expires: 365, sameSite: "lax" });
 
-  const voice = voices.find((v) => v.name === voiceName);
-  if (voice) {
-    speechSynthesis.cancel();
+    const voice = voices.find((v) => v.name === voiceName);
+    if (voice) {
+      speechSynthesis.cancel();
 
-    const utt = new SpeechSynthesisUtterance(demoText[lang]);
-    utt.voice = voice;
-    speechSynthesis.speak(utt);
-  }
-};
+      const utt = new SpeechSynthesisUtterance(demoText[lang]);
+      utt.voice = voice;
+      speechSynthesis.speak(utt);
+    }
+  };
 
   return (
     <div className="space-y-4">
