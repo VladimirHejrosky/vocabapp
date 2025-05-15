@@ -37,6 +37,7 @@ export default function RootLayout({
       <html lang="cs" suppressHydrationWarning>
         <head>
           <link rel="manifest" href="/manifest.json" />
+          <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
         </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}

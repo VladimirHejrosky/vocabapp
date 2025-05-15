@@ -22,7 +22,8 @@ export default async function Home() {
     | Language
     | undefined;
   return (
-    <div className="relative container mx-auto px-4 flex flex-col items-center justify-center min-h-[80vh] text-center">
+    <>
+    <div className="relative container mx-auto px-4 flex flex-col items-center justify-center min-h-[calc(100vh-9rem)] border-box text-center">
       <div className="absolute inset-0 -z-10 w-full h-full overflow-hidden">
         <AnimatedGridPattern
           numSquares={30}
@@ -39,9 +40,9 @@ export default async function Home() {
         VocabApp
       </SparklesText>
       <HyperText className="text-xl text-muted-foreground mb-4">
-        Obohať slovní zásobu pomocí kartiček.
+        Procvičuj jazykové znalosti chytře každý den.
       </HyperText>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 my-4">
         <SignedIn>
           <Link href="/albums">
             <Button size="lg" className="flex items-center gap-2 w-full">
@@ -69,10 +70,9 @@ export default async function Home() {
               Náhodný seznam
             </Button>
           </Link>
-          <LangSelector />
         </SignedIn>
         <SignedOut>
-          <div className="flex gap-4">
+          <div className="flex gap-4 w-full justify-center">
             <SignUpButton>
               <Button size="lg">Přihlásit se</Button>
             </SignUpButton>
@@ -82,17 +82,22 @@ export default async function Home() {
               </Button>
             </Link>
           </div>
+            <p className="text-muted-foreground italic">Pro učení pomocí kartiček se musíš přihlásit.</p>
         </SignedOut>
       </div>
+    </div>
 
-      <div className="absolute top-0 right-4 flex gap-4">
+      <div className="absolute bottom-0 flex gap-4 p-4 justify-between items-center w-full">
+          <LangSelector />
+          <div className="flex gap-4">
         <Link href="/privacy-policy" title="Zásady ochrany osobních údajů">
           <FileText className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
         </Link>
         <Link href="/terms-of-service" title="Podmínky služby">
           <ShieldCheck className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
         </Link>
+          </div>
       </div>
-    </div>
+      </>
   );
 }

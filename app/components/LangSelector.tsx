@@ -12,9 +12,9 @@ import {
 import { Language } from "@/lib/generated/prisma";
 
 export const languages: { value: Language; label: string }[] = [
-  { value: "EN", label: "Angličtina" },
-  { value: "ES", label: "Španělština" },
-  { value: "DE", label: "Němčina" },
+  { value: "EN", label: "EN" },
+  { value: "ES", label: "ES" },
+  { value: "DE", label: "DE" },
 ];
 
 type Voice = SpeechSynthesisVoice;
@@ -86,12 +86,12 @@ export default function LanguageVoiceSelector() {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="flex gap-4 my-4 justify-center">
       <Select
         value={lang}
         onValueChange={(value) => handleLangChange(value as Language)}
       >
-        <SelectTrigger className="w-full">
+        <SelectTrigger className="w-[70px]">
           <SelectValue placeholder="Vyber jazyk" />
         </SelectTrigger>
         <SelectContent>
@@ -107,7 +107,7 @@ export default function LanguageVoiceSelector() {
         value={selectedVoice || undefined}
         onValueChange={(value) => handleVoiceChange(value)}
       >
-        <SelectTrigger className="w-full">
+        <SelectTrigger className="w-[140px]">
           <SelectValue placeholder="Hlas" />
         </SelectTrigger>
         <SelectContent>
