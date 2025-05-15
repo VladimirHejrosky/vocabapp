@@ -60,17 +60,16 @@ const WordList = ({ data, albumId }: Props) => {
       </div>
 
       {/* words table */}
-      <Card>
-        <div>
+      <Card className="p-2">
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>SLOVO</TableHead>
-                <TableHead>PŘEKLAD</TableHead>
-                <TableHead className="hidden md:table-cell">
+                <TableHead className="text-center">SLOVO</TableHead>
+                <TableHead className="text-center">PŘEKLAD</TableHead>
+                <TableHead className="hidden md:table-cell text-center">
                   PŘÍKLAD VE VĚTĚ
                 </TableHead>
-                <TableHead className="w-[100px]">AKCE</TableHead>
+                <TableHead className="w-[100px] text-end">AKCE</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -92,7 +91,6 @@ const WordList = ({ data, albumId }: Props) => {
               )}
             </TableBody>
           </Table>
-        </div>
       </Card>
     </div>
   );
