@@ -2,29 +2,27 @@
 
 import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+    Card,
+    CardContent,
+    CardFooter,
+    CardHeader,
+    CardTitle,
 } from "@/components/ui/card";
-import { Trophy, RotateCw, ArrowLeft, Info } from "lucide-react";
+import { ArrowLeft, RotateCw, Trophy } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-interface QuizCompleteProps {
+interface PhrasesCompleteProps {
   score: number;
-  totalQuestions: number;
-  id: string;
+  total: number;
   onRestart: () => void;
 }
 
-export default function QuizComplete({
+export default function PhrasesComplete({
   score,
-  totalQuestions,
-  id,
+  total,
   onRestart,
-}: QuizCompleteProps) {
-  const percentage = Math.round((score / totalQuestions) * 100);
+}: PhrasesCompleteProps) {
+  const percentage = Math.round((score / total) * 100);
   const router = useRouter();
 
   let message = "Parádní výkon!";
@@ -41,7 +39,7 @@ export default function QuizComplete({
   return (
     <Card className="w-full max-w-3xl mx-auto gap-2">
       <CardHeader className="text-center">
-        <CardTitle className="text-2xl">Kvíz dokončen!</CardTitle>
+        <CardTitle className="text-2xl">Cvičení dokončeno!</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col items-center">
         <div className="relative w-32 h-32 flex items-center justify-center">
@@ -54,31 +52,21 @@ export default function QuizComplete({
         <div className="text-center">
           <h3 className={`text-2xl font-bold ${color} mb-2`}>{message}</h3>
           <p className="text-4xl font-bold mb-2">
-            {score} / {totalQuestions}
+            {score} / {total}
           </p>
         </div>
       </CardContent>
-      <CardFooter className="flex flex-col sm:flex-row gap-4 w-full justify-around">
+      <CardFooter className="flex flex-col sm:flex-row gap-4 w-full justify-between">
         <Button
           variant="secondary"
           className="flex items-center gap-2 flex-1 w-full"
           onClick={() => {
-            router.push("/grammar");
+            router.push("/phrases");
           }}
         >
           <ArrowLeft className="h-4 w-4" />
           Zpět
         </Button>
-        {percentage < 50 && (
-          <Button
-            variant="outline"
-            className="flex items-center gap-2 flex-1 w-full"
-            onClick={() => router.push(`/grammar/theory/${id}`)}
-          >
-            <Info className="h-4 w-4" />
-            Teorie
-          </Button>
-        )}
         <Button className="flex items-center gap-2 flex-1 w-full" onClick={onRestart}>
           <RotateCw className="h-4 w-4" />
           Zkusit znovu

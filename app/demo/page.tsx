@@ -15,7 +15,7 @@ const demoWords = [
   ];
   
 
-const page = () => {
+const demoPage = () => {
   return (
     <div className="container mx-auto px-4">
     <SubNav name="Kartičky" description="Demo" returnPath="/"/>
@@ -24,4 +24,4 @@ const page = () => {
   )
 }
 
-export default page
+export default demoPage

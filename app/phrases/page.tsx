@@ -1,22 +1,22 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { getGrammarList } from "@/lib/json/json-actions";
-import { Info, Play } from "lucide-react";
-import Link from "next/link";
+import React from "react";
 import SubNav from "../components/SubNav";
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
+import { Play } from "lucide-react";
+import { getPhrasesList } from "@/lib/json/json-actions";
+import Link from "next/link";
+import { PhraseList } from "@/lib/json/json-types";
 
-export default async function GrammarPage() {
-  const grammarItems = (await getGrammarList()) || [];
-
+const phrasesPage = async () => {
+  const phrases: PhraseList[] = (await getPhrasesList()) || [];
   return (
     <div className="container mx-auto px-4">
-      <SubNav name="Gramatické kvízy" returnPath="/" />
-
+      <SubNav name="Skládání vět" returnPath="/" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {grammarItems.length === 0 ? (
+        {phrases.length === 0 ? (
           <h3>Žádná data.</h3>
         ) : (
-          grammarItems.map((item) => {
+          phrases.map((item) => {
             return (
               <Card
                 key={item.id}
@@ -26,13 +26,8 @@ export default async function GrammarPage() {
                   <CardTitle>{item.title}</CardTitle>
                 </CardHeader>
                 <CardFooter className="flex gap-2">
-                  <Button asChild variant="secondary">
-                    <Link href={`/grammar/theory/${item.id}`}>
-                      <Info />
-                    </Link>
-                  </Button>
                   <Button asChild>
-                    <Link href={`/grammar/quiz/${item.id}`}>
+                    <Link href={`/phrases/${item.id}`}>
                       <Play />
                     </Link>
                   </Button>
@@ -44,4 +39,6 @@ export default async function GrammarPage() {
       </div>
     </div>
   );
-}
+};
+
+export default phrasesPage;

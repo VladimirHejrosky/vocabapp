@@ -21,9 +21,9 @@ export default function Quiz({ id, questions, onComplete }: QuizProps) {
   const [isCorrect, setIsCorrect] = useState(false)
   const [quizComplete, setQuizComplete] = useState(false)
   const [showExplanation, setShowExplanation] = useState(false)
+  const [progress, setProgress] = useState((currentQuestionIndex / questions.length) * 100)
 
   const currentQuestion = questions[currentQuestionIndex]
-  const progress = (currentQuestionIndex / questions.length) * 100
 
   const handleAnswerSelect = (answerIndex: number) => {
     if (answered) return
@@ -33,7 +33,7 @@ export default function Quiz({ id, questions, onComplete }: QuizProps) {
     setSelectedAnswer(answerIndex)
     setAnswered(true)
     setIsCorrect(correct)
-
+    setProgress(((currentQuestionIndex + 1) / questions.length) * 100)
     if (correct) {
       setScore(score + 1)
     } else {
@@ -75,7 +75,7 @@ export default function Quiz({ id, questions, onComplete }: QuizProps) {
     <div className="w-full max-w-3xl mx-auto">
       <div className="mb-2">
         <div className="flex justify-center mb-2 text-2xl font-bold">
-            {currentQuestionIndex } / {questions.length}
+            {currentQuestionIndex + 1 } / {questions.length}
         </div>
         <Progress value={progress} className="h-2" />
       </div>

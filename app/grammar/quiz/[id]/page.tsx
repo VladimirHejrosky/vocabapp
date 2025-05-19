@@ -25,7 +25,7 @@ export default async function QuizPage({ params }: Props) {
 
   return (
     <div className="container mx-auto px-4">
-      <SubNav name="Kvíz" description={quiz.title} returnPath="/grammar" />
+      <SubNav name="Gramatický kvíz" description={quiz.title} returnPath="/grammar" />
       <Quiz id={quiz.id} questions={questions} />
     </div>
   );

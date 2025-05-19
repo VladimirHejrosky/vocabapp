@@ -1,13 +1,12 @@
-"use server"
+"use server";
 import fs from "fs";
 import { cookies } from "next/headers";
 import path from "path";
 import { Language } from "../generated/prisma";
-import { Quiz } from "./json-types";
-
+import { PhraseExercise, PhraseList, Quiz } from "./json-types";
 
 export async function getGrammarList(): Promise<
-  { id: string; title: string; description: string }[]
+  { id: string; title: string; }[]
 > {
   const lang =
     ((await cookies()).get("lang")?.value as Language | undefined) || "EN";
@@ -24,7 +23,6 @@ export async function getGrammarList(): Promise<
       return {
         id: quiz.id,
         title: quiz.title,
-        description: quiz.description,
       };
     });
 }
@@ -49,9 +47,35 @@ export async function getGrammarById(id: string): Promise<Quiz | null> {
 
     console.warn(`⚠️ Quiz with id "${id}" not found in ${dir}`);
     return null;
-
   } catch (err) {
     console.error("🔥 getQuizById error:", err);
     return null;
   }
+}
+
+export async function getPhrasesList(): Promise< PhraseList[]> {
+    const lang =
+    ((await cookies()).get("lang")?.value as Language | undefined) || "EN";
+  const DATA_DIR = path.join(process.cwd(), "data", "phrases", lang);
+  const files = await fs.promises.readdir(DATA_DIR);
+  return files
+    .filter((file) => file.endsWith(".json"))
+    .map((file) => {
+      const json = JSON.parse(
+        fs.readFileSync(path.join(DATA_DIR, file), "utf8")
+      );
+      return {
+        id: json.id,
+        title: json.title,
+      };
+    });
+}
+
+export async function getPhrasesById(id: string): Promise<PhraseExercise> {
+    const lang =
+    ((await cookies()).get("lang")?.value as Language | undefined) || "EN";
+  const DATA_DIR = path.join(process.cwd(), "data", "phrases", lang);
+  const filePath = path.join(DATA_DIR, `${id}.json`);
+  const file = await fs.promises.readFile(filePath, "utf8");
+  return JSON.parse(file);
 }

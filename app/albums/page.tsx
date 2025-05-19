@@ -14,12 +14,15 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import AddAlbumDialog from "./components/AlbumDialog";
 import SubNav from "../components/SubNav";
+import { cookies } from "next/headers";
+import { Language } from "@/lib/generated/prisma";
 
 export default async function AlbumsPage() {
   const { userId } = await auth();
   if (!userId) redirect("/sign-in");
 
   const albums: AlbumWithCount[] = await getAlbums(userId);
+  const lang =((await cookies()).get("lang")?.value as Language | undefined) || "EN";
 
   return (
     <div className="container mx-auto px-4">
@@ -29,7 +32,7 @@ export default async function AlbumsPage() {
       </div>
       <Card className="mb-4">
         <CardHeader>
-          <CardTitle>Cvičení<span className="text-muted-foreground"> - náhodná slovíčka</span></CardTitle>
+          <CardTitle>Cvičení<span className="text-muted-foreground"> - náhodná slovíčka {lang}</span></CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap gap-4">

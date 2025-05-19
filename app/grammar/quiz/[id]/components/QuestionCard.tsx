@@ -22,6 +22,7 @@ interface QuestionCardProps {
   onNext: () => void;
 }
 
+
 export default function QuestionCard({
   question,
   selectedAnswer,
@@ -31,11 +32,13 @@ export default function QuestionCard({
   onAnswerSelect,
   onNext,
 }: QuestionCardProps) {
+
+  const [questionStart, questionEnd] = question.question.split("_")
   return (
     <Card className="w-full">
       <CardHeader>
         <CardTitle className="text-xl text-center">
-          {question.question}
+          {questionStart}<span className="text-muted-foreground">__</span>{questionEnd}
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -51,7 +54,7 @@ export default function QuestionCard({
                     ? "bg-success hover:bg-success"
                     : index === selectedAnswer
                     ? "bg-destructive hover:bg-destructive"
-                    : ""
+                    : "hidden"
                   : ""
               )}
               onClick={() => onAnswerSelect(index)}
@@ -74,8 +77,8 @@ export default function QuestionCard({
 
         {showExplanation && (
           <div className="mt-4 p-2 bg-muted rounded-md">
-            <h3 className="font-semibold mb-1">Vysvětlení:</h3>
-            <p className="text-muted-foreground italic">
+            <h3 className="font-semibold text-sm">Vysvětlení:</h3>
+            <p className="text-muted-foreground text-md italic">
               {question.explanation}
             </p>
           </div>

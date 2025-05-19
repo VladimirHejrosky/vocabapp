@@ -1,4 +1,5 @@
 import SubNav from "@/app/components/SubNav"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { getGrammarById } from "@/lib/json/json-actions"
 import { notFound } from "next/navigation"
 
@@ -18,9 +19,22 @@ export default async function TheoryPage({params}: Props) {
   return (
     <div className="container mx-auto px-4">
      <SubNav name="Teorie" description={data.title} returnPath="/grammar" />
-          <div>
-            <h1 className="text-3xl font-bold">{data.title}</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, laborum cupiditate. Quaerat, eligendi atque iusto adipisci, officiis incidunt voluptatibus dignissimos, unde dolorum expedita rerum placeat. Facilis voluptatem officia maiores magni?</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {data.theory?.map((item, index) => (
+              <Card key={index} className="flex flex-col">
+                <CardHeader>
+                <CardTitle>{item.title}</CardTitle>
+                <CardDescription>{item.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                <ul>
+                  {item.examples.map((example, index) => (
+                    <li key={index}>{example}</li>
+                  ))}
+                </ul>
+                  </CardContent>
+              </Card>
+            ))}
           </div>
       </div>
   )
