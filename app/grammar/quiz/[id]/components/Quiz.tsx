@@ -61,8 +61,9 @@ export default function Quiz({ id, questions, onComplete }: QuizProps) {
     setAnswered(false)
     setSelectedAnswer(null)
     setIsCorrect(false)
-    setQuizComplete(true)
+    setQuizComplete(false)
     setShowExplanation(false)
+    setProgress(0)
   }
 
   if (quizComplete) {

@@ -14,7 +14,7 @@ import { albumSchema } from "@/validation/form-validations";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { languages } from "@/app/components/LangSelector";
-
+import Cookies from 'js-cookie'
 import { DialogClose, DialogFooter } from "@/components/ui/dialog";
 import { Language } from "@/lib/generated/prisma";
 import {
@@ -38,13 +38,14 @@ interface Props {
 }
 
 const AlbumForm = ({ album, onSuccess }: Props) => {
+  const defaultLang = Cookies.get('lang') || "EN"
   const form = useForm({
     resolver: zodResolver(albumSchema),
     defaultValues: {
       id: album ? album.id : undefined,
       name: album ? album.name : "",
       description: album ? album.description ?? "" : "",
-      language: album ? album.language : undefined,
+      language: album ? album.language : defaultLang as Language,
     },
   });
 
@@ -112,7 +113,7 @@ const AlbumForm = ({ album, onSuccess }: Props) => {
               Zavřít
             </Button>
           </DialogClose>
-          <Button disabled={form.formState.isSubmitting} type="submit">{album ? "Uložit" : "Vytvořit"}</Button>
+          <Button disabled={form.formState.isSubmitted || form.formState.isSubmitting} type="submit">{album ? "Uložit" : "Vytvořit"}</Button>
         </DialogFooter>
       </form>
     </Form>

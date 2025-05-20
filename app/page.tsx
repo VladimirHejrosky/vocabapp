@@ -16,6 +16,7 @@ import {
 import { cookies } from "next/headers";
 import Link from "next/link";
 import LangSelector from "./components/LangSelector";
+import Menu from "./components/Menu";
 
 export default async function Home() {
   const langCookie = (await cookies()).get("lang")?.value as
@@ -42,56 +43,10 @@ export default async function Home() {
         <HyperText className="text-xl text-muted-foreground mb-4">
           Procvičuj jazykové znalosti a uč se nová slovíčka pomocí kartiček.
         </HyperText>
-        <div className="flex flex-col gap-4 my-4">
-          <Link href="/grammar" prefetch={true}>
-            <Button
-              size="lg"
-              variant="secondary"
-              className="flex items-center gap-2 w-full border-2"
-            >
-              <NotepadText className="h-5 w-5 justify-self-start" />
-              Gramatické kvízy
-            </Button>
-          </Link>
-          <Link href="/phrases" prefetch={true}>
-            <Button
-              size="lg"
-              variant="secondary"
-              className="flex items-center gap-2 w-full border-2"
-            >
-              <PenTool className="h-5 w-5 " />
-              Skládání vět
-            </Button>
-          </Link>
-          <SignedIn>
-            <Link href="/albums">
-              <Button size="lg" className="flex items-center gap-2 w-full">
-                <BookOpen className="h-5 w-5" />
-                Procházet alba
-              </Button>
-            </Link>
-          </SignedIn>
-          <SignedOut>
-            <div className="flex gap-4 w-full justify-between">
-              <SignUpButton>
-                <Button size="lg">Přihlásit se</Button>
-              </SignUpButton>
-              <Link href="/demo">
-                <Button size="lg" className="border-2" variant="secondary">
-                  Vyzkoušet <MoveRight />
-                </Button>
-              </Link>
-            </div>
-          </SignedOut>
-        </div>
-        <SignedOut>
-          <p className="text-muted-foreground italic">
-            Pro učení pomocí kartiček se musíš přihlásit.
-          </p>
-        </SignedOut>
+        <Menu />
       </div>
 
-      <div className="absolute bottom-0 flex gap-4 p-4 mb-8 justify-between items-center w-full">
+      <div className="absolute bottom-0 flex gap-4 p-4 mb-4 justify-between items-center w-full">
         <LangSelector />
         <div className="flex gap-4">
           <Link href="/privacy-policy" title="Zásady ochrany osobních údajů">

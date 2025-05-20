@@ -103,7 +103,7 @@ const EditTermDialogForm = ({ word, albumId, isOpen, setIsOpen }: Props) => {
                   Zrušit
                 </Button>
               </DialogClose>
-              <Button disabled={form.formState.isSubmitted} type="submit">
+              <Button disabled={form.formState.isSubmitted || form.formState.isSubmitting} type="submit">
                 Uložit
               </Button>
             </DialogFooter>

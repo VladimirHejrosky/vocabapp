@@ -96,9 +96,6 @@ export default function PhraseBuilder({ exercises }: PhraseBuilderProps) {
     const correct =
       userTranslation === currentExercise.originalPhrase.toLowerCase();
 
-    console.log(userTranslation.toLocaleLowerCase());
-    console.log(currentExercise.originalPhrase.toLocaleLowerCase());
-
     setIsCorrect(correct);
     setProgress(((currentExerciseIndex + 1) / exercises.length) * 100);
     if (correct) {

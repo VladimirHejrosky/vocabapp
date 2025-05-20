@@ -65,7 +65,7 @@ export async function getAlbum(userId: string, albumId: number) {
   const album = await db.album.findFirst({
     where: { id: albumId, userId },
     include: {
-      words: { orderBy: { createdAt: "desc" } },
+      words: { orderBy: { term: "asc" } },
     },
   });
   return album;

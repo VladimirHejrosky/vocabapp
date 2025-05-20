@@ -1,6 +1,6 @@
 import SubNav from "@/app/components/SubNav";
+import { getRandomItems } from "@/lib/functions/array-functions";
 import { getGrammarById } from "@/lib/json/json-actions";
-import type { QuizQuestion } from "@/lib/json/json-types";
 import { notFound } from "next/navigation";
 import Quiz from "./components/Quiz";
 
@@ -11,17 +11,13 @@ interface Props {
 export default async function QuizPage({ params }: Props) {
   const { id } = await params;
   const quiz = await getGrammarById(id);
-
+  
   if (!quiz) {
     notFound();
   }
+  
 
-  const questions: QuizQuestion[] = quiz.questions.map((q) => ({
-    question: q.question,
-    answers: q.answers,
-    correctAnswer: q.correctAnswer,
-    explanation: q.explanation,
-  }));
+ const questions = getRandomItems(quiz.questions, 2)
 
   return (
     <div className="container mx-auto px-4">
