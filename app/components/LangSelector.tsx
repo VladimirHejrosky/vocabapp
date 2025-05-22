@@ -107,7 +107,7 @@ export default function LanguageVoiceSelector() {
         value={selectedVoice || undefined}
         onValueChange={(value) => handleVoiceChange(value)}
       >
-        <SelectTrigger className="w-[140px]">
+        <SelectTrigger className="w-[150px]">
           <SelectValue placeholder="Hlas" />
         </SelectTrigger>
         <SelectContent>

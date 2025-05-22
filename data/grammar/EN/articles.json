@@ -1,0 +1,152 @@
+{
+  "id": "articles",
+  "title": "Členy",
+  "theory": [
+    {
+      "title": "A",
+      "description": "Neurčitý člen používaný před slovy začínajícími na souhláskový zvuk. Používá se, když mluvíme o něčem poprvé nebo o něčem obecném.",
+      "examples": [
+        "a dog",
+        "a book"
+      ]
+    },
+    {
+      "title": "An",
+      "description": "Neurčitý člen používaný stejně jako 'a', ale před slovy začínajícími na samohláskový zvuk (a, e, i, o, u).",
+      "examples": [
+        "an apple",
+        "an hour"
+      ]
+    },
+    {
+      "title": "The",
+      "description": "Určitý člen používaný, když mluvíme o konkrétní nebo již známé věci nebo osobě.",
+      "examples": [
+        "the sun",
+        "the book on the table"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question": "I saw _ elephant at the zoo.",
+      "answers": ["a", "an", "the", "bez členu"],
+      "correctAnswer": 1,
+      "explanation": "„An“ se používá před slovy začínajícími na samohláskový zvuk."
+    },
+    {
+      "question": "Can you pass me _ salt, please?",
+      "answers": ["a", "an", "the", "bez členu"],
+      "correctAnswer": 2,
+      "explanation": "„The“ se používá, když mluvíme o konkrétní věci."
+    },
+    {
+      "question": "She is reading _ interesting book.",
+      "answers": ["a", "an", "the", "bez členu"],
+      "correctAnswer": 1,
+      "explanation": "„A“ se používá před slovy se souhláskovým zvukem."
+    },
+    {
+      "question": "He waited for _ hour before the bus came.",
+      "answers": ["a", "an", "the", "bez členu"],
+      "correctAnswer": 1,
+      "explanation": "„An“ se používá kvůli výslovnosti slova ‚hour‘ – začíná na samohláskový zvuk."
+    },
+    {
+      "question": "I bought _ umbrella because it was raining.",
+      "answers": ["a", "an", "the", "bez členu"],
+      "correctAnswer": 1,
+      "explanation": "„An“ se používá, protože ‚umbrella‘ začíná na samohláskový zvuk."
+    },
+    {
+      "question": "She wants to be _ astronaut.",
+      "answers": ["a", "an", "the", "bez členu"],
+      "correctAnswer": 1,
+      "explanation": "„An“ protože ‚astronaut‘ začíná na samohláskový zvuk."
+    },
+    {
+      "question": "We watched _ movie last night.",
+      "answers": ["a", "an", "the", "bez členu"],
+      "correctAnswer": 2,
+      "explanation": "„The“ protože mluvíme o konkrétním filmu."
+    },
+    {
+      "question": "There is _ university in this city.",
+      "answers": ["a", "an", "the", "bez členu"],
+      "correctAnswer": 0,
+      "explanation": "„A“ protože ‚university‘ začíná na souhláskový zvuk ‚ju‘."
+    },
+    {
+      "question": "He is _ honest man.",
+      "answers": ["a", "an", "the", "bez členu"],
+      "correctAnswer": 1,
+      "explanation": "„An“ protože ‚honest‘ má samohláskový zvuk na začátku (nevyslovuje se 'h')."
+    },
+    {
+      "question": "_ Earth orbits the Sun.",
+      "answers": ["A", "An", "The", "bez členu"],
+      "correctAnswer": 2,
+      "explanation": "„The“ protože mluvíme o jedinečné věci – planeta Země."
+    },
+    {
+      "question": "He wants to buy _ car.",
+      "answers": ["a", "an", "the", "bez členu"],
+      "correctAnswer": 0,
+      "explanation": "„A“ protože mluvíme o autě poprvé a začíná na souhláskový zvuk."
+    },
+    {
+      "question": "Do you want _ orange or an apple?",
+      "answers": ["a", "an", "the", "bez členu"],
+      "correctAnswer": 1,
+      "explanation": "„An“ protože ‚orange‘ začíná na samohláskový zvuk."
+    },
+    {
+      "question": "I love listening to _ radio in the morning.",
+      "answers": ["a", "an", "the", "bez členu"],
+      "correctAnswer": 2,
+      "explanation": "„The radio“ je ustálené spojení – konkrétní zařízení."
+    },
+    {
+      "question": "_ moon looks beautiful tonight.",
+      "answers": ["A", "An", "The", "bez členu"],
+      "correctAnswer": 2,
+      "explanation": "„The moon“ – jedinečný objekt, známý mluvčím i posluchači."
+    },
+    {
+      "question": "He is studying to become _ engineer.",
+      "answers": ["a", "an", "the", "bez členu"],
+      "correctAnswer": 1,
+      "explanation": "„An“ protože ‚engineer‘ začíná na samohláskový zvuk."
+    },
+    {
+      "question": "We visited _ Eiffel Tower during our trip.",
+      "answers": ["a", "an", "the", "bez členu"],
+      "correctAnswer": 2,
+      "explanation": "„The Eiffel Tower“ – známá a jedinečná stavba."
+    },
+    {
+      "question": "She gave me _ pen to sign the form.",
+      "answers": ["a", "an", "the", "bez členu"],
+      "correctAnswer": 0,
+      "explanation": "„A pen“ – poprvé zmiňovaná věc."
+    },
+    {
+      "question": "_ Pacific Ocean is the largest ocean.",
+      "answers": ["A", "An", "The", "bez členu"],
+      "correctAnswer": 2,
+      "explanation": "„The Pacific Ocean“ – jméno oceánu vyžaduje určitý člen."
+    },
+    {
+      "question": "He has _ idea for the project.",
+      "answers": ["a", "an", "the", "bez členu"],
+      "correctAnswer": 1,
+      "explanation": "„An idea“ – začíná na samohláskový zvuk."
+    },
+    {
+      "question": "We stayed in _ hotel near the beach.",
+      "answers": ["a", "an", "the", "bez členu"],
+      "correctAnswer": 0,
+      "explanation": "„A hotel“ – zmíněno poprvé, souhláskový zvuk."
+    }
+  ]
+}

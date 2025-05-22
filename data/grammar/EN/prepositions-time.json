@@ -1,0 +1,208 @@
+{
+  "id": "prepositions-time",
+  "title": "Předložky (čas)",
+  "theory": [
+    {
+      "title": "At",
+      "description": "Používá se pro přesný čas nebo konkrétní momenty v čase (např. části dne nebo svátky).",
+      "examples": [
+        "at 7 o'clock",
+        "at midnight"
+      ]
+    },
+    {
+      "title": "On",
+      "description": "Používá se pro konkrétní dny a data.",
+      "examples": [
+        "on Monday",
+        "on July 4th"
+      ]
+    },
+    {
+      "title": "In",
+      "description": "Používá se pro delší časové úseky jako měsíce, roky, století a části dne.",
+      "examples": [
+        "in June",
+        "in the morning"
+      ]
+    },
+    {
+      "title": "Since",
+      "description": "Používá se pro vyjádření, odkdy něco trvá (začátek děje).",
+      "examples": [
+        "since 2020",
+        "since Monday"
+      ]
+    },
+    {
+      "title": "For",
+      "description": "Používá se pro vyjádření trvání určitého období.",
+      "examples": [
+        "for two hours",
+        "for a week"
+      ]
+    },
+    {
+      "title": "By",
+      "description": "Používá se pro označení deadlinu, tedy do kdy se něco má stát.",
+      "examples": [
+        "by Friday",
+        "by 6 PM"
+      ]
+    },
+    {
+      "title": "During",
+      "description": "Používá se k vyjádření, že se něco stalo během určitého období nebo události.",
+      "examples": [
+        "during the meeting",
+        "during summer"
+      ]
+    },
+    {
+      "title": "Until / Till",
+      "description": "Používá se k vyjádření trvání do určitého bodu v čase.",
+      "examples": [
+        "until midnight",
+        "till Monday"
+      ]
+    },
+    {
+      "title": "Before",
+      "description": "Používá se pro děje, které se staly dříve než jiný časový bod.",
+      "examples": [
+        "before lunch",
+        "before 1990"
+      ]
+    },
+    {
+      "title": "After",
+      "description": "Používá se pro děje, které se staly po určitém bodě v čase.",
+      "examples": [
+        "after dinner",
+        "after the show"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question": "She arrived _ 7 o'clock.",
+      "answers": ["in", "on", "at", "by"],
+      "correctAnswer": 2,
+      "explanation": "„At“ se používá pro přesné časové údaje."
+    },
+    {
+      "question": "We have a meeting _ Monday.",
+      "answers": ["in", "on", "at", "by"],
+      "correctAnswer": 1,
+      "explanation": "„On“ se používá pro konkrétní dny."
+    },
+    {
+      "question": "I was born _ 1995.",
+      "answers": ["at", "in", "on", "by"],
+      "correctAnswer": 1,
+      "explanation": "„In“ se používá pro roky a delší časová období."
+    },
+    {
+      "question": "They have lived here _ 2010.",
+      "answers": ["for", "since", "in", "from"],
+      "correctAnswer": 1,
+      "explanation": "„Since“ označuje začátek trvání."
+    },
+    {
+      "question": "We waited _ two hours.",
+      "answers": ["since", "during", "for", "in"],
+      "correctAnswer": 2,
+      "explanation": "„For“ označuje délku trvání."
+    },
+    {
+      "question": "She will be back _ 6 PM.",
+      "answers": ["at", "until", "by", "on"],
+      "correctAnswer": 2,
+      "explanation": "„By“ označuje nejpozdější možný čas."
+    },
+    {
+      "question": "He slept _ the meeting.",
+      "answers": ["during", "for", "in", "since"],
+      "correctAnswer": 0,
+      "explanation": "„During“ se používá s událostmi."
+    },
+    {
+      "question": "I stayed at the party _ midnight.",
+      "answers": ["for", "by", "until", "since"],
+      "correctAnswer": 2,
+      "explanation": "„Until“ označuje konečný bod v čase."
+    },
+    {
+      "question": "They finished dinner _ the movie started.",
+      "answers": ["after", "before", "by", "until"],
+      "correctAnswer": 1,
+      "explanation": "„Before“ označuje děj, který předchází jinému."
+    },
+    {
+      "question": "We went out _ the show.",
+      "answers": ["after", "before", "during", "until"],
+      "correctAnswer": 0,
+      "explanation": "„After“ označuje děj po jiném ději."
+    },
+    {
+      "question": "I usually work _ the morning.",
+      "answers": ["at", "in", "on", "during"],
+      "correctAnswer": 1,
+      "explanation": "„In the morning“ je běžná fráze pro část dne."
+    },
+    {
+      "question": "Let's meet _ lunch.",
+      "answers": ["at", "on", "in", "after"],
+      "correctAnswer": 0,
+      "explanation": "„At lunch“ označuje specifický čas během dne."
+    },
+    {
+      "question": "He studied _ the weekend.",
+      "answers": ["during", "for", "since", "on"],
+      "correctAnswer": 0,
+      "explanation": "„During“ se používá pro časové úseky jako „the weekend“."
+    },
+    {
+      "question": "We stayed there _ a week.",
+      "answers": ["since", "for", "until", "by"],
+      "correctAnswer": 1,
+      "explanation": "„For a week“ označuje délku pobytu."
+    },
+    {
+      "question": "They’ve known each other _ high school.",
+      "answers": ["for", "since", "during", "by"],
+      "correctAnswer": 1,
+      "explanation": "„Since high school“ – od určité doby v minulosti."
+    },
+    {
+      "question": "I need it done _ Friday.",
+      "answers": ["on", "in", "at", "by"],
+      "correctAnswer": 3,
+      "explanation": "„By Friday“ znamená nejpozději do pátku."
+    },
+    {
+      "question": "He usually gets up _ 7 AM.",
+      "answers": ["at", "on", "in", "by"],
+      "correctAnswer": 0,
+      "explanation": "„At“ pro přesný čas."
+    },
+    {
+      "question": "She waited _ he arrived.",
+      "answers": ["since", "until", "after", "by"],
+      "correctAnswer": 1,
+      "explanation": "„Until“ označuje čekání až do určitého okamžiku."
+    },
+    {
+      "question": "The shop is closed _ Sundays.",
+      "answers": ["on", "at", "in", "by"],
+      "correctAnswer": 0,
+      "explanation": "„On Sundays“ se používá pro dny v týdnu."
+    },
+    {
+      "question": "They got married _ June.",
+      "answers": ["on", "at", "in", "by"],
+      "correctAnswer": 2,
+      "explanation": "„In“ pro měsíce a delší časová období."
+    }
+  ]
+}

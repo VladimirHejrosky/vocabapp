@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { SignedIn, SignedOut, SignUpButton, useUser } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton, SignUpButton, useUser } from "@clerk/nextjs";
 import { NotepadText, PenTool, BookOpen, MoveRight } from "lucide-react";
 import Link from "next/link";
 import MenuSkeleton from "./MenuSkeleton";
@@ -43,13 +43,18 @@ const Menu = () => {
           </Link>
         </SignedIn>
         <SignedOut>
-          <div className="flex gap-4 w-full justify-between">
+          <div className="flex flex-col gap-4 w-full justify-between">
+            <div className="flex gap-4">
             <SignUpButton>
-              <Button size="lg">Přihlásit se</Button>
+              <Button size="lg">Registrovat</Button>
             </SignUpButton>
+            <SignInButton>
+              <Button size="lg">Přihlásit</Button>
+            </SignInButton>
+            </div>
             <Link href="/demo">
-              <Button size="lg" className="border-2" variant="secondary">
-                Vyzkoušet <MoveRight />
+              <Button size="lg" className="border-2 w-full" variant="secondary">
+                Vyzkoušet kartičky <MoveRight />
               </Button>
             </Link>
           </div>

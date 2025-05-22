@@ -17,7 +17,7 @@ export default async function QuizPage({ params }: Props) {
   }
   
 
- const questions = getRandomItems(quiz.questions, 2)
+ const questions = getRandomItems(quiz.questions, 10)
 
   return (
     <div className="container mx-auto px-4">

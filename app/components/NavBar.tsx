@@ -48,6 +48,7 @@ export function NavBar() {
       <nav className="flex gap-4 items-center justify-around w-full">
         {routes.map((route) => (
           <Link
+          
             key={route.href}
             href={route.href}
             className={cn(
