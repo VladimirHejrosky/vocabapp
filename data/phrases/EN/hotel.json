@@ -1,0 +1,106 @@
+{
+  "id": "hotel",
+  "title": "Hotel",
+  "phrases": [
+    {
+      "czPhrase": "Máte volný pokoj?",
+      "originalPhrase": "Do you have a room available?",
+      "words": ["Do", "you", "have", "a", "room", "available", "free", "reservation"]
+    },
+    {
+      "czPhrase": "Mám rezervaci na jméno Novák.",
+      "originalPhrase": "I have a reservation under the name Novak.",
+      "words": ["I", "have", "a", "reservation", "under", "the", "name", "Novak", "check-in"]
+    },
+    {
+      "czPhrase": "Jaký je čas ubytování?",
+      "originalPhrase": "What time is check-in?",
+      "words": ["What", "time", "is", "check-in", "checkout", "room", "key"]
+    },
+    {
+      "czPhrase": "Potřebuji další ručníky.",
+      "originalPhrase": "I need more towels.",
+      "words": ["I", "need", "more", "towels", "pillows", "blankets", "soap"]
+    },
+    {
+      "czPhrase": "Kde je výtah?",
+      "originalPhrase": "Where is the elevator?",
+      "words": ["Where", "is", "the", "elevator", "stairs", "floor", "room"]
+    },
+    {
+      "czPhrase": "Jak se dostanu na recepci?",
+      "originalPhrase": "How do I get to the reception?",
+      "words": ["How", "do", "I", "get", "to", "the", "reception", "lobby", "entrance"]
+    },
+    {
+      "czPhrase": "Máte bezplatné Wi-Fi?",
+      "originalPhrase": "Do you have free Wi-Fi?",
+      "words": ["Do", "you", "have", "free", "Wi-Fi", "internet", "password"]
+    },
+    {
+      "czPhrase": "Jaké je heslo k Wi-Fi?",
+      "originalPhrase": "What is the Wi-Fi password?",
+      "words": ["What", "is", "the", "Wi-Fi", "password", "code", "internet"]
+    },
+    {
+      "czPhrase": "Je snídaně v ceně?",
+      "originalPhrase": "Is breakfast included?",
+      "words": ["Is", "breakfast", "included", "free", "available", "buffet"]
+    },
+    {
+      "czPhrase": "V kolik je snídaně?",
+      "originalPhrase": "What time is breakfast?",
+      "words": ["What", "time", "is", "breakfast", "dinner", "lunch", "served"]
+    },
+    {
+      "czPhrase": "Kde je můj pokoj?",
+      "originalPhrase": "Where is my room?",
+      "words": ["Where", "is", "my", "room", "key", "floor", "number"]
+    },
+    {
+      "czPhrase": "Nejde mi odemknout dveře.",
+      "originalPhrase": "I can't unlock the door.",
+      "words": ["I", "can't", "unlock", "the", "door", "key", "room", "card"]
+    },
+    {
+      "czPhrase": "V pokoji je příliš horko.",
+      "originalPhrase": "The room is too hot.",
+      "words": ["The", "room", "is", "too", "hot", "cold", "small", "dark"]
+    },
+    {
+      "czPhrase": "Funguje klimatizace?",
+      "originalPhrase": "Does the air conditioning work?",
+      "words": ["Does", "the", "air", "conditioning", "work", "fan", "heating"]
+    },
+    {
+      "czPhrase": "Mohu dostat pozdní odhlášení?",
+      "originalPhrase": "Can I get a late check-out?",
+      "words": ["Can", "I", "get", "a", "late", "check-out", "early", "stay"]
+    },
+    {
+      "czPhrase": "Ztratil jsem klíč od pokoje.",
+      "originalPhrase": "I lost my room key.",
+      "words": ["I", "lost", "my", "room", "key", "card", "door"]
+    },
+    {
+      "czPhrase": "Chtěl bych si stěžovat.",
+      "originalPhrase": "I would like to make a complaint.",
+      "words": ["I", "would", "like", "to", "make", "a", "complaint", "problem"]
+    },
+    {
+      "czPhrase": "Potřebuji vzbudit v sedm ráno.",
+      "originalPhrase": "I need a wake-up call at seven.",
+      "words": ["I", "need", "a", "wake-up", "call", "at", "seven", "alarm"]
+    },
+    {
+      "czPhrase": "Kde si mohu uložit zavazadla?",
+      "originalPhrase": "Where can I store my luggage?",
+      "words": ["Where", "can", "I", "store", "my", "luggage", "bags", "room"]
+    },
+    {
+      "czPhrase": "Děkuji za příjemný pobyt.",
+      "originalPhrase": "Thank you for the pleasant stay.",
+      "words": ["Thank", "you", "for", "the", "pleasant", "stay", "room", "service"]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "id": "basics",
+  "title": "Základy",
+  "phrases": [
+    {
+      "czPhrase": "Dobrý den",
+      "originalPhrase": "Guten Tag",
+      "words": ["Guten", "Tag", "Morgen", "Hallo", "Tschüss"]
+    },
+    {
+      "czPhrase": "Na shledanou",
+      "originalPhrase": "Auf Wiedersehen",
+      "words": ["Auf", "Wiedersehen", "Hallo", "Danke", "Tschüss"]
+    },
+    {
+      "czPhrase": "Děkuji",
+      "originalPhrase": "Danke",
+      "words": ["Danke", "Bitte", "Hallo", "Ja", "Nein"]
+    },
+    {
+      "czPhrase": "Prosím",
+      "originalPhrase": "Bitte",
+      "words": ["Bitte", "Danke", "Hallo", "Entschuldigung", "Ja"]
+    },
+    {
+      "czPhrase": "Ano",
+      "originalPhrase": "Ja",
+      "words": ["Ja", "Nein", "Vielleicht", "Danke", "Bitte"]
+    },
+    {
+      "czPhrase": "Ne",
+      "originalPhrase": "Nein",
+      "words": ["Nein", "Ja", "Doch", "Bitte", "Hallo"]
+    },
+    {
+      "czPhrase": "Jak se máš?",
+      "originalPhrase": "Wie geht es dir?",
+      "words": ["Wie", "geht", "es", "dir", "gut", "mir"]
+    },
+    {
+      "czPhrase": "Jmenuji se Jana",
+      "originalPhrase": "Ich heiße Jana",
+      "words": ["Ich", "heiße", "Jana", "du", "bin", "Name"]
+    },
+    {
+      "czPhrase": "Odkud jsi?",
+      "originalPhrase": "Woher kommst du?",
+      "words": ["Woher", "kommst", "du", "bist", "ich", "aus"]
+    },
+    {
+      "czPhrase": "Mluvím trochu německy",
+      "originalPhrase": "Ich spreche ein bisschen Deutsch",
+      "words": ["Ich", "spreche", "ein", "bisschen", "Deutsch", "gut", "nicht"]
+    },
+    {
+      "czPhrase": "Nerozumím",
+      "originalPhrase": "Ich verstehe nicht",
+      "words": ["Ich", "verstehe", "nicht", "spreche", "Deutsch", "kein"]
+    },
+    {
+      "czPhrase": "Můžeš to zopakovat?",
+      "originalPhrase": "Kannst du das wiederholen?",
+      "words": ["Kannst", "du", "das", "wiederholen", "bitte", "nochmal"]
+    },
+    {
+      "czPhrase": "Pomoc!",
+      "originalPhrase": "Hilfe!",
+      "words": ["Hilfe!", "bitte", "schnell", "Notruf", "Hallo"]
+    },
+    {
+      "czPhrase": "Kolik to stojí?",
+      "originalPhrase": "Wie viel kostet das?",
+      "words": ["Wie", "viel", "kostet", "das", "Preis", "Euro"]
+    },
+    {
+      "czPhrase": "Kde je toaleta?",
+      "originalPhrase": "Wo ist die Toilette?",
+      "words": ["Wo", "ist", "die", "Toilette", "hier", "dort"]
+    },
+    {
+      "czPhrase": "Je to daleko?",
+      "originalPhrase": "Ist es weit?",
+      "words": ["Ist", "es", "weit", "nah", "Wo", "hier"]
+    },
+    {
+      "czPhrase": "Co to je?",
+      "originalPhrase": "Was ist das?",
+      "words": ["Was", "ist", "das", "dies", "Objekt", "Ding"]
+    },
+    {
+      "czPhrase": "Jsem z Česka",
+      "originalPhrase": "Ich komme aus Tschechien",
+      "words": ["Ich", "komme", "aus", "Tschechien", "Deutschland", "woher"]
+    },
+    {
+      "czPhrase": "Miluji Německo",
+      "originalPhrase": "Ich liebe Deutschland",
+      "words": ["Ich", "liebe", "Deutschland", "mag", "Land", "sehr"]
+    },
+    {
+      "czPhrase": "Dobrou noc",
+      "originalPhrase": "Gute Nacht",
+      "words": ["Gute", "Nacht", "Morgen", "Tag", "Abend"]
+    }
+  ]
+}
