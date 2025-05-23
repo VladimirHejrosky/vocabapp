@@ -21,121 +21,121 @@
   ],
   "questions": [
     {
-      "question": "Right now, she _ (read) a book.",
+      "question": "Right now, she _ a book. (read)",
       "answers": ["reads", "is reading", "read", "is read"],
       "correctAnswer": 1,
       "explanation": "Používáme 'is reading' – děj právě probíhá (nyní)."
     },
     {
-      "question": "He _ (go) to the gym every morning.",
+      "question": "He _ to the gym every morning. (go)",
       "answers": ["goes", "is going", "going", "go"],
       "correctAnswer": 0,
       "explanation": "'Goes' – pravidelná činnost, přítomný čas prostý."
     },
     {
-      "question": "They _ (have) lunch at the moment.",
+      "question": "They _ lunch at the moment. (have)",
       "answers": ["have", "has", "are having", "having"],
       "correctAnswer": 2,
       "explanation": "'Are having' – právě teď probíhá."
     },
     {
-      "question": "My brother _ (play) football on weekends.",
+      "question": "My brother _ football on weekends. (play)",
       "answers": ["is playing", "plays", "play", "playing"],
       "correctAnswer": 1,
       "explanation": "'Plays' – pravidelná aktivita o víkendech."
     },
     {
-      "question": "Listen! The birds _ (sing).",
+      "question": "Listen! The birds _. (sing)",
       "answers": ["sing", "sings", "are singing", "singing"],
       "correctAnswer": 2,
       "explanation": "'Are singing' – děj právě probíhá, slyšíme to."
     },
     {
-      "question": "She _ (not like) coffee.",
+      "question": "She _ coffee. (not like)",
       "answers": ["is not liking", "don’t like", "doesn’t like", "not likes"],
       "correctAnswer": 2,
       "explanation": "Stavový sloveso – používáme přítomný prostý: 'doesn’t like'."
     },
     {
-      "question": "I _ (study) English this semester.",
+      "question": "I _ English this semester. (study)",
       "answers": ["study", "am studying", "studies", "studying"],
       "correctAnswer": 1,
       "explanation": "'Am studying' – dočasná aktivita."
     },
     {
-      "question": "We usually _ (eat) dinner at 7 p.m.",
+      "question": "We usually _ dinner at 7 p.m. (eat)",
       "answers": ["eat", "are eating", "eats", "eating"],
       "correctAnswer": 0,
       "explanation": "'Eat' – pravidelný zvyk."
     },
     {
-      "question": "She _ (talk) on the phone right now.",
+      "question": "She _ on the phone right now. (talk)",
       "answers": ["talk", "is talking", "talks", "talking"],
       "correctAnswer": 1,
       "explanation": "'Is talking' – právě teď."
     },
     {
-      "question": "My parents _ (live) in the countryside.",
+      "question": "My parents _ in the countryside. (live)",
       "answers": ["are living", "live", "lives", "living"],
       "correctAnswer": 1,
       "explanation": "'Live' – trvalý stav, přítomný prostý."
     },
     {
-      "question": "Look! The baby _ (sleep).",
+      "question": "Look! The baby _. (sleep)",
       "answers": ["sleeps", "sleep", "is sleeping", "sleeping"],
       "correctAnswer": 2,
       "explanation": "'Is sleeping' – právě teď probíhající činnost."
     },
     {
-      "question": "I _ (not understand) this exercise.",
+      "question": "I _ this exercise. (not understand)",
       "answers": ["am not understanding", "do not understand", "don’t understands", "not understand"],
       "correctAnswer": 1,
       "explanation": "U sloves vnímání jako 'understand' používáme přítomný prostý."
     },
     {
-      "question": "They _ (travel) to Spain this week.",
+      "question": "They _ to Spain this week. (travel)",
       "answers": ["are travelling", "travel", "travels", "are travel"],
       "correctAnswer": 0,
       "explanation": "Dočasný/plánovaný děj – přítomný průběhový."
     },
     {
-      "question": "He always _ (forget) his keys.",
+      "question": "He always _ his keys. (forget)",
       "answers": ["is forgetting", "forgets", "forget", "has forgotten"],
       "correctAnswer": 1,
       "explanation": "'Forgets' – častý zvyk nebo chování."
     },
     {
-      "question": "I _ (have) a great time at the party now.",
+      "question": "I _ a great time at the party now. (have)",
       "answers": ["have", "am having", "has", "am have"],
       "correctAnswer": 1,
       "explanation": "'Am having' – právě teď probíhá."
     },
     {
-      "question": "She _ (cook) dinner every day.",
+      "question": "She _ dinner every day. (cook)",
       "answers": ["cooks", "is cooking", "cook", "cooking"],
       "correctAnswer": 0,
       "explanation": "'Cooks' – pravidelná činnost."
     },
     {
-      "question": "My friend _ (stay) with us for a few days.",
+      "question": "My friend _ with us for a few days. (stay)",
       "answers": ["is staying", "stay", "stays", "are staying"],
       "correctAnswer": 0,
       "explanation": "Dočasná situace – přítomný průběhový."
     },
     {
-      "question": "I _ (go) to the gym twice a week.",
+      "question": "I _ to the gym twice a week. (go)",
       "answers": ["am going", "go", "goes", "am go"],
       "correctAnswer": 1,
       "explanation": "'Go' – opakovaná činnost."
     },
     {
-      "question": "She _ (wear) a red dress today.",
+      "question": "She _ a red dress today. (wear)",
       "answers": ["wear", "is wearing", "wears", "wearing"],
       "correctAnswer": 1,
       "explanation": "Dočasná situace – 'is wearing'."
     },
     {
-      "question": "We _ (not watch) TV every evening.",
+      "question": "We _ TV every evening. (not watch)",
       "answers": ["aren’t watching", "don’t watch", "doesn’t watch", "not watching"],
       "correctAnswer": 1,
       "explanation": "'Don’t watch' – pravidelnost, přítomný prostý zápor."

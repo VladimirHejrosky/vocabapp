@@ -44,12 +44,12 @@
     },
     {
       "czPhrase": "Účet, prosím.",
-      "originalPhrase": "The bill, please.",
+      "originalPhrase": "The bill please.",
       "words": ["The", "bill", "please", "check", "pay", "money"]
     },
     {
       "czPhrase": "Bylo to výborné, děkuji.",
-      "originalPhrase": "It was delicious, thank you.",
+      "originalPhrase": "It was delicious thank you.",
       "words": ["It", "was", "delicious", "thank", "you", "good", "meal"]
     },
     {
@@ -74,8 +74,8 @@
     },
     {
       "czPhrase": "Chci stůl venku, prosím.",
-      "originalPhrase": "I want a table outside, please.",
-      "words": ["I", "want", "a", "table", "outside", "inside", "seat"]
+      "originalPhrase": "I want a table outside please.",
+      "words": ["I", "want", "a", "table", "outside", "inside", "seat", "please"]
     },
     {
       "czPhrase": "Jsem alergický na ořechy.",
