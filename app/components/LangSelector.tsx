@@ -69,6 +69,7 @@ export default function LanguageVoiceSelector() {
     Cookies.set("lang", newLang, { expires: 365, sameSite: "lax" });
     Cookies.remove("voice");
     setSelectedVoice(undefined);
+    window.location.reload();
   };
 
   const handleVoiceChange = (voiceName: string) => {
