@@ -37,25 +37,21 @@ export default function QuestionCard({
 }: QuestionCardProps) {
   const [questionStart, questionEnd] = question.question.split("_");
 
+  const textToSpeach = (questionStart + question.answers[question.correctAnswer] + questionEnd).split("(")[0]
+
   return (
     <Card className="w-full">
-      <CardHeader className="relative">
+      <CardHeader className="flex flex-col justify-center items-center">
         <CardTitle className="text-xl text-center">
           {questionStart}
           <span className="text-muted-foreground">__</span>
           {questionEnd}
         </CardTitle>
         {answered && (
-          <div className="absolute right-4">
             <SpeakButton
-              text={
-                questionStart +
-                question.answers[question.correctAnswer] +
-                questionEnd
-              }
+              text={textToSpeach}
               lang={lang}
             />
-          </div>
         )}
       </CardHeader>
       <CardContent>
