@@ -30,7 +30,7 @@ export default async function AlbumDetailPage({ params }: Props) {
   return (
     <div className="container mx-auto px-4">
       <div className="flex justify-between items-center">
-        <SubNav name={album.name} desctiprion={album.description || ""} returnPath="/albums"/>
+        <SubNav name={album.name} description={album.description || ""} returnPath="/albums"/>
         <div className="flex gap-2 flex-col mb-4">
           <AlbumDialog album={album} />
           <DeleteAlbumDialog albumId={album.id} userId={userId}

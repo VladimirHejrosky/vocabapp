@@ -32,9 +32,9 @@ export default async function LearningPage({ searchParams }: Props) {
 
   return (
     <div className="container mx-auto px-4">
-      <SubNav name="Seznam" desctiprion={
+      <SubNav name="Seznam" description={
           (album && albumData?.name) || "Náhodná slovíčka"
-        } returnPath={album ? `/albums/${album}` : "/"} />
+        } returnPath={album ? `/albums/${album}` : "/albums"} />
       <LearnList initialWords={listWords} lang={lang}/>
       </div>
   );

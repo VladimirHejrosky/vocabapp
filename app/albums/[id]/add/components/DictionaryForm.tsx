@@ -152,7 +152,7 @@ export default function DictionaryForm({paramId, albumLang}: Props) {
           >
             {reachedMaxLength ? "Maximum 20 řádků" :<><CirclePlus /> Přidat řádek</>}
           </Button>
-          <Button disabled={form.formState.isSubmitted} type="submit">
+          <Button disabled={form.formState.isSubmitted || form.formState.isSubmitting} type="submit">
             <Save /> Přidat do slovníku
           </Button>
         </div>

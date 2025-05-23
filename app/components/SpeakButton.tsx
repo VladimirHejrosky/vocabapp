@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Language } from "@/lib/generated/prisma";
 import { Volume2 } from "lucide-react";
 import { FC, useCallback, useEffect, useMemo, useState } from "react";
+import Cookies from "js-cookie";
 
 const languageMap: Record<Language, string> = {
   EN: "en-US",
@@ -24,9 +25,7 @@ export const SpeakButton: FC<SpeakButtonProps> = ({ text, lang }) => {
 
   const loadVoices = useCallback(() => {
     const available = window.speechSynthesis.getVoices();
-    if (available.length > 0) {
-      setVoices(available);
-    }
+    setVoices(available);
   }, []);
 
   useEffect(() => {
@@ -34,7 +33,6 @@ export const SpeakButton: FC<SpeakButtonProps> = ({ text, lang }) => {
 
     loadVoices();
     window.speechSynthesis.addEventListener("voiceschanged", loadVoices);
-
     return () => {
       window.speechSynthesis.removeEventListener("voiceschanged", loadVoices);
     };
@@ -42,6 +40,11 @@ export const SpeakButton: FC<SpeakButtonProps> = ({ text, lang }) => {
 
   const selectedVoice = useMemo(() => {
     if (!voices.length) return null;
+
+    const voiceNameFromCookie = Cookies.get("voice");
+    const cookieVoice = voices.find((v) => v.name === voiceNameFromCookie);
+    if (cookieVoice) return cookieVoice;
+
     return (
       voices.find((v) => v.lang === langCode && v.localService) ||
       voices.find((v) => v.lang.startsWith(langCode.split("-")[0]))
@@ -54,13 +57,13 @@ export const SpeakButton: FC<SpeakButtonProps> = ({ text, lang }) => {
     window.speechSynthesis.cancel();
 
     const utter = new SpeechSynthesisUtterance(text);
-    utter.lang = langCode;
     utter.voice = selectedVoice;
+    utter.lang = selectedVoice.lang;
 
     window.speechSynthesis.speak(utter);
   };
 
-     if (!selectedVoice) return null;
+  if (!selectedVoice) return null;
 
   return (
     <Button onClick={handleSpeak} variant="ghost">

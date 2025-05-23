@@ -1,0 +1,208 @@
+{
+  "id": "prepositions-place",
+  "title": "Předložky (místo)",
+  "theory": [
+    {
+      "title": "At",
+      "description": "Používá se pro specifické body nebo místa, např. budovy, zastávky, adresy.",
+      "examples": [
+        "at the bus stop",
+        "at the entrance"
+      ]
+    },
+    {
+      "title": "In",
+      "description": "Používá se pro uzavřené prostory nebo oblasti, jako jsou místnosti, města nebo země.",
+      "examples": [
+        "in the kitchen",
+        "in Paris"
+      ]
+    },
+    {
+      "title": "On",
+      "description": "Používá se pro povrchy nebo objekty, které jsou v kontaktu s povrchem.",
+      "examples": [
+        "on the table",
+        "on the wall"
+      ]
+    },
+    {
+      "title": "Under / Below",
+      "description": "Vyjadřuje polohu pod něčím. 'Under' je běžnější, 'below' často ve formálním nebo technickém kontextu.",
+      "examples": [
+        "under the bed",
+        "below the surface"
+      ]
+    },
+    {
+      "title": "Above / Over",
+      "description": "Vyjadřuje polohu nad něčím. 'Over' může také znamenat pohyb přes něco.",
+      "examples": [
+        "above the clouds",
+        "fly over the mountain"
+      ]
+    },
+    {
+      "title": "Between / Among",
+      "description": "'Between' se používá mezi dvěma objekty, 'among' mezi více než dvěma.",
+      "examples": [
+        "between two trees",
+        "among friends"
+      ]
+    },
+    {
+      "title": "Behind / In front of",
+      "description": "'Behind' znamená za něčím, 'in front of' před něčím.",
+      "examples": [
+        "behind the door",
+        "in front of the building"
+      ]
+    },
+    {
+      "title": "Across / Along",
+      "description": "'Across' znamená napříč přes něco, 'along' podél něčeho.",
+      "examples": [
+        "walk across the street",
+        "walk along the river"
+      ]
+    },
+    {
+      "title": "Through",
+      "description": "Vyjadřuje pohyb skrz uzavřený prostor nebo překážku.",
+      "examples": [
+        "through the tunnel",
+        "walk through the forest"
+      ]
+    },
+    {
+      "title": "By / Next to / Beside",
+      "description": "Všechny znamenají 'vedle'. 'By' je nejběžnější, 'next to' a 'beside' se často používají pro fyzickou blízkost.",
+      "examples": [
+        "by the window",
+        "next to the car"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question": "The keys are _ the table.",
+      "answers": ["on", "in", "under", "above"],
+      "correctAnswer": 0,
+      "explanation": "Používáme 'on' pro něco, co leží na povrchu."
+    },
+    {
+      "question": "She sat _ the desk.",
+      "answers": ["in", "on", "at", "by"],
+      "correctAnswer": 2,
+      "explanation": "'At' používáme pro místo, kde se vykonává určitá činnost (např. práce u stolu)."
+    },
+    {
+      "question": "There’s a painting _ the wall.",
+      "answers": ["on", "in", "at", "above"],
+      "correctAnswer": 0,
+      "explanation": "'On the wall' znamená, že obraz visí na povrchu zdi."
+    },
+    {
+      "question": "They walked _ the river for hours.",
+      "answers": ["across", "along", "over", "by"],
+      "correctAnswer": 1,
+      "explanation": "'Along' znamená pohyb podél něčeho."
+    },
+    {
+      "question": "He lives _ the third floor.",
+      "answers": ["in", "at", "on", "by"],
+      "correctAnswer": 2,
+      "explanation": "'On' se používá pro patra budov."
+    },
+    {
+      "question": "The plane flew _ the mountains.",
+      "answers": ["through", "over", "across", "under"],
+      "correctAnswer": 1,
+      "explanation": "'Over' se používá pro pohyb nad něčím."
+    },
+    {
+      "question": "The book is _ the drawer.",
+      "answers": ["in", "on", "at", "under"],
+      "correctAnswer": 0,
+      "explanation": "'In' používáme pro uzavřený prostor (šuple)."
+    },
+    {
+      "question": "We sat _ the fire and talked.",
+      "answers": ["beside", "behind", "in front of", "between"],
+      "correctAnswer": 0,
+      "explanation": "'Beside' znamená vedle."
+    },
+    {
+      "question": "The shoes are _ the bed.",
+      "answers": ["on", "under", "above", "in"],
+      "correctAnswer": 1,
+      "explanation": "'Under' znamená pod něčím."
+    },
+    {
+      "question": "The sun is directly _ us.",
+      "answers": ["over", "under", "next to", "beside"],
+      "correctAnswer": 0,
+      "explanation": "'Over' znamená přímo nad něčím."
+    },
+    {
+      "question": "He stood _ the door, waiting.",
+      "answers": ["in front of", "behind", "on", "by"],
+      "correctAnswer": 0,
+      "explanation": "'In front of' znamená před něčím."
+    },
+    {
+      "question": "She’s hiding _ the curtain.",
+      "answers": ["next to", "behind", "in front of", "above"],
+      "correctAnswer": 1,
+      "explanation": "'Behind' znamená schovaný za něčím."
+    },
+    {
+      "question": "He walked _ the street to get to the store.",
+      "answers": ["along", "across", "over", "under"],
+      "correctAnswer": 1,
+      "explanation": "'Across' znamená napříč, z jedné strany na druhou."
+    },
+    {
+      "question": "They walked _ the tunnel.",
+      "answers": ["through", "under", "in", "across"],
+      "correctAnswer": 0,
+      "explanation": "'Through' znamená skrz nějaký prostor."
+    },
+    {
+      "question": "He is sitting _ me and John.",
+      "answers": ["among", "between", "next to", "in front of"],
+      "correctAnswer": 1,
+      "explanation": "'Between' se používá mezi dvěma konkrétními věcmi."
+    },
+    {
+      "question": "I parked my bike _ the fence.",
+      "answers": ["in front of", "on", "at", "by"],
+      "correctAnswer": 3,
+      "explanation": "'By' znamená u něčeho, blízko něčeho."
+    },
+    {
+      "question": "She placed the vase _ the shelf.",
+      "answers": ["on", "in", "at", "above"],
+      "correctAnswer": 0,
+      "explanation": "'On the shelf' znamená na povrchu police."
+    },
+    {
+      "question": "The painting hangs _ the sofa.",
+      "answers": ["above", "on", "in front of", "behind"],
+      "correctAnswer": 0,
+      "explanation": "'Above' znamená nad něčím, ale bez kontaktu."
+    },
+    {
+      "question": "The bird flew _ the forest.",
+      "answers": ["under", "through", "over", "across"],
+      "correctAnswer": 1,
+      "explanation": "'Through' znamená skrz nějaký prostor (les)."
+    },
+    {
+      "question": "There’s a bench _ the tree.",
+      "answers": ["behind", "in front of", "under", "over"],
+      "correctAnswer": 2,
+      "explanation": "'Under the tree' znamená pod stromem."
+    }
+  ]
+}

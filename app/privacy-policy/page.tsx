@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function PrivacyPolicyPage() {
@@ -10,7 +11,10 @@ export default function PrivacyPolicyPage() {
       </h1>
 
       <section className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">🇨🇿 Česky</h2>
+        <div className="flex gap-2 items-center mb-2">
+          <Image src="/cz-flag.png" alt="CZ" width={30} height={20} />
+          <h2 className="text-xl font-semibold">Česky</h2>
+        </div>
         <p>
           Vaše soukromí je pro nás důležité. Tato aplikace pro učení slovíček
           ukládá pouze nezbytné informace:
@@ -30,7 +34,10 @@ export default function PrivacyPolicyPage() {
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold mb-2">🇬🇧 English</h2>
+        <div className="flex gap-2 items-center mb-2">
+        <Image src="/uk-flag.png" alt="UK" width={32} height={16} />
+        <h2 className="text-xl font-semibold">English</h2>
+        </div>
         <p>
           Your privacy is important to us. This vocabulary app stores only
           essential data:

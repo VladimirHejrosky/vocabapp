@@ -1,0 +1,144 @@
+{
+  "id": "present-tenses",
+  "title": "Přítomný čas prostý a průběhový",
+  "theory": [
+    {
+      "title": "Přítomný čas prostý (Present Simple)",
+      "description": "Používá se pro opakované, pravidelné děje, obecné pravdy a stavy. Často se pojí s výrazy jako 'always', 'usually', 'every day', atd.",
+      "examples": [
+        "She works in a bank.",
+        "I usually get up at 7 a.m."
+      ]
+    },
+    {
+      "title": "Přítomný čas průběhový (Present Continuous)",
+      "description": "Používá se pro děje, které právě probíhají, dočasné situace nebo plánované budoucí události. Často se pojí s výrazy jako 'now', 'at the moment', 'currently', atd.",
+      "examples": [
+        "She is working on a new project now.",
+        "I am watching a movie at the moment."
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question": "Right now, she _ (read) a book.",
+      "answers": ["reads", "is reading", "read", "is read"],
+      "correctAnswer": 1,
+      "explanation": "Používáme 'is reading' – děj právě probíhá (nyní)."
+    },
+    {
+      "question": "He _ (go) to the gym every morning.",
+      "answers": ["goes", "is going", "going", "go"],
+      "correctAnswer": 0,
+      "explanation": "'Goes' – pravidelná činnost, přítomný čas prostý."
+    },
+    {
+      "question": "They _ (have) lunch at the moment.",
+      "answers": ["have", "has", "are having", "having"],
+      "correctAnswer": 2,
+      "explanation": "'Are having' – právě teď probíhá."
+    },
+    {
+      "question": "My brother _ (play) football on weekends.",
+      "answers": ["is playing", "plays", "play", "playing"],
+      "correctAnswer": 1,
+      "explanation": "'Plays' – pravidelná aktivita o víkendech."
+    },
+    {
+      "question": "Listen! The birds _ (sing).",
+      "answers": ["sing", "sings", "are singing", "singing"],
+      "correctAnswer": 2,
+      "explanation": "'Are singing' – děj právě probíhá, slyšíme to."
+    },
+    {
+      "question": "She _ (not like) coffee.",
+      "answers": ["is not liking", "don’t like", "doesn’t like", "not likes"],
+      "correctAnswer": 2,
+      "explanation": "Stavový sloveso – používáme přítomný prostý: 'doesn’t like'."
+    },
+    {
+      "question": "I _ (study) English this semester.",
+      "answers": ["study", "am studying", "studies", "studying"],
+      "correctAnswer": 1,
+      "explanation": "'Am studying' – dočasná aktivita."
+    },
+    {
+      "question": "We usually _ (eat) dinner at 7 p.m.",
+      "answers": ["eat", "are eating", "eats", "eating"],
+      "correctAnswer": 0,
+      "explanation": "'Eat' – pravidelný zvyk."
+    },
+    {
+      "question": "She _ (talk) on the phone right now.",
+      "answers": ["talk", "is talking", "talks", "talking"],
+      "correctAnswer": 1,
+      "explanation": "'Is talking' – právě teď."
+    },
+    {
+      "question": "My parents _ (live) in the countryside.",
+      "answers": ["are living", "live", "lives", "living"],
+      "correctAnswer": 1,
+      "explanation": "'Live' – trvalý stav, přítomný prostý."
+    },
+    {
+      "question": "Look! The baby _ (sleep).",
+      "answers": ["sleeps", "sleep", "is sleeping", "sleeping"],
+      "correctAnswer": 2,
+      "explanation": "'Is sleeping' – právě teď probíhající činnost."
+    },
+    {
+      "question": "I _ (not understand) this exercise.",
+      "answers": ["am not understanding", "do not understand", "don’t understands", "not understand"],
+      "correctAnswer": 1,
+      "explanation": "U sloves vnímání jako 'understand' používáme přítomný prostý."
+    },
+    {
+      "question": "They _ (travel) to Spain this week.",
+      "answers": ["are travelling", "travel", "travels", "are travel"],
+      "correctAnswer": 0,
+      "explanation": "Dočasný/plánovaný děj – přítomný průběhový."
+    },
+    {
+      "question": "He always _ (forget) his keys.",
+      "answers": ["is forgetting", "forgets", "forget", "has forgotten"],
+      "correctAnswer": 1,
+      "explanation": "'Forgets' – častý zvyk nebo chování."
+    },
+    {
+      "question": "I _ (have) a great time at the party now.",
+      "answers": ["have", "am having", "has", "am have"],
+      "correctAnswer": 1,
+      "explanation": "'Am having' – právě teď probíhá."
+    },
+    {
+      "question": "She _ (cook) dinner every day.",
+      "answers": ["cooks", "is cooking", "cook", "cooking"],
+      "correctAnswer": 0,
+      "explanation": "'Cooks' – pravidelná činnost."
+    },
+    {
+      "question": "My friend _ (stay) with us for a few days.",
+      "answers": ["is staying", "stay", "stays", "are staying"],
+      "correctAnswer": 0,
+      "explanation": "Dočasná situace – přítomný průběhový."
+    },
+    {
+      "question": "I _ (go) to the gym twice a week.",
+      "answers": ["am going", "go", "goes", "am go"],
+      "correctAnswer": 1,
+      "explanation": "'Go' – opakovaná činnost."
+    },
+    {
+      "question": "She _ (wear) a red dress today.",
+      "answers": ["wear", "is wearing", "wears", "wearing"],
+      "correctAnswer": 1,
+      "explanation": "Dočasná situace – 'is wearing'."
+    },
+    {
+      "question": "We _ (not watch) TV every evening.",
+      "answers": ["aren’t watching", "don’t watch", "doesn’t watch", "not watching"],
+      "correctAnswer": 1,
+      "explanation": "'Don’t watch' – pravidelnost, přítomný prostý zápor."
+    }
+  ]
+}

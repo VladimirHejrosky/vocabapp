@@ -1,0 +1,106 @@
+{
+  "id": "restaurant",
+  "title": "Restaurace",
+  "phrases": [
+    {
+      "czPhrase": "Máte volný stůl pro dva?",
+      "originalPhrase": "Do you have a table for two?",
+      "words": ["Do", "you", "have", "a", "table", "for", "two", "seat", "free"]
+    },
+    {
+      "czPhrase": "Chtěl bych si objednat.",
+      "originalPhrase": "I would like to order.",
+      "words": ["I", "would", "like", "to", "order", "eat", "menu"]
+    },
+    {
+      "czPhrase": "Mohu vidět jídelní lístek?",
+      "originalPhrase": "Can I see the menu?",
+      "words": ["Can", "I", "see", "the", "menu", "bill", "order"]
+    },
+    {
+      "czPhrase": "Co byste doporučil?",
+      "originalPhrase": "What would you recommend?",
+      "words": ["What", "would", "you", "recommend", "like", "order", "choose"]
+    },
+    {
+      "czPhrase": "Dám si dnešní specialitu.",
+      "originalPhrase": "I'll have the special of the day.",
+      "words": ["I'll", "have", "the", "special", "of", "the", "day", "dish", "meal"]
+    },
+    {
+      "czPhrase": "Nejím maso.",
+      "originalPhrase": "I don't eat meat.",
+      "words": ["I", "don't", "eat", "meat", "fish", "vegetarian", "food"]
+    },
+    {
+      "czPhrase": "Bezlepková varianta, prosím.",
+      "originalPhrase": "Gluten-free option, please.",
+      "words": ["Gluten-free", "option", "please", "dish", "menu", "vegan"]
+    },
+    {
+      "czPhrase": "Mohu dostat trochu vody?",
+      "originalPhrase": "Can I have some water?",
+      "words": ["Can", "I", "have", "some", "water", "wine", "drink"]
+    },
+    {
+      "czPhrase": "Účet, prosím.",
+      "originalPhrase": "The bill, please.",
+      "words": ["The", "bill", "please", "check", "pay", "money"]
+    },
+    {
+      "czPhrase": "Bylo to výborné, děkuji.",
+      "originalPhrase": "It was delicious, thank you.",
+      "words": ["It", "was", "delicious", "thank", "you", "good", "meal"]
+    },
+    {
+      "czPhrase": "Mohu platit kartou?",
+      "originalPhrase": "Can I pay by card?",
+      "words": ["Can", "I", "pay", "by", "card", "cash", "credit"]
+    },
+    {
+      "czPhrase": "Chtěli bychom zaplatit zvlášť.",
+      "originalPhrase": "We would like to pay separately.",
+      "words": ["We", "would", "like", "to", "pay", "separately", "together"]
+    },
+    {
+      "czPhrase": "Objednali jsme si před deseti minutami.",
+      "originalPhrase": "We ordered ten minutes ago.",
+      "words": ["We", "ordered", "ten", "minutes", "ago", "wait", "long"]
+    },
+    {
+      "czPhrase": "To není to, co jsem si objednal.",
+      "originalPhrase": "This is not what I ordered.",
+      "words": ["This", "is", "not", "what", "I", "ordered", "different", "wrong"]
+    },
+    {
+      "czPhrase": "Chci stůl venku, prosím.",
+      "originalPhrase": "I want a table outside, please.",
+      "words": ["I", "want", "a", "table", "outside", "inside", "seat"]
+    },
+    {
+      "czPhrase": "Jsem alergický na ořechy.",
+      "originalPhrase": "I'm allergic to nuts.",
+      "words": ["I'm", "allergic", "to", "nuts", "milk", "gluten"]
+    },
+    {
+      "czPhrase": "Přinesete nám trochu chleba?",
+      "originalPhrase": "Could you bring us some bread?",
+      "words": ["Could", "you", "bring", "us", "some", "bread", "water", "wine"]
+    },
+    {
+      "czPhrase": "Dáte si dezert?",
+      "originalPhrase": "Would you like some dessert?",
+      "words": ["Would", "you", "like", "some", "dessert", "cake", "coffee"]
+    },
+    {
+      "czPhrase": "Je to jídlo pálivé?",
+      "originalPhrase": "Is this dish spicy?",
+      "words": ["Is", "this", "dish", "spicy", "hot", "mild"]
+    },
+    {
+      "czPhrase": "Rezervoval jsem stůl na osm hodin.",
+      "originalPhrase": "I booked a table for eight o'clock.",
+      "words": ["I", "booked", "a", "table", "for", "eight", "o'clock", "reservation"]
+    }
+  ]
+}

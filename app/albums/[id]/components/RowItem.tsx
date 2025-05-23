@@ -37,12 +37,12 @@ const RowItem = ({ word, albumId }: Props) => {
         albumId={albumId}
       />
       <TableRow key={word.id}>
-        <TableCell className="font-medium">{word.term}</TableCell>
-        <TableCell>{word.translation}</TableCell>
-        <TableCell className="hidden md:table-cell text-muted-foreground text-sm">
+        <TableCell className="font-medium text-center">{word.term}</TableCell>
+        <TableCell className="text-center">{word.translation}</TableCell>
+        <TableCell className="hidden md:table-cell text-muted-foreground text-sm text-center">
           {word.example || "Žádný příklad"}
         </TableCell>
-        <TableCell>
+        <TableCell className="text-end">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon">

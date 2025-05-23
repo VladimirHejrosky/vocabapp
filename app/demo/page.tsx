@@ -15,13 +15,13 @@ const demoWords = [
   ];
   
 
-const page = () => {
+const demoPage = () => {
   return (
     <div className="container mx-auto px-4">
-    <SubNav name="Kartičky" desctiprion="Demo" returnPath="/"/>
+    <SubNav name="Kartičky" description="Demo" returnPath="/"/>
     <CardSet demo={true} initialWords={demoWords} lang="EN"/>
   </div>
   )
 }
 
-export default page
+export default demoPage

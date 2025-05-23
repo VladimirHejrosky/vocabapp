@@ -1,0 +1,155 @@
+{
+  "id": "pronouns",
+  "title": "Osobní zájmena",
+  "theory": [
+    {
+      "title": "Osobní zájmena",
+      "description": "Ve španělštině se osobní zájmena často vynechávají, protože osoba je zřejmá z koncovky slovesa. Přesto je důležité je znát, obzvlášť pro začátečníky.",
+      "examples": [
+        "Yo soy. (Já jsem.)",
+        "Tú eres. (Ty jsi.)",
+        "Él es. (On je.)",
+        "Ella es. (Ona je.)",
+        "Eso es. (Ono je.)",
+        "Nosotros/Nosotras somos. (My jsme.)",
+        "Vosotros/Vosotras sois. (Vy jste.)",
+        "Ellos/Ellas son. (Oni/ony jsou.)",
+        "Ustedes son. (Vy jste – formálně)"
+      ]
+    },
+    {
+      "title": "Koncovky pravidelných sloves v přítomném čase",
+      "description": "Španělská slovesa se dělí na tři skupiny podle zakončení v infinitivu: -ar, -er, -ir. Každá skupina má vlastní pravidelné koncovky v přítomném čase. Níže uvádíme příklad s pravidelným slovesem 'hablar' (mluvit).",
+      "examples": [
+        "Yo hablo. (Já mluvím.) – koncovka: -o",
+        "Tú hablas. (Ty mluvíš.) – koncovka: -as",
+        "Él/Ella habla. (On/Ona mluví.) – koncovka: -a",
+        "Nosotros/Nosotras hablamos. (My mluvíme.) – koncovka: -amos",
+        "Vosotros/Vosotras habláis. (Vy mluvíte.) – koncovka: -áis",
+        "Ellos/Ellas/Ustedes hablan. (Oni/Vy mluví.) – koncovka: -an"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question": "_ soy de México.",
+      "answers": ["Yo", "Tú", "Él", "Usted"],
+      "correctAnswer": 0,
+      "explanation": "'Yo' znamená 'já'."
+    },
+    {
+      "question": "_ eres mi amigo.",
+      "answers": ["Yo", "Tú", "Él", "Ella"],
+      "correctAnswer": 1,
+      "explanation": "'Tú' znamená 'ty'."
+    },
+    {
+      "question": "_ es profesora.",
+      "answers": ["Yo", "Él", "Ella", "Nosotros"],
+      "correctAnswer": 2,
+      "explanation": "'Ella' znamená 'ona'."
+    },
+    {
+      "question": "_ somos hermanos.",
+      "answers": ["Ellos", "Nosotros", "Vosotros", "Ustedes"],
+      "correctAnswer": 1,
+      "explanation": "'Nosotros' znamená 'my' (muži nebo smíšená skupina)."
+    },
+    {
+      "question": "_ viven en Barcelona.",
+      "answers": ["Ellas", "Nosotras", "Ellos", "Vosotros"],
+      "correctAnswer": 2,
+      "explanation": "'Ellos' znamená 'oni' (muži nebo smíšená skupina)."
+    },
+    {
+      "question": "_ sois estudiantes.",
+      "answers": ["Ustedes", "Vosotros", "Ellos", "Nosotros"],
+      "correctAnswer": 1,
+      "explanation": "'Vosotros' je neformální 'vy' používané ve Španělsku."
+    },
+    {
+      "question": "_ no habla inglés. (formálně, vy)",
+      "answers": ["Tú", "Ella", "Usted", "Vosotros"],
+      "correctAnswer": 2,
+      "explanation": "'Usted' je formální zájmeno pro 'vy' (jednotné číslo)."
+    },
+    {
+      "question": "_ somos amigas. (ženy)",
+      "answers": ["Nosotros", "Vosotras", "Nosotras", "Ustedes"],
+      "correctAnswer": 2,
+      "explanation": "'Nosotras' se používá pro 'my', když mluví jen ženy."
+    },
+    {
+      "question": "_ son profesores. (muži)",
+      "answers": ["Ellos", "Ellas", "Vosotros", "Tú"],
+      "correctAnswer": 0,
+      "explanation": "'Ellos' znamená 'oni' (muži nebo smíšená skupina)."
+    },
+    {
+      "question": "_ eres alta. (mluvíme k ženě)",
+      "answers": ["Tú", "Ella", "Usted", "Vosotras"],
+      "correctAnswer": 0,
+      "explanation": "'Tú' se používá pro 'ty', neformálně."
+    },
+    {
+      "question": "_ somos de Chile.",
+      "answers": ["Nosotros", "Vosotros", "Ellos", "Ustedes"],
+      "correctAnswer": 0,
+      "explanation": "'Nosotros' – 'my'."
+    },
+    {
+      "question": "_ son mis padres. (muži)",
+      "answers": ["Ellas", "Ustedes", "Ellos", "Vosotros"],
+      "correctAnswer": 2,
+      "explanation": "'Ellos' – 'oni'."
+    },
+    {
+      "question": "_ vive en Perú. (ona)",
+      "answers": ["Él", "Ella", "Tú", "Yo"],
+      "correctAnswer": 1,
+      "explanation": "'Ella' – 'ona'."
+    },
+    {
+      "question": "_ habláis español. (vy, neformálně ve Španělsku)",
+      "answers": ["Vosotros", "Ellos", "Nosotros", "Ustedes"],
+      "correctAnswer": 0,
+      "explanation": "'Vosotros' – neformální 'vy' v Evropě."
+    },
+    {
+      "question": "_ es mi hermano. (on)",
+      "answers": ["Ella", "Él", "Tú", "Usted"],
+      "correctAnswer": 1,
+      "explanation": "'Él' – 'on'."
+    },
+    {
+      "question": "_ no somos de aquí. (ženy)",
+      "answers": ["Nosotros", "Nosotras", "Ellas", "Vosotras"],
+      "correctAnswer": 1,
+      "explanation": "'Nosotras' – 'my' (ženy)."
+    },
+    {
+      "question": "_ son de Colombia. (formálně, vy)",
+      "answers": ["Ustedes", "Vosotros", "Nosotros", "Tú"],
+      "correctAnswer": 0,
+      "explanation": "'Ustedes' je formální i běžné 'vy' v Latinské Americe."
+    },
+    {
+      "question": "_ es mi profesora. (vy, formálně)",
+      "answers": ["Usted", "Tú", "Ella", "Vosotros"],
+      "correctAnswer": 0,
+      "explanation": "'Usted' se používá při formálním oslovení."
+    },
+    {
+      "question": "_ sois mis amigas. (ženy, ve Španělsku)",
+      "answers": ["Vosotras", "Ustedes", "Nosotras", "Ellas"],
+      "correctAnswer": 0,
+      "explanation": "'Vosotras' – neformální 'vy' pro ženy ve Španělsku."
+    },
+    {
+      "question": "_ está en casa. (on)",
+      "answers": ["Él", "Ella", "Usted", "Tú"],
+      "correctAnswer": 0,
+      "explanation": "'Él' znamená 'on'."
+    }
+  ]
+}
