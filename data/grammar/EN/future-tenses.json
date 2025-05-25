@@ -1,0 +1,144 @@
+{
+  "id": "future-tenses",
+  "title": "Budoucí čas will a going to",
+  "theory": [
+    {
+      "title": "Will",
+      "description": "Používá se pro spontánní rozhodnutí, sliby, nabídky a předpovědi bez důkazu.",
+      "examples": [
+        "I think it will rain tomorrow.",
+        "I’ll help you with your homework."
+      ]
+    },
+    {
+      "title": "Going to",
+      "description": "Používá se pro plánované akce a předpovědi na základě důkazů.",
+      "examples": [
+        "We’re going to visit Grandma this weekend.",
+        "Look at those clouds. It’s going to rain."
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question": "I think she _ very successful. (be)",
+      "answers": ["is going to be", "will be", "is being", "is"],
+      "correctAnswer": 1,
+      "explanation": "'Will be' – předpověď bez důkazu, vyjádření názoru."
+    },
+    {
+      "question": "Look at those black clouds. It _ (rain).",
+      "answers": ["will rain", "is raining", "is going to rain", "rains"],
+      "correctAnswer": 2,
+      "explanation": "'Is going to rain' – předpověď na základě důkazů (vidíme mraky)."
+    },
+    {
+      "question": "She _ you when she arrives. (call)",
+      "answers": ["will call", "is going to call", "calls", "is calling"],
+      "correctAnswer": 0,
+      "explanation": "'Will call' – budoucí akce, rozhodnutí či oznámení."
+    },
+    {
+      "question": "We _ a party on Friday. It’s already planned. (have)",
+      "answers": ["will have", "are going to have", "have", "will be having"],
+      "correctAnswer": 1,
+      "explanation": "'Are going to have' – naplánovaná událost."
+    },
+    {
+      "question": "I’m tired. I _ to bed now. (go)",
+      "answers": ["go", "will go", "am going", "going to go"],
+      "correctAnswer": 1,
+      "explanation": "'Will go' – spontánní rozhodnutí."
+    },
+    {
+      "question": "He _ you with that heavy box. He just offered. (help)",
+      "answers": ["is going to help", "helps", "will help", "is helping"],
+      "correctAnswer": 2,
+      "explanation": "'Will help' – nabídka učiněná právě teď."
+    },
+    {
+      "question": "They _ to London next year. They’ve already rented a flat. (move)",
+      "answers": ["will move", "are going to move", "move", "moved"],
+      "correctAnswer": 1,
+      "explanation": "'Are going to move' – naplánovaná akce."
+    },
+    {
+      "question": "I’m sure he _ the test. He’s very smart. (pass)",
+      "answers": ["is going to pass", "passes", "will pass", "is passing"],
+      "correctAnswer": 2,
+      "explanation": "'Will pass' – vyjádření jistoty nebo předpovědi."
+    },
+    {
+      "question": "Be careful. You _ . (fall)",
+      "answers": ["are falling", "will fall", "are going to fall", "fall"],
+      "correctAnswer": 2,
+      "explanation": "'Are going to fall' – předpověď na základě pozorování."
+    },
+    {
+      "question": "We _ our cousins this weekend. We bought the tickets. (visit)",
+      "answers": ["will visit", "are visiting", "are going to visit", "visit"],
+      "correctAnswer": 2,
+      "explanation": "'Are going to visit' – plán, rozhodnutí učiněné předem."
+    },
+    {
+      "question": "Wait a minute. I _ the door for you. (open)",
+      "answers": ["am going to open", "will open", "open", "am opening"],
+      "correctAnswer": 1,
+      "explanation": "'Will open' – spontánní nabídka."
+    },
+    {
+      "question": "He _ to the meeting. He told me yesterday. (not come)",
+      "answers": ["won’t come", "isn’t going to come", "doesn’t come", "isn’t coming"],
+      "correctAnswer": 1,
+      "explanation": "'Isn’t going to come' – rozhodnutí oznámené předem."
+    },
+    {
+      "question": "She _ the exam. She hasn’t studied at all. (not pass)",
+      "answers": ["won’t pass", "isn’t going to pass", "isn’t passing", "doesn’t pass"],
+      "correctAnswer": 1,
+      "explanation": "'Isn’t going to pass' – předpověď na základě důkazů."
+    },
+    {
+      "question": "I promise I _ anyone.  (tell)",
+      "answers": ["am not telling", "won’t tell", "don’t tell", "not going to tell"],
+      "correctAnswer": 1,
+      "explanation": "'Won’t tell' – slib, vyjádření úmyslu."
+    },
+    {
+      "question": "We _ lunch together? That sounds nice. (have)",
+      "answers": ["are going to have", "shall we have", "will we have", "have"],
+      "correctAnswer": 2,
+      "explanation": "Otázka nabízející budoucí akci – 'will we have'."
+    },
+    {
+      "question": "He _ this race. He’s too slow. (not win)",
+      "answers": ["won’t win", "isn’t going to win", "not winning", "doesn’t win"],
+      "correctAnswer": 1,
+      "explanation": "'Isn’t going to win' – předpověď na základě současné situace."
+    },
+    {
+      "question": "What _ you _ this evening? (do)",
+      "answers": ["do / do", "will / do", "are / going to do", "are / do"],
+      "correctAnswer": 2,
+      "explanation": "'Are you going to do' – dotaz na plánovanou činnost."
+    },
+    {
+      "question": "I _ to Italy next week. I’ve booked my flight. (travel)",
+      "answers": ["am going to travel", "will travel", "travel", "am travelling"],
+      "correctAnswer": 0,
+      "explanation": "'Am going to travel' – předem naplánovaná událost."
+    },
+    {
+      "question": "It’s too late now. We _ on time. (not finish)",
+      "answers": ["won’t finish", "are not finishing", "are not going to finish", "don’t finish"],
+      "correctAnswer": 2,
+      "explanation": "'Are not going to finish' – logický závěr na základě situace."
+    },
+    {
+      "question": "Don’t worry, I _ you with your project. (help)",
+      "answers": ["will help", "am going to help", "am helping", "help"],
+      "correctAnswer": 0,
+      "explanation": "'Will help' – spontánní nabídka pomoci."
+    }
+  ]
+}

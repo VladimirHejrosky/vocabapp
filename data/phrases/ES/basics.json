@@ -1,0 +1,106 @@
+{
+  "id": "basics",
+  "title": "Základy",
+  "phrases": [
+    {
+      "czPhrase": "Dobrý den",
+      "originalPhrase": "Buenos días",
+      "words": ["Buenos", "días", "tardes", "hola", "noche"]
+    },
+    {
+      "czPhrase": "Na shledanou",
+      "originalPhrase": "Adiós",
+      "words": ["Adiós", "hola", "gracias", "buenas", "tarde"]
+    },
+    {
+      "czPhrase": "Děkuji",
+      "originalPhrase": "Gracias",
+      "words": ["Gracias", "por", "favor", "hola", "sí"]
+    },
+    {
+      "czPhrase": "Prosím",
+      "originalPhrase": "Por favor",
+      "words": ["Por", "favor", "gracias", "hola", "bien"]
+    },
+    {
+      "czPhrase": "Ano",
+      "originalPhrase": "Sí",
+      "words": ["Sí", "no", "quizás", "gracias", "hola"]
+    },
+    {
+      "czPhrase": "Ne",
+      "originalPhrase": "No",
+      "words": ["No", "sí", "gracias", "favor", "tú"]
+    },
+    {
+      "czPhrase": "Jak se máš?",
+      "originalPhrase": "¿Cómo estás?",
+      "words": ["Cómo", "estás", "estoy", "bien", "tú", "hola"]
+    },
+    {
+      "czPhrase": "Jmenuji se Jana",
+      "originalPhrase": "Me llamo Jana",
+      "words": ["Me", "llamo", "Jana", "tú", "soy", "nombre"]
+    },
+    {
+      "czPhrase": "Odkud jsi?",
+      "originalPhrase": "¿De dónde eres?",
+      "words": ["De", "dónde", "eres", "soy", "vivo", "llamas"]
+    },
+    {
+      "czPhrase": "Mluvím trochu španělsky",
+      "originalPhrase": "Hablo un poco de español",
+      "words": ["Hablo", "un", "poco", "de", "español", "bien", "nada"]
+    },
+    {
+      "czPhrase": "Nerozumím",
+      "originalPhrase": "No entiendo",
+      "words": ["No", "entiendo", "comprendo", "hablo", "escucho"]
+    },
+    {
+      "czPhrase": "Můžeš to zopakovat?",
+      "originalPhrase": "¿Puedes repetirlo?",
+      "words": ["Puedes", "repetirlo", "decir", "otra", "vez"]
+    },
+    {
+      "czPhrase": "Pomoc!",
+      "originalPhrase": "¡Ayuda!",
+      "words": ["¡Ayuda!", "socorro", "por", "favor", "rápido"]
+    },
+    {
+      "czPhrase": "Kolik to stojí?",
+      "originalPhrase": "¿Cuánto cuesta?",
+      "words": ["Cuánto", "cuesta", "vale", "precio", "dinero"]
+    },
+    {
+      "czPhrase": "Kde je toaleta?",
+      "originalPhrase": "¿Dónde está el baño?",
+      "words": ["Dónde", "está", "el", "baño", "servicio", "aquí"]
+    },
+    {
+      "czPhrase": "Je to daleko?",
+      "originalPhrase": "¿Está lejos?",
+      "words": ["Está", "lejos", "cerca", "camino", "dónde"]
+    },
+    {
+      "czPhrase": "Co to je?",
+      "originalPhrase": "¿Qué es esto?",
+      "words": ["Qué", "es", "esto", "eso", "objeto", "cosa"]
+    },
+    {
+      "czPhrase": "Jsem z Česka",
+      "originalPhrase": "Soy de Chequia",
+      "words": ["Soy", "de", "Chequia", "España", "Eslovaquia", "dónde"]
+    },
+    {
+      "czPhrase": "Miluji Španělsko",
+      "originalPhrase": "Amo España",
+      "words": ["Amo", "España", "me", "gusta", "quiero", "país"]
+    },
+    {
+      "czPhrase": "Dobrou noc",
+      "originalPhrase": "Buenas noches",
+      "words": ["Buenas", "noches", "días", "tardes", "sueño"]
+    }
+  ]
+}

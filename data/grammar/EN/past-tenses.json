@@ -1,0 +1,144 @@
+{
+  "id": "past-tenses",
+  "title": "Čas minulý a předpřítomný",
+  "theory": [
+    {
+      "title": "Past Simple (Minulý čas prostý)",
+      "description": "Používá se pro dokončené akce v určitém čase v minulosti. Často se pojí s časovými výrazy jako 'yesterday', 'last year', 'in 2010', 'two days ago' apod.",
+      "examples": [
+        "I visited London last summer.",
+        "She didn’t go to school yesterday."
+      ]
+    },
+    {
+      "title": "Present Perfect (Předpřítomný čas)",
+      "description": "Používá se pro akce, které mají vliv na přítomnost, nebo pokud není důležitý konkrétní čas. Často se pojí s výrazy jako 'just', 'already', 'yet', 'ever', 'never', 'since', 'for'.",
+      "examples": [
+        "I have never eaten sushi.",
+        "She has just finished her homework."
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question": "I _ Rome last year. (visit)",
+      "answers": ["have visited", "visited", "visit", "had visited"],
+      "correctAnswer": 1,
+      "explanation": "'Visited' – minulý čas s časovým určením 'last year'."
+    },
+    {
+      "question": "She _ never to Canada. (never / be)",
+      "answers": ["never went", "has never been", "never has been", "was never"],
+      "correctAnswer": 1,
+      "explanation": "'Has never been' – zkušenost bez určení času, předpřítomný čas."
+    },
+    {
+      "question": "We _ that movie yet. (not see)",
+      "answers": ["didn’t see", "haven’t seen", "don’t see", "haven’t saw"],
+      "correctAnswer": 1,
+      "explanation": "'Haven’t seen' – 'yet' se používá s předpřítomným časem."
+    },
+    {
+      "question": "They _ the party an hour ago. (leave)",
+      "answers": ["left", "have left", "have been leaving", "leave"],
+      "correctAnswer": 0,
+      "explanation": "'Left' – konkrétní čas v minulosti ('an hour ago')."
+    },
+    {
+      "question": "I _ him since we were children. (know)",
+      "answers": ["knew", "have known", "know", "had known"],
+      "correctAnswer": 1,
+      "explanation": "'Have known' – děj začal v minulosti a pokračuje dodnes."
+    },
+    {
+      "question": "My parents _ in Spain three times. (be)",
+      "answers": ["have been", "were", "are", "had been"],
+      "correctAnswer": 0,
+      "explanation": "'Have been' – zkušenost bez určení konkrétního času."
+    },
+    {
+      "question": "He _ his leg last winter. (break)",
+      "answers": ["has broken", "broke", "had broken", "has broke"],
+      "correctAnswer": 1,
+      "explanation": "'Broke' – 'last winter' je konkrétní čas v minulosti."
+    },
+    {
+      "question": "We _ dinner just. (just / finish)",
+      "answers": ["just finished", "have just finished", "finished just", "have finished just"],
+      "correctAnswer": 1,
+      "explanation": "'Have just finished' – 'just' se používá s předpřítomným časem."
+    },
+    {
+      "question": "I _ that book when I was 15. (read)",
+      "answers": ["read", "have read", "had read", "was reading"],
+      "correctAnswer": 0,
+      "explanation": "'Read' (minulý čas) – s časovým údajem 'when I was 15'."
+    },
+    {
+      "question": "She _ here for ten years. (live)",
+      "answers": ["lived", "has lived", "was living", "lives"],
+      "correctAnswer": 1,
+      "explanation": "'Has lived' – děj trvá od minulosti do přítomnosti ('for ten years')."
+    },
+    {
+      "question": "We _ to the cinema last weekend. (go)",
+      "answers": ["have gone", "went", "go", "have been"],
+      "correctAnswer": 1,
+      "explanation": "'Went' – minulý čas s výrazem 'last weekend'."
+    },
+    {
+      "question": "I _ from him since Monday. (not hear)",
+      "answers": ["didn't hear", "haven’t heard", "don’t hear", "wasn’t hearing"],
+      "correctAnswer": 1,
+      "explanation": "'Haven’t heard' – od určitého bodu do teď, předpřítomný čas."
+    },
+    {
+      "question": "He _ his keys, so he can’t get in. (lose)",
+      "answers": ["lost", "has lost", "had lost", "is losing"],
+      "correctAnswer": 1,
+      "explanation": "'Has lost' – důsledek v přítomnosti (nemůže se dostat dovnitř)."
+    },
+    {
+      "question": "They _ to Paris last summer. (go)",
+      "answers": ["have gone", "went", "go", "have been"],
+      "correctAnswer": 1,
+      "explanation": "'Went' – časové určení 'last summer'."
+    },
+    {
+      "question": "She _ five emails today. (write)",
+      "answers": ["wrote", "has written", "writes", "was writing"],
+      "correctAnswer": 1,
+      "explanation": "'Has written' – 'today' ještě neskončil, předpřítomný čas."
+    },
+    {
+      "question": "I _ such a beautiful place never. (never / see)",
+      "answers": ["never saw", "have never seen", "didn't see", "was never seeing"],
+      "correctAnswer": 1,
+      "explanation": "'Have never seen' – zkušenost bez konkrétního času."
+    },
+    {
+      "question": "We _ at the zoo yesterday. (be)",
+      "answers": ["have been", "are", "were", "was"],
+      "correctAnswer": 2,
+      "explanation": "'Were' – konkrétní minulý čas 'yesterday'."
+    },
+    {
+      "question": "He _ the office just. (just / leave)",
+      "answers": ["has just left", "just left", "left just", "is just leaving"],
+      "correctAnswer": 0,
+      "explanation": "'Has just left' – nedávná událost důležitá pro přítomnost."
+    },
+    {
+      "question": "I _ breakfast this morning. (not eat)",
+      "answers": ["didn't eat", "haven’t eaten", "don’t eat", "wasn’t eating"],
+      "correctAnswer": 1,
+      "explanation": "'Haven’t eaten' – pokud je ještě ráno, používáme předpřítomný čas."
+    },
+    {
+      "question": "She _ a new car in 2018. (buy)",
+      "answers": ["has bought", "bought", "was buying", "buy"],
+      "correctAnswer": 1,
+      "explanation": "'Bought' – konkrétní čas v minulosti ('in 2018')."
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "id": "pronouns",
+  "title": "Osobní zájmena",
+  "theory": [
+    {
+      "title": "Osobní zájmena",
+      "description": "V němčině se osobní zájmena používají k vyjádření podmětu ve větě. Jsou důležitá při časování sloves.",
+      "examples": [
+        "Ich bin. (Já jsem.)",
+        "Du bist. (Ty jsi.)",
+        "Er ist. (On je.)",
+        "Sie ist. (Ona je.)",
+        "Es ist. (Ono je.)",
+        "Wir sind. (My jsme.)",
+        "Ihr seid. (Vy jste. – neformální)",
+        "Sie sind. (Oni jsou.)",
+        "Sie sind. (Vy jste. – formální)"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question": "_ bin müde.",
+      "answers": ["Ich", "Du", "Er", "Sie"],
+      "correctAnswer": 0,
+      "explanation": "„Ich“ znamená „já“, takže věta je: Ich bin müde. (Jsem unavený.)"
+    },
+    {
+      "question": "_ bist mein Freund.",
+      "answers": ["Er", "Du", "Ich", "Es"],
+      "correctAnswer": 1,
+      "explanation": "„Du“ znamená „ty“, věta je: Du bist mein Freund. (Ty jsi můj kamarád.)"
+    },
+    {
+      "question": "_ ist Lehrer.",
+      "answers": ["Sie", "Ich", "Er", "Du"],
+      "correctAnswer": 2,
+      "explanation": "„Er“ znamená „on“, takže věta je: Er ist Lehrer. (On je učitel.)"
+    },
+    {
+      "question": "_ sind müde.",
+      "answers": ["Ich", "Wir", "Ihr", "Du"],
+      "correctAnswer": 1,
+      "explanation": "„Wir“ znamená „my“, věta je: Wir sind müde. (Jsme unavení.)"
+    },
+    {
+      "question": "_ seid meine Freunde.",
+      "answers": ["Wir", "Du", "Ihr", "Sie"],
+      "correctAnswer": 2,
+      "explanation": "„Ihr“ znamená „vy“ (neformálně, množné číslo)."
+    },
+    {
+      "question": "_ ist meine Schwester.",
+      "answers": ["Sie", "Er", "Ich", "Wir"],
+      "correctAnswer": 0,
+      "explanation": "„Sie“ znamená „ona“, takže věta je: Sie ist meine Schwester. (Ona je moje sestra.)"
+    },
+    {
+      "question": "_ ist ein Kind.",
+      "answers": ["Er", "Es", "Du", "Ich"],
+      "correctAnswer": 1,
+      "explanation": "„Es“ se používá pro střední rod, např. dítě – Das Kind → Es ist ein Kind."
+    },
+    {
+      "question": "_ sind Schüler.",
+      "answers": ["Sie", "Du", "Ihr", "Es"],
+      "correctAnswer": 0,
+      "explanation": "„Sie“ může být i „oni“, zde znamená: Sie sind Schüler. (Oni jsou žáci.)"
+    },
+    {
+      "question": "_ sind sehr nett. (formální vy)",
+      "answers": ["Ihr", "Sie", "Wir", "Du"],
+      "correctAnswer": 1,
+      "explanation": "„Sie“ s velkým S je formální „Vy“. Věta: Sie sind sehr nett. (Vy jste velmi milí.)"
+    },
+    {
+      "question": "Wer ist das? _ bin Paul.",
+      "answers": ["Er", "Ich", "Du", "Wir"],
+      "correctAnswer": 1,
+      "explanation": "Odpověď na otázku je „Ich bin Paul.“ – Já jsem Paul."
+    },
+    {
+      "question": "_ bist sehr freundlich.",
+      "answers": ["Du", "Sie", "Ihr", "Es"],
+      "correctAnswer": 0,
+      "explanation": "„Du“ znamená „ty“, věta: Du bist sehr freundlich. (Ty jsi velmi přátelský.)"
+    },
+    {
+      "question": "Peter und ich – _ sind Freunde.",
+      "answers": ["Sie", "Wir", "Ihr", "Es"],
+      "correctAnswer": 1,
+      "explanation": "„Peter und ich“ = „my“, tedy „wir“. Věta: Wir sind Freunde."
+    },
+    {
+      "question": "Anna und du – _ seid Kollegen.",
+      "answers": ["Ihr", "Sie", "Wir", "Du"],
+      "correctAnswer": 0,
+      "explanation": "„Anna und du“ = „vy“, tedy „ihr“. Věta: Ihr seid Kollegen."
+    },
+    {
+      "question": "_ ist mein Vater.",
+      "answers": ["Er", "Ich", "Sie", "Du"],
+      "correctAnswer": 0,
+      "explanation": "„Er“ znamená „on“, věta: Er ist mein Vater. (On je můj otec.)"
+    },
+    {
+      "question": "_ ist meine Mutter.",
+      "answers": ["Sie", "Du", "Es", "Er"],
+      "correctAnswer": 0,
+      "explanation": "„Sie“ znamená „ona“, věta: Sie ist meine Mutter. (Ona je moje matka.)"
+    },
+    {
+      "question": "_ seid müde.",
+      "answers": ["Wir", "Ihr", "Sie", "Du"],
+      "correctAnswer": 1,
+      "explanation": "„Ihr“ je „vy“ – neformálně množné číslo. Ihr seid müde. (Vy jste unavení.)"
+    },
+    {
+      "question": "_ ist mein Auto.",
+      "answers": ["Es", "Er", "Ich", "Sie"],
+      "correctAnswer": 0,
+      "explanation": "„Es“ pro střední rod, např. auto (das Auto). Věta: Es ist mein Auto."
+    },
+    {
+      "question": "_ sind meine Eltern.",
+      "answers": ["Wir", "Ihr", "Sie", "Du"],
+      "correctAnswer": 2,
+      "explanation": "„Sie“ znamená „oni“. Věta: Sie sind meine Eltern. (Oni jsou moji rodiče.)"
+    },
+    {
+      "question": "_ bin zu Hause.",
+      "answers": ["Ich", "Er", "Du", "Wir"],
+      "correctAnswer": 0,
+      "explanation": "„Ich“ znamená „já“, věta: Ich bin zu Hause. (Jsem doma.)"
+    },
+    {
+      "question": "_ bist zu spät.",
+      "answers": ["Ich", "Er", "Du", "Sie"],
+      "correctAnswer": 2,
+      "explanation": "„Du“ je „ty“. Věta: Du bist zu spät. (Přišel jsi pozdě.)"
+    }
+  ]
+}
