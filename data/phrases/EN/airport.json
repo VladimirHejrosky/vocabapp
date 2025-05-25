@@ -1,0 +1,106 @@
+{
+  "id": "airport",
+  "title": "Letiště",
+  "phrases": [
+    {
+      "czPhrase": "Kde je odbavovací přepážka?",
+      "originalPhrase": "Where is the check-in counter?",
+      "words": ["Where", "is", "the", "check-in", "counter", "passport", "security"]
+    },
+    {
+      "czPhrase": "Potřebuji palubní vstupenku.",
+      "originalPhrase": "I need a boarding pass.",
+      "words": ["I", "need", "a", "boarding", "pass", "ticket", "gate"]
+    },
+    {
+      "czPhrase": "Jaké je číslo mého letu?",
+      "originalPhrase": "What is my flight number?",
+      "words": ["What", "is", "my", "flight", "number", "name", "seat"]
+    },
+    {
+      "czPhrase": "Kdy odlétá letadlo?",
+      "originalPhrase": "When does the plane depart?",
+      "words": ["When", "does", "the", "plane", "depart", "arrive", "soon"]
+    },
+    {
+      "czPhrase": "Kam mám jít na bezpečnostní kontrolu?",
+      "originalPhrase": "Where do I go for security check?",
+      "words": ["Where", "do", "I", "go", "for", "security", "check", "customs", "to"]
+    },
+    {
+      "czPhrase": "Zpozdil se můj let?",
+      "originalPhrase": "Is my flight delayed?",
+      "words": ["Is", "my", "flight", "delayed", "on", "cancelled", "early"]
+    },
+    {
+      "czPhrase": "Potřebuji pomoct s kufrem.",
+      "originalPhrase": "I need help with my suitcase.",
+      "words": ["I", "need", "help", "with", "my", "suitcase", "bag", "ticket"]
+    },
+    {
+      "czPhrase": "Ztratil jsem pas.",
+      "originalPhrase": "I lost my passport.",
+      "words": ["I", "lost", "my", "passport", "luggage", "found", "card"]
+    },
+    {
+      "czPhrase": "Kde je moje zavazadlo?",
+      "originalPhrase": "Where is my luggage?",
+      "words": ["Where", "is", "my", "luggage", "suitcase", "baggage", "bag"]
+    },
+    {
+      "czPhrase": "Musíte projít celní kontrolou.",
+      "originalPhrase": "You must go through customs.",
+      "words": ["You", "must", "go", "through", "customs", "check", "security"]
+    },
+    {
+      "czPhrase": "Vaše sedadlo je u okna.",
+      "originalPhrase": "Your seat is by the window.",
+      "words": ["Your", "seat", "is", "by", "the", "window", "aisle", "row"]
+    },
+    {
+      "czPhrase": "Let má mezipřistání v Paříži.",
+      "originalPhrase": "The flight has a layover in Paris.",
+      "words": ["The", "flight", "has", "a", "layover", "in", "Paris", "London", "gate"]
+    },
+    {
+      "czPhrase": "Přijďte k bráně číslo osm.",
+      "originalPhrase": "Please come to gate number eight.",
+      "words": ["Please", "come", "to", "gate", "number", "eight", "seven", "check"]
+    },
+    {
+      "czPhrase": "Váš pas prosím.",
+      "originalPhrase": "Your passport please.",
+      "words": ["Your", "passport", "please", "ticket", "boarding", "name"]
+    },
+    {
+      "czPhrase": "Musíte projít rentgenem.",
+      "originalPhrase": "You have to go through the X-ray.",
+      "words": ["You", "have", "to", "go", "through", "the", "X-ray", "scanner", "control"]
+    },
+    {
+      "czPhrase": "Let trvá dvě hodiny.",
+      "originalPhrase": "The flight takes two hours.",
+      "words": ["The", "flight", "takes", "two", "hours", "minutes", "long"]
+    },
+    {
+      "czPhrase": "Kam letíte?",
+      "originalPhrase": "Where are you flying to?",
+      "words": ["Where", "are", "you", "flying", "to", "from", "going"]
+    },
+    {
+      "czPhrase": "Cestujete služebně nebo soukromě?",
+      "originalPhrase": "Are you traveling for business or pleasure?",
+      "words": ["Are", "you", "traveling", "for", "business", "or", "pleasure", "vacation"]
+    },
+    {
+      "czPhrase": "Přejeme příjemný let.",
+      "originalPhrase": "We wish you a pleasant flight.",
+      "words": ["We", "wish", "you", "a", "pleasant", "flight", "journey", "trip"]
+    },
+    {
+      "czPhrase": "Prosím, připoutejte se.",
+      "originalPhrase": "Please fasten your seatbelt.",
+      "words": ["Please", "fasten", "your", "seatbelt", "belt", "sit", "relax"]
+    }
+  ]
+}

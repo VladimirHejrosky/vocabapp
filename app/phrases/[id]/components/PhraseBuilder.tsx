@@ -94,7 +94,7 @@ export default function PhraseBuilder({ exercises }: PhraseBuilderProps) {
   const checkAnswer = () => {
     const userTranslation = selectedWords.join(" ").toLowerCase();
     const correct =
-      userTranslation === currentExercise.originalPhrase.toLowerCase();
+      userTranslation === currentExercise.originalPhrase.toLowerCase().replace(".", "") || userTranslation === currentExercise.originalPhrase.toLowerCase().replace("?", "") || userTranslation === currentExercise.originalPhrase.toLowerCase().replace("¿", "");
 
     setIsCorrect(correct);
     setProgress(((currentExerciseIndex + 1) / exercises.length) * 100);
@@ -143,7 +143,7 @@ export default function PhraseBuilder({ exercises }: PhraseBuilderProps) {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <div className="mb-2">
-        <div className="flex justify-center mb-2 text-2xl font-bold w-full">
+        <div className="flex relative justify-center mb-2 text-2xl font-bold w-full">
           <div className="text-center">
             {currentExerciseIndex + 1} / {exercises.length}
           </div>
@@ -151,7 +151,7 @@ export default function PhraseBuilder({ exercises }: PhraseBuilderProps) {
             onClick={toggleMute}
             variant="outline"
             size="icon"
-            className="absolute right-4"
+            className="absolute right-0"
           >
             {mute ? <VolumeOff /> : <Volume2 />}
           </Button>

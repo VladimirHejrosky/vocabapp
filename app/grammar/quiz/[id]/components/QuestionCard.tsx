@@ -11,8 +11,11 @@ import {
 import { CheckCircle, XCircle } from "lucide-react";
 import { QuizQuestion } from "@/lib/json/json-types";
 import { cn } from "@/lib/utils";
+import { SpeakButton } from "@/app/components/SpeakButton";
+import { Language } from "@/lib/generated/prisma";
 
 interface QuestionCardProps {
+  lang: Language | undefined;
   question: QuizQuestion;
   selectedAnswer: number | null;
   answered: boolean;
@@ -22,8 +25,8 @@ interface QuestionCardProps {
   onNext: () => void;
 }
 
-
 export default function QuestionCard({
+  lang,
   question,
   selectedAnswer,
   answered,
@@ -32,14 +35,24 @@ export default function QuestionCard({
   onAnswerSelect,
   onNext,
 }: QuestionCardProps) {
+  const [questionStart, questionEnd] = question.question.split("_");
 
-  const [questionStart, questionEnd] = question.question.split("_")
+  const textToSpeach = (questionStart + question.answers[question.correctAnswer] + questionEnd).split("(")[0]
+
   return (
     <Card className="w-full">
-      <CardHeader>
+      <CardHeader className="flex flex-col justify-center items-center">
         <CardTitle className="text-xl text-center">
-          {questionStart}<span className="text-muted-foreground">__</span>{questionEnd}
+          {questionStart}
+          <span className="text-muted-foreground">__</span>
+          {questionEnd}
         </CardTitle>
+        {answered && (
+            <SpeakButton
+              text={textToSpeach}
+              lang={lang}
+            />
+        )}
       </CardHeader>
       <CardContent>
         <div className="grid gap-2">
