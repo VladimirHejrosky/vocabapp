@@ -16,7 +16,6 @@ import { revalidatePath } from "next/cache";
 // Albums
 
 export async function getAlbums(userId: string) {
-
   const albums = await db.album.findMany({
     where: { userId },
     orderBy: { name: "asc" },
@@ -47,7 +46,7 @@ export async function upsertAlbum(
         language: data.language,
       },
     });
-    revalidatePath("/albums/" + albumId)
+    revalidatePath("/albums/" + albumId);
   } else {
     await db.album.create({
       data: {
@@ -57,7 +56,7 @@ export async function upsertAlbum(
         userId,
       },
     });
-    revalidatePath("/albums")
+    revalidatePath("/albums");
   }
 }
 
@@ -81,7 +80,7 @@ export async function getAlbumWithWords(userId: string, albumId: number) {
       name: true,
       language: true,
       words: {
-        orderBy: { priority: "asc" },
+        orderBy: [{ priority: "asc" }, { updatedAt: "asc" }],
         take: 10,
         select: {
           id: true,
@@ -100,7 +99,6 @@ export async function deleteAlbum(userId: string, albumId: number) {
   await db.album.delete({
     where: { id: albumId, userId },
   });
-
 }
 
 // Words
@@ -120,7 +118,7 @@ export async function getRandomWords(userId: string) {
         },
       }),
     },
-    orderBy: { priority: "asc" },
+    orderBy: [{ priority: "asc" }, { updatedAt: "asc" }],
     take: 10,
   });
   return words;
@@ -152,8 +150,7 @@ export async function deleteWord(wordId: number, albumId: number) {
   await db.word.delete({
     where: { id: wordId, userId },
   });
-  revalidatePath("/albums/" + albumId)
-
+  revalidatePath("/albums/" + albumId);
 }
 
 export async function editWord(
@@ -163,47 +160,49 @@ export async function editWord(
   const { userId } = await auth();
   const { success, data } = wordPair.safeParse(unsafeData);
   if (!success || !userId) return { error: true };
-    await db.word.update({
-      where: { id: data.id, userId },
-      data: {
-        term: data.term,
-        translation: data.translation,
-        example: data.example,
-      },
-    });
-    revalidatePath("/albums/" + albumId)
-
+  await db.word.update({
+    where: { id: data.id, userId },
+    data: {
+      term: data.term,
+      translation: data.translation,
+      example: data.example,
+    },
+  });
+  revalidatePath("/albums/" + albumId);
 }
 
-export async function updateWordsPriority( unsafeData: z.infer<typeof wordsForUpdate> ){
+export async function updateWordsPriority(
+  unsafeData: z.infer<typeof wordsForUpdate>
+) {
   const { userId } = await auth();
   const { success, data } = wordsForUpdate.safeParse(unsafeData);
   if (!success || !userId) return { error: true };
 
-  const filteredData = data.map(({ id, priority, know }) => {
-    if (know && priority < 10) {
-      return { id, newPriority: priority + 1 };
-    }
-    if (!know && priority > 1) {
-      return { id, newPriority: 1 };
-    }
-    return null;
-  })
-  .filter(Boolean) as { id: number; newPriority: number }[];
+  const filteredData = data
+    .map(({ id, priority, know }) => {
+      if (know && priority < 10) {
+        return { id, newPriority: priority + 1 };
+      }
+      if (!know && priority > 1) {
+        return { id, newPriority: 1 };
+      }
+      return null;
+    })
+    .filter(Boolean) as { id: number; newPriority: number }[];
 
-  const updateOps = filteredData.map(word =>
-  db.word.update({
-    where: {
-      id: word.id,
-      userId
-    },
-    data: {
-      priority: word.newPriority
-    }
-  })
-);
+  const updateOps = filteredData.map((word) =>
+    db.word.update({
+      where: {
+        id: word.id,
+        userId,
+      },
+      data: {
+        priority: word.newPriority,
+      },
+    })
+  );
 
-await Promise.all(updateOps);
+  await Promise.all(updateOps);
 }
 
 // functions

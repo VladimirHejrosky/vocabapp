@@ -6,6 +6,8 @@ import { cookies } from "next/headers";
 import { Language } from "@/lib/generated/prisma";
 import NoDataWarning from "../components/NoDataWarning";
 
+export const dynamic = 'force-dynamic';
+
 const getLangCookie = async () => {
     const langCookie = (await cookies()).get('lang')?.value as Language | undefined;
     return langCookie

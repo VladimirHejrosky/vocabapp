@@ -15,6 +15,7 @@ export default function GlobalError({
 }) {
   const router = useRouter();
 
+
   useEffect(() => {
     console.error('Unexpected error:', error);
   }, [error]);
