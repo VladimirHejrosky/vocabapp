@@ -182,11 +182,11 @@ export default function PhraseBuilder({ exercises }: PhraseBuilderProps) {
               <Button
                 key={`selected-${index}`}
                 variant="secondary"
-                className="h-8"
+                className="h-10"
                 onClick={() => handleSelectedWordClick(index)}
                 disabled={isCorrect !== null}
               >
-                {word}
+                {word.toLocaleLowerCase()}
               </Button>
             ))
           )}
@@ -201,7 +201,7 @@ export default function PhraseBuilder({ exercises }: PhraseBuilderProps) {
         )}
 
         {/* Available words */}
-        <div className="flex flex-wrap p-2 gap-2 border-2 border-dashed rounded-lg">
+        <div className="flex flex-wrap p-2 gap-2 my-6">
           {wordPool.map((item, index) => (
             <Button
               key={`word-slot-${index}`}
