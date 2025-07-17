@@ -6,6 +6,8 @@ import { cookies } from "next/headers";
 import { Language } from "@/lib/generated/prisma";
 import { auth } from "@clerk/nextjs/server";
 
+export const dynamic = 'force-dynamic';
+
 const getLangCookie = async () => {
     const langCookie = (await cookies()).get('lang')?.value as Language | undefined;
     return langCookie

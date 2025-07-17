@@ -43,6 +43,7 @@ export default function CardSet({ initialWords, lang, demo }: Props) {
     true
   );
   const [fisrtTime, setFirstTime] = useState(true);
+  const [isUpdating, setIsUpdating] = useState(false);
 
   const currentWord = words[currentIndex];
   const remainingWords =
@@ -115,16 +116,26 @@ export default function CardSet({ initialWords, lang, demo }: Props) {
     }
   };
 
-  const handleUpdateData = async () => {
-    if (!fisrtTime || demo) return;
+ const handleUpdateData = async () => {
+  if (!fisrtTime || demo) return;
+
+  setIsUpdating(true);
+
+  try {
     const dataForUpdate = words.map((word) => ({
       id: word.id,
       priority: word.priority,
       know: knownWords.includes(word.id),
     }));
+
     await updateWordsPriority(dataForUpdate);
     setFirstTime(false);
-  };
+  } catch {
+    console.error("Chyba při ukládání priorit");
+  } finally {
+    setIsUpdating(false); 
+  }
+};
 
   useEffect(() => {
     if (animation === "entering") {
@@ -153,12 +164,12 @@ export default function CardSet({ initialWords, lang, demo }: Props) {
         )}
 
         <div className="flex gap-4 mb-6">
-          <Button variant="outline" onClick={() => router.back()}>
+          <Button disabled={isUpdating} variant="outline" onClick={() => router.back()}>
             <ArrowLeft />
             Zpět
           </Button>
           {unknownWords.length > 0 && (
-            <Button onClick={resetLearning} className="flex items-center gap-2">
+            <Button disabled={isUpdating} onClick={resetLearning} className="flex items-center gap-2">
               <RotateCw className="h-4 w-4" />
               Pokračovat
             </Button>
