@@ -1,17 +1,24 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AlertTriangle } from 'lucide-react';
 
 export default function GlobalError({
+  error,
   reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
 }) {
   const router = useRouter();
+
+
+  useEffect(() => {
+    console.error('Unexpected error:', error);
+  }, [error]);
 
   return (
     <div className="container mx-auto px-4">
